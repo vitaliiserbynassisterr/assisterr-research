@@ -574,6 +574,98 @@
             .card { break-inside: avoid; border: 1px solid #ddd !important; }
         }
 
+    
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            
+            .header { 
+                padding: 1.5rem 1rem; 
+                border-radius: 12px;
+            }
+            .header h1 { font-size: 1.4rem; line-height: 1.3; }
+            .header-meta { gap: 1rem; }
+            .meta-item { font-size: 0.8rem; }
+            .logo svg { width: 100px; height: 25px; }
+            
+            .card { 
+                padding: 1.25rem; 
+                border-radius: 12px;
+                margin-bottom: 1rem;
+            }
+            .card h2 { font-size: 1.25rem; }
+            .card h3 { font-size: 1.05rem; }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            .stat-card { padding: 1rem; }
+            .stat-value { font-size: 1.75rem; }
+            .stat-label { font-size: 0.8rem; }
+            
+            table { font-size: 0.85rem; }
+            th, td { padding: 0.75rem 0.5rem; }
+            
+            .finding-card { padding: 1rem; }
+            .finding-card h4 { font-size: 1rem; }
+            
+            ul, ol { padding-left: 1.25rem; }
+            li { font-size: 0.9rem; margin-bottom: 0.5rem; }
+            
+            .badge { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+            
+            .download-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .back-link {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .footer { padding: 1.5rem 1rem; font-size: 0.85rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .container { padding: 0.75rem; }
+            .header { padding: 1.25rem 0.75rem; }
+            .header h1 { font-size: 1.2rem; }
+            .meta-item { font-size: 0.75rem; }
+            
+            .card { padding: 1rem; }
+            .card h2 { font-size: 1.1rem; }
+            .card h3 { font-size: 0.95rem; }
+            
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .stat-card { padding: 0.75rem; }
+            .stat-value { font-size: 1.5rem; }
+            
+            /* Make tables scrollable on very small screens */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            table { min-width: 500px; }
+            
+            .download-btn {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 14px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (pointer: coarse) {
+            .download-btn { padding: 14px 20px; }
+            .back-link { padding: 0.6rem 1.2rem; }
+            a, button { min-height: 44px; }
+        }
+
     </style>
 </head>
 <body>
@@ -628,7 +720,7 @@
             </div>
 
             <h3>TAM/SAM/SOM Analysis</h3>
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Market</th>
@@ -663,7 +755,7 @@
                         <td class="cagr-highlight">62.7%</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box">
                 <strong>Key Insight:</strong> Vertical AI agents have the <span class="cagr-highlight">highest CAGR (62.7%)</span> - this is where Assisterr should focus.
@@ -698,7 +790,7 @@
             </div>
 
             <h3>Direct Competitors</h3>
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Project</th>
@@ -739,10 +831,10 @@
                         <td>Failed execution (-95% from ATH)</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h3>Adjacent Success Stories</h3>
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Company</th>
@@ -771,7 +863,7 @@
                         <td>Zero tokenization = opportunity</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
         </section>
 
         <!-- Top 5 Opportunities -->
@@ -789,12 +881,12 @@
                         <h3 class="opportunity-title">DeFi Yield Optimization Agents</h3>
                         <span class="appeal-badge highest">Highest Appeal</span>
                     </div>
-                    <table>
+                    <div class="table-wrapper"><table>
                         <tr><td><strong>Pain Point</strong></td><td>Manual yield farming is 24/7, complex</td></tr>
                         <tr><td><strong>Proof Point</strong></td><td>AI agents: 0% liquidation vs 43% human</td></tr>
                         <tr><td><strong>Revenue Model</strong></td><td>$2-5k/month per agent subscription</td></tr>
                         <tr><td><strong>TAM</strong></td><td>$24B+ DeFi assets need automation</td></tr>
-                    </table>
+                    </table></div>
                     <div class="positioning-quote">"Autonomous DeFi Portfolio Manager on Solana"</div>
                 </div>
 
@@ -805,12 +897,12 @@
                         <h3 class="opportunity-title">Crypto Compliance & KYC/AML Automation</h3>
                         <span class="appeal-badge very-high">Very High (Regulatory)</span>
                     </div>
-                    <table>
+                    <div class="table-wrapper"><table>
                         <tr><td><strong>Pain Point</strong></td><td>MiCA 2026, DAC8 2027, IRS tracking</td></tr>
                         <tr><td><strong>Proof Point</strong></td><td>AI reduces investigation time 50%+</td></tr>
                         <tr><td><strong>Revenue Model</strong></td><td>$10-100k/year enterprise contracts</td></tr>
                         <tr><td><strong>TAM</strong></td><td>Every crypto company needs this</td></tr>
-                    </table>
+                    </table></div>
                     <div class="positioning-quote">"AnChain.AI for Solana" or "Compliance Infrastructure for Web3"</div>
                 </div>
 
@@ -821,12 +913,12 @@
                         <h3 class="opportunity-title">DAO Governance & Treasury Agents</h3>
                         <span class="appeal-badge high">High Appeal</span>
                     </div>
-                    <table>
+                    <div class="table-wrapper"><table>
                         <tr><td><strong>Pain Point</strong></td><td>DAOs manage $24B+, need automation</td></tr>
                         <tr><td><strong>Proof Point</strong></td><td>AI treasury = 32% higher yields</td></tr>
                         <tr><td><strong>Revenue Model</strong></td><td>$2-10k/month per DAO</td></tr>
                         <tr><td><strong>TAM</strong></td><td>Thousands of DAOs globally</td></tr>
-                    </table>
+                    </table></div>
                     <div class="positioning-quote">"Aragon for the AI Era"</div>
                 </div>
 
@@ -837,12 +929,12 @@
                         <h3 class="opportunity-title">Smart Contract Security Audit Agents</h3>
                         <span class="appeal-badge high">High Appeal</span>
                     </div>
-                    <table>
+                    <div class="table-wrapper"><table>
                         <tr><td><strong>Pain Point</strong></td><td>Traditional audits: $10-250k, weeks</td></tr>
                         <tr><td><strong>Proof Point</strong></td><td>AI found $4.6M in exploits in testing</td></tr>
                         <tr><td><strong>Revenue Model</strong></td><td>$5-50k per audit (vs $100k+ traditional)</td></tr>
                         <tr><td><strong>TAM</strong></td><td>Every smart contract needs auditing</td></tr>
-                    </table>
+                    </table></div>
                     <div class="positioning-quote">"Democratizing Smart Contract Security"</div>
                 </div>
 
@@ -853,12 +945,12 @@
                         <h3 class="opportunity-title">"Harvey for Crypto" - Legal AI</h3>
                         <span class="appeal-badge proven">Proven Playbook</span>
                     </div>
-                    <table>
+                    <div class="table-wrapper"><table>
                         <tr><td><strong>Pain Point</strong></td><td>Crypto legal is complex, expensive</td></tr>
                         <tr><td><strong>Proof Point</strong></td><td>Harvey: $5M Series A -> $8B valuation</td></tr>
                         <tr><td><strong>Revenue Model</strong></td><td>$10-100k/year per law firm/company</td></tr>
                         <tr><td><strong>TAM</strong></td><td>Every crypto company needs legal help</td></tr>
-                    </table>
+                    </table></div>
                     <div class="positioning-quote">"Harvey for Crypto - Legal AI for Web3"</div>
                 </div>
             </div>
@@ -939,7 +1031,7 @@
             </div>
 
             <h3>Key Differentiators vs Competition</h3>
-            <table class="diff-table">
+            <div class="table-wrapper"><table class="diff-table">
                 <thead>
                     <tr>
                         <th>Assisterr</th>
@@ -974,7 +1066,7 @@
                         <td>Horizontal</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
         </section>
 
         <!-- Series A Benchmarks -->
@@ -985,7 +1077,7 @@
             </div>
 
             <h3>Financial Targets</h3>
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Metric</th>
@@ -1015,7 +1107,7 @@
                         <td>Below median (preserves control)</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h3>Milestones Before Series A</h3>
             <ul class="checklist">
@@ -1036,7 +1128,7 @@
 
             <div class="investor-tier">
                 <span class="tier-label">Tier 1 - Primary Targets</span>
-                <table>
+                <div class="table-wrapper"><table>
                     <thead>
                         <tr>
                             <th>Investor</th>
@@ -1061,12 +1153,12 @@
                             <td>DeFi focus</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
             </div>
 
             <div class="investor-tier">
                 <span class="tier-label secondary">Tier 2 - Secondary Targets</span>
-                <table>
+                <div class="table-wrapper"><table>
                     <thead>
                         <tr>
                             <th>Investor</th>
@@ -1091,7 +1183,7 @@
                             <td>BSC + ecosystem</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
             </div>
 
             <div class="investor-tier">

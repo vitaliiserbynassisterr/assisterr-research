@@ -275,6 +275,98 @@
             .card { break-inside: avoid; border: 1px solid #ddd !important; }
         }
 
+    
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            
+            .header { 
+                padding: 1.5rem 1rem; 
+                border-radius: 12px;
+            }
+            .header h1 { font-size: 1.4rem; line-height: 1.3; }
+            .header-meta { gap: 1rem; }
+            .meta-item { font-size: 0.8rem; }
+            .logo svg { width: 100px; height: 25px; }
+            
+            .card { 
+                padding: 1.25rem; 
+                border-radius: 12px;
+                margin-bottom: 1rem;
+            }
+            .card h2 { font-size: 1.25rem; }
+            .card h3 { font-size: 1.05rem; }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+            .stat-card { padding: 1rem; }
+            .stat-value { font-size: 1.75rem; }
+            .stat-label { font-size: 0.8rem; }
+            
+            table { font-size: 0.85rem; }
+            th, td { padding: 0.75rem 0.5rem; }
+            
+            .finding-card { padding: 1rem; }
+            .finding-card h4 { font-size: 1rem; }
+            
+            ul, ol { padding-left: 1.25rem; }
+            li { font-size: 0.9rem; margin-bottom: 0.5rem; }
+            
+            .badge { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
+            
+            .download-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .back-link {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .footer { padding: 1.5rem 1rem; font-size: 0.85rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .container { padding: 0.75rem; }
+            .header { padding: 1.25rem 0.75rem; }
+            .header h1 { font-size: 1.2rem; }
+            .meta-item { font-size: 0.75rem; }
+            
+            .card { padding: 1rem; }
+            .card h2 { font-size: 1.1rem; }
+            .card h3 { font-size: 0.95rem; }
+            
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .stat-card { padding: 0.75rem; }
+            .stat-value { font-size: 1.5rem; }
+            
+            /* Make tables scrollable on very small screens */
+            .table-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            table { min-width: 500px; }
+            
+            .download-btn {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 14px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (pointer: coarse) {
+            .download-btn { padding: 14px 20px; }
+            .back-link { padding: 0.6rem 1.2rem; }
+            a, button { min-height: 44px; }
+        }
+
     </style>
 </head>
 <body>
@@ -351,7 +443,7 @@
         <section class="card">
             <h2>1. AI Agent Infrastructure Deals (2024-2026)</h2>
 
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Company</th>
@@ -420,7 +512,7 @@
                         <td>Sep 2025</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h3>Key Observations</h3>
             <ol>
@@ -438,7 +530,7 @@
             <h2>2. Trust/Verification Infrastructure - KYA First-Mover Opportunity</h2>
 
             <h3>Competitive Landscape</h3>
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Company</th>
@@ -471,7 +563,7 @@
                         <td>2025</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <div class="highlight-box">
                 <strong>Critical Insight:</strong> KYA is an emerging category in 2025-2026 with minimal established players. "By end of 2025, thousands of production-grade agent systems now live" requiring trust infrastructure.
@@ -491,7 +583,7 @@
         <section class="card">
             <h2>3. Solana AI Ecosystem Deals</h2>
 
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Project</th>
@@ -531,7 +623,7 @@
                         <td>Oct 2025</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h3>Solana Ecosystem Context</h3>
             <ul>
@@ -547,7 +639,7 @@
         <section class="card">
             <h2>4. DeFi Infrastructure Valuations (Solana)</h2>
 
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Company</th>
@@ -592,7 +684,7 @@
                         <td>Pivot to Solana treasury</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h3>Valuation Methodology</h3>
             <p><strong>DeFi Infrastructure Commands Premium Multiples:</strong></p>
@@ -610,7 +702,7 @@
             <h2>5. Investor Overlap Analysis</h2>
 
             <h3>Top AI + Crypto VCs</h3>
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Investor</th>
@@ -651,7 +743,7 @@
                         <td><span class="badge badge-warning">Medium</span></td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
 
             <h3>Target Investors for Assisterr</h3>
             <div class="highlight-box">
@@ -721,7 +813,7 @@
             </div>
 
             <h3>Traction Milestones to Hit</h3>
-            <table>
+            <div class="table-wrapper"><table>
                 <thead>
                     <tr>
                         <th>Metric</th>
@@ -766,7 +858,7 @@
                         <td>300%+ YoY</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
         </section>
 
         <div class="section-divider"></div>
