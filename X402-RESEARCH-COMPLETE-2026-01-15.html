@@ -262,10 +262,54 @@
         .white-space-item strong {
             color: #079455;
         }
+    
+        .download-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #F66824 0%, #DB5F94 100%);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 20px rgba(246, 104, 36, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(246, 104, 36, 0.6);
+        }
+        .download-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+        @media print {
+            .download-btn { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .container { max-width: 100% !important; padding: 0 !important; }
+            .header { background: #F66824 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .card { break-inside: avoid; border: 1px solid #ddd !important; }
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
+
+    <a href="index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #F66824; text-decoration: none; margin-bottom: 1rem; font-weight: 500;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Research Hub
+    </a>
+
         <!-- Header -->
         <header class="header">
             <div class="logo">
