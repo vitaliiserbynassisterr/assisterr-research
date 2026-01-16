@@ -149,6 +149,65 @@
         .stat-label {
             color: #A4A7AE;
             font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+        .info-btn {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #333;
+            border: 1px solid #555;
+            color: #A4A7AE;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: help;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .info-btn:hover {
+            background: #F66824;
+            border-color: #F66824;
+            color: white;
+        }
+        .tooltip {
+            position: absolute;
+            bottom: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: #252525;
+            border: 1px solid #F66824;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            width: 250px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #E0E0E0;
+            text-align: left;
+            line-height: 1.4;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #F66824;
+        }
+        .info-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
         }
 
         .footer {
@@ -221,19 +280,39 @@
         <div class="stats-bar">
             <div class="stat">
                 <div class="stat-value">$64B</div>
-                <div class="stat-label">SLM Market 2034</div>
+                <div class="stat-label">
+                    SLM Market 2034
+                    <span class="info-btn">?
+                        <span class="tooltip">Total Addressable Market for Small Language Models projected to reach $64B by 2034, driven by edge AI and on-device inference demand.</span>
+                    </span>
+                </div>
             </div>
             <div class="stat">
                 <div class="stat-value">$150B</div>
-                <div class="stat-label">AI Agent Market</div>
+                <div class="stat-label">
+                    AI Agent Market
+                    <span class="info-btn">?
+                        <span class="tooltip">Global AI agent market size including autonomous agents, copilots, and agent orchestration platforms. Fastest growing segment in AI.</span>
+                    </span>
+                </div>
             </div>
             <div class="stat">
                 <div class="stat-value">$50-100M</div>
-                <div class="stat-label">Target Valuation</div>
+                <div class="stat-label">
+                    Target Valuation
+                    <span class="info-btn">?
+                        <span class="tooltip">Assisterr's target pre-money valuation for Series A based on comparable AI+crypto infrastructure deals (Together AI, Nous Research, etc.)</span>
+                    </span>
+                </div>
             </div>
             <div class="stat">
                 <div class="stat-value">0</div>
-                <div class="stat-label">VC Portfolio Conflicts</div>
+                <div class="stat-label">
+                    VC Portfolio Conflicts
+                    <span class="info-btn">?
+                        <span class="tooltip"><strong>Zero conflicts found.</strong> None of our target VCs (a16z, Paradigm, Polychain, Multicoin) have competing portfolio companies in the AI agent trust infrastructure space on Solana.</span>
+                    </span>
+                </div>
             </div>
         </div>
 
