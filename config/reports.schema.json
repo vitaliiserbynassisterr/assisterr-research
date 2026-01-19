@@ -76,7 +76,7 @@
           },
           "version": {
             "type": "string",
-            "enum": ["1.0", "2.0", "3.0", "4.0"],
+            "enum": ["1.0", "2.0", "3.0", "4.0", "4.2", "4.3"],
             "description": "Report version (research system version when created)"
           }
         }
