@@ -61,7 +61,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": ["primary", "purple", "blue", "green", "pink"]
+              "enum": ["primary", "purple", "blue", "green", "pink", "orange"]
             },
             "description": "Badge color classes (maps to CSS)"
           },
@@ -76,7 +76,7 @@
           },
           "version": {
             "type": "string",
-            "enum": ["1.0", "2.0", "3.0"],
+            "enum": ["1.0", "2.0", "3.0", "4.0"],
             "description": "Report version (research system version when created)"
           }
         }

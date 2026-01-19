@@ -1,28 +1,27 @@
 {
-  "system_version": "3.3.0",
-  "last_updated": "2026-01-19T11:55:25.208553",
+  "system_version": "4.0.0",
+  "last_updated": "2026-01-19T17:30:00.000000",
   "reports": [
     {
-      "filename": "CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19.html",
-      "id": "CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19",
+      "filename": "CEO-RESEARCH-solana-ai-vibe-coding-v4-qa-2026-01-19.html",
+      "id": "CEO-RESEARCH-solana-ai-vibe-coding-v4-qa-2026-01-19",
       "featured": true,
       "badges": [
-        "NEW - Latest Research",
-        "Solana",
-        "Vibe-Coding",
+        "Research v4.0",
+        "Trust Crisis",
         "PoC Ready"
       ],
       "badge_colors": [
         "purple",
-        "blue",
+        "orange",
         "green"
       ],
-      "title": "Solana AI Vibe-Coding Ecosystem",
-      "description": "Complete vibe-coding landscape: Dev.fun (20K+ apps), Cursor ($29B), coding agents. 9 whitespace PoC opportunities identified.",
-      "version": "2.0",
+      "title": "Solana AI Vibe-Coding v4.0",
+      "description": "UPGRADED: Trust crisis discovered (Replit deleted DB, Cursor scandals). $57M SAM, 17 entities extracted, 8/10 QA pass. \"Anchor AI\" PoC ready.",
+      "version": "4.0",
       "date": "2026-01-19",
       "category": "solana",
-      "featured_label": "NEW - Latest Research"
+      "featured_label": "Research v4.0"
     },
     {
       "filename": "SLM-MARKETPLACE-FOR-AI-AGENTS-2026-01-16.html",
