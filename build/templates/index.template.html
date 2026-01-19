@@ -285,10 +285,10 @@
 
         <!-- CATEGORY VIEW -->
         <div id="view-category" class="view-section active">
-            {% for cat_id, cat_info in categories.items() %}
-            {% set cat_reports = reports_by_category.get(cat_id, []) %}
-            {% if cat_reports or cat_id == 'featured' %}
-            <h2 class="section-title">{{ cat_info.name }}</h2>
+            {% for cat_id, cat_data in reports_by_category.items() %}
+            {% set cat_reports = cat_data.reports %}
+            {% if cat_reports %}
+            <h2 class="section-title">{{ cat_data.info.name }}</h2>
             <div class="reports-grid">
                 {% for report in cat_reports %}
                 <a href="reports/{{ report.filename }}" class="report-card{% if report.featured and cat_id == 'featured' %} featured{% endif %}">

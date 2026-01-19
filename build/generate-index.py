@@ -169,6 +169,12 @@ def generate_index(data):
     reports = data.get("reports", [])
     categories = data.get("categories", {})
 
+    # Add display fields to each report
+    for report in reports:
+        date_str = report.get("date", "")
+        report["date_display"] = format_date_label(date_str)
+        report["date_full"] = format_date_label(date_str)
+
     # Prepare template context
     featured_reports = get_featured_reports(reports)
     reports_by_category = organize_by_category(reports, categories)
