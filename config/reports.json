@@ -24,6 +24,48 @@
       "featured_label": "Research v5.1"
     },
     {
+      "filename": "CEO-RESEARCH-anchor-program-ai-2026-01-19.html",
+      "id": "CEO-RESEARCH-anchor-program-ai-2026-01-19",
+      "featured": true,
+      "badges": [
+        "Research v4.6",
+        "Anchor",
+        "PoC Ready"
+      ],
+      "badge_colors": [
+        "purple",
+        "blue",
+        "green"
+      ],
+      "title": "Anchor Program AI - Vibe-Coding Agent",
+      "description": "CRITICAL GAP: ZERO AI tools for Anchor. First-mover 6-12mo. TAM $420-710M, SAM $110-180M. 38 findings, 89% accuracy, P11/P12/P14/P15 QA pass.",
+      "version": "4.6",
+      "date": "2026-01-19",
+      "category": "solana",
+      "featured_label": "Research v4.6"
+    },
+    {
+      "filename": "CEO-RESEARCH-solana-token-extensions-ai-2026-01-19.html",
+      "id": "CEO-RESEARCH-solana-token-extensions-ai-2026-01-19",
+      "featured": true,
+      "badges": [
+        "Research v4.3",
+        "Token Extensions",
+        "PoC Ready"
+      ],
+      "badge_colors": [
+        "purple",
+        "blue",
+        "green"
+      ],
+      "title": "Solana Token Extensions AI",
+      "description": "CRITICAL GAP: ZERO AI tools for Token-2022 extensions. First-mover opportunity 6-12mo. TAM $17.7M, 68 findings, 92% accuracy, P11/P15 QA pass.",
+      "version": "4.3",
+      "date": "2026-01-19",
+      "category": "solana",
+      "featured_label": "Research v4.3"
+    },
+    {
       "filename": "CEO-RESEARCH-solana-blinks-actions-ai-2026-01-19.html",
       "id": "CEO-RESEARCH-solana-blinks-actions-ai-2026-01-19",
       "featured": true,
