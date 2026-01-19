@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Assisterr Research Reports Registry",
+  "description": "Metadata for all research reports in the Assisterr Research Hub",
+  "type": "object",
+  "required": ["system_version", "reports", "categories"],
+  "properties": {
+    "system_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Research system version (semver)"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO timestamp of last update"
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "filename", "title", "date", "category"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier (usually filename without .html)"
+          },
+          "filename": {
+            "type": "string",
+            "pattern": "\\.html$",
+            "description": "HTML filename in reports/ folder"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 100,
+            "description": "Display title for the report"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "Short description for the report card"
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "Report date (YYYY-MM-DD)"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["solana", "slm", "vertical", "kya", "vc", "cross-chain"],
+            "description": "Primary category for grouping"
+          },
+          "badges": {
+            "type": "array",
+            "items": {"type": "string"},
+            "maxItems": 4,
+            "description": "Badge labels to display"
+          },
+          "badge_colors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["primary", "purple", "blue", "green", "pink"]
+            },
+            "description": "Badge color classes (maps to CSS)"
+          },
+          "featured": {
+            "type": "boolean",
+            "default": false,
+            "description": "Show in Featured Reports section"
+          },
+          "featured_label": {
+            "type": "string",
+            "description": "Custom featured badge text (e.g., 'NEW - Latest Research')"
+          },
+          "version": {
+            "type": "string",
+            "enum": ["1.0", "2.0", "3.0"],
+            "description": "Report version (research system version when created)"
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "object",
+      "description": "Category definitions with display names and order",
+      "patternProperties": {
+        "^[a-z-]+$": {
+          "type": "object",
+          "required": ["name", "order"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Display name for the category"
+            },
+            "order": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Sort order (lower = first)"
+            },
+            "auto_select": {
+              "type": "string",
+              "description": "Auto-selection rule (e.g., 'latest_3' for featured)"
+            }
+          }
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "description": "Stats bar configuration",
+      "properties": {
+        "slm_market": {"type": "string"},
+        "ai_agent_market": {"type": "string"},
+        "target_valuation": {"type": "string"},
+        "vc_conflicts": {"type": "string"}
+      }
+    }
+  }
+}

@@ -28,6 +28,7 @@
         .meta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .meta-item { background: rgba(0,0,0,0.2); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; }
 
+        /* View Toggle */
         .view-toggle {
             display: flex;
             justify-content: center;
@@ -58,6 +59,7 @@
         .view-btn.active { background: linear-gradient(135deg, #F66824 0%, #DB5F94 100%); color: white; }
         .view-btn svg { width: 18px; height: 18px; }
 
+        /* Date Separator */
         .date-separator {
             display: flex;
             align-items: center;
@@ -207,9 +209,11 @@
         .footer a { color: #F66824; text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
 
+        /* Hidden sections for view toggle */
         .view-section { display: none; }
         .view-section.active { display: block; }
 
+        /* Version Legend */
         .version-legend {
             background: #1A1A1A;
             border: 1px solid #333;
@@ -221,19 +225,131 @@
         .version-legend-items { display: flex; gap: 2rem; flex-wrap: wrap; }
         .version-legend-item { display: flex; align-items: center; gap: 0.5rem; color: #A4A7AE; }
 
+        
+            .header h1 { font-size: 1.75rem; }
+            .view-toggle { flex-direction: column; width: 100%; }
+        }
+    
+        /* ===== MOBILE RESPONSIVE ===== */
         @media (max-width: 768px) {
             .container { padding: 1rem; }
-            .header { padding: 1.5rem 1rem; border-radius: 12px; }
+            
+            .header { 
+                padding: 1.5rem 1rem; 
+                border-radius: 12px;
+            }
             .header h1 { font-size: 1.5rem; }
-            .reports-grid { grid-template-columns: 1fr; gap: 1rem; }
-            .stats-bar { grid-template-columns: repeat(2, 1fr); }
-            .view-toggle { flex-direction: row; width: 100%; }
-            .view-btn { flex: 1; justify-content: center; }
+            .header .subtitle { font-size: 1rem; }
+            .meta { gap: 0.5rem; }
+            .meta-item { 
+                font-size: 0.75rem; 
+                padding: 0.4rem 0.8rem;
+            }
+            .logo svg { width: 100px; height: 25px; }
+            
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 1rem;
+                gap: 0.75rem;
+            }
+            .stat-value { font-size: 1.5rem; }
+            .stat-label { font-size: 0.75rem; }
+            .info-btn { width: 14px; height: 14px; font-size: 9px; }
+            .tooltip {
+                width: 200px;
+                font-size: 0.75rem;
+                padding: 0.5rem 0.75rem;
+                left: auto;
+                right: -10px;
+                transform: none;
+            }
+            .tooltip::after {
+                left: auto;
+                right: 15px;
+            }
+            
+            .view-toggle { 
+                flex-direction: row;
+                width: 100%;
+                padding: 0.35rem;
+            }
+            .view-btn { 
+                padding: 0.6rem 1rem; 
+                font-size: 0.8rem;
+                flex: 1;
+                justify-content: center;
+            }
+            .view-btn svg { width: 16px; height: 16px; }
+            
+            .section-title { font-size: 1.2rem; }
+            
+            .reports-grid { 
+                grid-template-columns: 1fr; 
+                gap: 1rem;
+            }
+            .report-card { 
+                padding: 1.25rem;
+                border-radius: 12px;
+            }
+            .report-card h3 { font-size: 1rem; }
+            .report-card p { font-size: 0.85rem; }
+            .card-date { 
+                font-size: 0.65rem;
+                padding: 0.2rem 0.5rem;
+            }
+            .badge { 
+                font-size: 0.65rem; 
+                padding: 0.2rem 0.6rem;
+            }
+            .featured-badge { font-size: 0.6rem; }
+            
+            .date-separator { margin: 2rem 0 1rem; }
+            .date-badge { 
+                font-size: 0.75rem; 
+                padding: 0.4rem 1rem;
+            }
+            .date-badge .count { font-size: 0.65rem; }
+            
+            .version-legend { padding: 1rem; }
+            .version-legend h3 { font-size: 0.9rem; }
+            .version-legend-items { 
+                flex-direction: column; 
+                gap: 1rem;
+            }
+            .version-legend-item { font-size: 0.8rem; }
+            
+            .footer { 
+                padding: 1.5rem 1rem; 
+                font-size: 0.85rem;
+            }
         }
+        
+        @media (max-width: 480px) {
+            .container { padding: 0.75rem; }
+            .header { padding: 1.25rem 1rem; }
+            .header h1 { font-size: 1.3rem; }
+            .header .subtitle { font-size: 0.9rem; }
+            .meta-item { font-size: 0.7rem; padding: 0.35rem 0.7rem; }
+            
+            .stats-bar { 
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .stat { padding: 0.5rem; }
+            .stat-value { font-size: 1.3rem; }
+            .stat-label { font-size: 0.7rem; }
+            
+            .view-btn { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+            
+            .report-card { padding: 1rem; }
+            .report-card h3 { font-size: 0.95rem; }
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header class="header">
             <div class="logo">
                 <svg width="132" height="33" viewBox="0 0 132 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -249,29 +365,31 @@
             <div class="meta">
                 <span class="meta-item">January 2026</span>
                 <span class="meta-item">18 Research Reports</span>
-                <span class="meta-item">Research System v3.3.0</span>
+                <span class="meta-item">Multi-Agent Research System</span>
             </div>
         </header>
 
+        <!-- Stats Bar -->
         <div class="stats-bar">
             <div class="stat">
                 <div class="stat-value">$64B</div>
-                <div class="stat-label">SLM Market 2034 <span class="info-btn">?<span class="tooltip">Total Addressable Market for Small Language Models projected to reach $64B by 2034.</span></span></div>
+                <div class="stat-label">SLM Market 2034 <span class="info-btn">?<span class="tooltip">Total Addressable Market for Small Language Models projected to reach $64B by 2034, driven by edge AI and on-device inference demand.</span></span></div>
             </div>
             <div class="stat">
                 <div class="stat-value">$150B</div>
-                <div class="stat-label">AI Agent Market <span class="info-btn">?<span class="tooltip">Global AI agent market size including autonomous agents and copilots.</span></span></div>
+                <div class="stat-label">AI Agent Market <span class="info-btn">?<span class="tooltip">Global AI agent market size including autonomous agents, copilots, and agent orchestration platforms. Fastest growing segment in AI.</span></span></div>
             </div>
             <div class="stat">
                 <div class="stat-value">$50-100M</div>
-                <div class="stat-label">Target Valuation <span class="info-btn">?<span class="tooltip">Assisterr's target pre-money valuation for Series A.</span></span></div>
+                <div class="stat-label">Target Valuation <span class="info-btn">?<span class="tooltip">Assisterr's target pre-money valuation for Series A based on comparable AI+crypto infrastructure deals (Together AI, Nous Research, etc.)</span></span></div>
             </div>
             <div class="stat">
                 <div class="stat-value">0</div>
-                <div class="stat-label">VC Portfolio Conflicts <span class="info-btn">?<span class="tooltip"><strong>Zero conflicts found.</strong> None of target VCs have competing portfolio companies.</span></span></div>
+                <div class="stat-label">VC Portfolio Conflicts <span class="info-btn">?<span class="tooltip"><strong>Zero conflicts found.</strong> None of our target VCs (a16z, Paradigm, Polychain, Multicoin) have competing portfolio companies in the AI agent trust infrastructure space on Solana.</span></span></div>
             </div>
         </div>
 
+        <!-- View Toggle -->
         <div class="view-toggle">
             <button class="view-btn active" onclick="switchView('category')" id="btn-category">
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
@@ -283,559 +401,170 @@
             </button>
         </div>
 
-        <!-- CATEGORY VIEW -->
+        <!-- ============ CATEGORY VIEW ============ -->
         <div id="view-category" class="view-section active">
-            
-            
-            
+
+            <!-- Featured Reports -->
             <h2 class="section-title">Featured Reports</h2>
             <div class="reports-grid">
-                
+                <a href="CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19.html" class="report-card featured">
+                    <span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 19</span>
+                    <span class="featured-badge">NEW - Latest Research</span>
+                    <h3>Solana AI Vibe-Coding Ecosystem</h3>
+                    <p>Complete vibe-coding landscape: Dev.fun (20K+ apps), Cursor ($29B), coding agents. 9 whitespace PoC opportunities identified.</p>
+                    <div class="report-meta">
+                        <span class="badge badge-purple">Solana</span>
+                        <span class="badge badge-blue">Vibe-Coding</span>
+                        <span class="badge badge-green">PoC Ready</span>
+                        <span class="badge badge-v2">v2.0</span>
+                    </div>
+                </a>
+                <a href="SLM-MARKETPLACE-FOR-AI-AGENTS-2026-01-16.html" class="report-card featured">
+                    <span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span>
+                    <span class="featured-badge">Key Document</span>
+                    <h3>SLM Marketplace for AI Agents</h3>
+                    <p>"The App Store for AI Agents" - Decentralized model discovery, trading & orchestration with crypto-native payment rails.</p>
+                    <div class="report-meta">
+                        <span class="badge badge-primary">SLM</span>
+                        <span class="badge badge-purple">Marketplace</span>
+                        <span class="badge badge-green">Series A</span>
+                        <span class="badge badge-v2">v2.0</span>
+                    </div>
+                </a>
+                <a href="SERIES-A-INVESTOR-DEEP-DIVE-2026-01-16.html" class="report-card featured">
+                    <span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span>
+                    <span class="featured-badge">Key Document</span>
+                    <h3>Series A Investor Deep Dive</h3>
+                    <p>Complete VC landscape analysis: Paradigm, a16z, Pantera. Partner-level mapping, intro pathways, and valuation benchmarks.</p>
+                    <div class="report-meta">
+                        <span class="badge badge-primary">VC Targets</span>
+                        <span class="badge badge-green">$15-25M</span>
+                        <span class="badge badge-v2">v2.0</span>
+                    </div>
+                </a>
             </div>
-            
-            
-            
-            
-            <h2 class="section-title">Solana Ecosystem</h2>
+
+            <!-- SLM & Edge AI -->
+            <h2 class="section-title">SLM & Edge AI Research</h2>
             <div class="reports-grid">
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100d86830&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100e0dbf0&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
+                <a href="SLM-RESEARCH-2026-01-16-FULL-REPORT.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>SLM Research Full Report</h3><p>Comprehensive SLM market analysis: Phi-4, Qwen2.5, Llama 3.2. Edge deployment, cost optimization, and technical benchmarks.</p><div class="report-meta"><span class="badge badge-primary">SLM</span><span class="badge badge-blue">Technical</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SLM-CROSS-VERTICAL-COMPARISON-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>SLM Cross-Vertical Comparison</h3><p>SLM model selection by industry vertical: Financial Services, Healthcare, Legal, Manufacturing, Retail.</p><div class="report-meta"><span class="badge badge-primary">SLM</span><span class="badge badge-purple">Verticals</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SLM-MODELS-FOR-DEFI-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>SLM Models for DeFi</h3><p>Optimal SLM selection for DeFi use cases: yield optimization, risk analysis, trading agents.</p><div class="report-meta"><span class="badge badge-primary">SLM</span><span class="badge badge-green">DeFi</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="FUNDING-slm-edge-ai-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>SLM/Edge AI Funding Landscape</h3><p>VC activity in SLM and edge AI infrastructure: recent rounds, investor thesis, valuation multiples.</p><div class="report-meta"><span class="badge badge-primary">Funding</span><span class="badge badge-blue">Edge AI</span><span class="badge badge-v2">v2.0</span></div></a>
             </div>
-            
-            
-            
-            
-            <h2 class="section-title">SLM &amp; Edge AI Research</h2>
-            <div class="reports-grid">
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100d86830&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100e0dbf0&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
-            </div>
-            
-            
-            
-            
+
+            <!-- Vertical AI Agents -->
             <h2 class="section-title">Vertical AI Agents</h2>
             <div class="reports-grid">
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100d86830&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100e0dbf0&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
+                <a href="VERTICAL-AI-AGENTS-BY-INDUSTRY-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>Vertical AI Agents by Industry</h3><p>Industry analysis: Healthcare ($5.3B Abridge), Legal (Harvey $8B), DeFi whitespace. Market sizing and competitive gaps.</p><div class="report-meta"><span class="badge badge-purple">Verticals</span><span class="badge badge-green">Opportunity</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="CEO-DEFI-YIELD-agents-2026-01-15.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 15</span><h3>DeFi Yield Optimization Agents</h3><p>Autonomous yield optimization: strategy comparison, risk frameworks, and agent architecture for DeFi.</p><div class="report-meta"><span class="badge badge-green">DeFi</span><span class="badge badge-blue">Agents</span><span class="badge badge-v1">v1.0</span></div></a>
             </div>
-            
-            
-            
-            
+
+            <!-- Trust Infrastructure -->
             <h2 class="section-title">Trust Infrastructure (KYA)</h2>
             <div class="reports-grid">
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100d86830&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100e0dbf0&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
+                <a href="KYA-RESEARCH-COMPLETE-2026-01-15.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 15</span><h3>KYA Research Complete</h3><p>Know Your Agent (KYA) trust infrastructure: market sizing, competitive landscape, and first-mover opportunity.</p><div class="report-meta"><span class="badge badge-pink">KYA</span><span class="badge badge-green">Trust</span><span class="badge badge-v1">v1.0</span></div></a>
+                <a href="KYA-SERIES-A-RESEARCH-2026-01-15.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 15</span><h3>KYA Series A Research</h3><p>KYA positioning for Series A: a16z thesis alignment (96:1 agent-to-human ratio needs trust infrastructure).</p><div class="report-meta"><span class="badge badge-pink">KYA</span><span class="badge badge-primary">Series A</span><span class="badge badge-v1">v1.0</span></div></a>
+                <a href="X402-RESEARCH-COMPLETE-2026-01-15.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 15</span><h3>x402 Payment Rails Research</h3><p>Agent payment infrastructure: x402 protocol, micropayments, autonomous agent commerce.</p><div class="report-meta"><span class="badge badge-blue">Payments</span><span class="badge badge-purple">x402</span><span class="badge badge-v1">v1.0</span></div></a>
             </div>
-            
-            
-            
-            
-            <h2 class="section-title">Series A &amp; VC Intelligence</h2>
+
+            <!-- Cross-Chain -->
+            <h2 class="section-title">Cross-Chain & Multi-Chain</h2>
             <div class="reports-grid">
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100d86830&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100e0dbf0&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
+                <a href="CEO-RESEARCH-cross-chain-orchestration-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>Cross-Chain Agent Orchestration</h3><p>Multi-chain AI agent coordination: LayerZero integration, chain abstraction, unified orchestration layer.</p><div class="report-meta"><span class="badge badge-purple">Cross-Chain</span><span class="badge badge-blue">Infra</span><span class="badge badge-v2">v2.0</span></div></a>
             </div>
-            
-            
-            
-            
-            <h2 class="section-title">Cross-Chain &amp; Multi-Chain</h2>
+
+            <!-- Solana Ecosystem -->
+            <h2 class="section-title">Solana Ecosystem</h2>
             <div class="reports-grid">
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100d86830&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
-                <a href="reports/" class="report-card">
-                    <span class="card-date">
-                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        
-                    </span>
-                    
-                    <h3>&lt;built-in method title of str object at 0x100e0dbf0&gt;</h3>
-                    <p></p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-v">v</span>
-                    </div>
-                </a>
-                
+                <a href="CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 19</span><h3>Solana AI Vibe-Coding Ecosystem</h3><p>Complete vibe-coding landscape: Dev.fun (20K+ apps), SolCoder, Código.ai. 9 whitespace PoC opportunities for Assisterr.</p><div class="report-meta"><span class="badge badge-purple">Solana</span><span class="badge badge-blue">Vibe-Coding</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SOLANA-GRANT-STRATEGY-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>Solana Grant Strategy</h3><p>Solana Foundation grant application strategy: success factors, positioning, and ecosystem alignment.</p><div class="report-meta"><span class="badge badge-purple">Solana</span><span class="badge badge-green">Grants</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="CEO-RESEARCH-assisterr-crypto-ai-opportunities-2026-01-15.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 15</span><h3>Crypto-AI Opportunities</h3><p>Strategic opportunities at the intersection of AI and crypto: Solana ecosystem, tokenized AI, and decentralized infrastructure.</p><div class="report-meta"><span class="badge badge-primary">Strategy</span><span class="badge badge-purple">Crypto-AI</span><span class="badge badge-v1">v1.0</span></div></a>
             </div>
-            
-            
+
+            <!-- Series A & VC -->
+            <h2 class="section-title">Series A & VC Intelligence</h2>
+            <div class="reports-grid">
+                <a href="VC-INVESTOR-THESIS-SERIES-A-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>VC Investor Thesis Analysis</h3><p>Deep dive on investor thesis: a16z ("crypto decentralizes AI"), Paradigm, Sequoia, and what narratives resonate.</p><div class="report-meta"><span class="badge badge-primary">VC</span><span class="badge badge-green">Thesis</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="VC-PORTFOLIO-INTRO-PATHWAYS-assisterr-series-a-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>VC Portfolio & Intro Pathways</h3><p>Portfolio conflict analysis (ZERO conflicts), warm intro pathways, and partner-level targeting.</p><div class="report-meta"><span class="badge badge-primary">VC</span><span class="badge badge-pink">Intros</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="finding-ai-crypto-series-a-benchmarks-2026-01-16.html" class="report-card"><span class="card-date"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Jan 16</span><h3>AI+Crypto Series A Benchmarks</h3><p>Valuation benchmarks: Together AI ($3.3B), Nous Research ($1B from Paradigm), revenue multiples.</p><div class="report-meta"><span class="badge badge-green">Benchmarks</span><span class="badge badge-primary">Valuations</span><span class="badge badge-v2">v2.0</span></div></a>
+            </div>
         </div>
 
-        <!-- DATE VIEW -->
+        <!-- ============ DATE VIEW ============ -->
         <div id="view-date" class="view-section">
-            
+
+            <!-- January 19, 2026 -->
             <div class="date-separator">
                 <div class="date-badge">
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    
+                    January 19, 2026
                     <span class="count">1 report</span>
                 </div>
             </div>
             <div class="reports-grid">
-                
-                <a href="reports/CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19.html" class="report-card featured">
-                    
-                    <span class="featured-badge">NEW - Latest Research</span>
-                    
-                    <h3>Solana AI Vibe-Coding Ecosystem</h3>
-                    <p>Complete vibe-coding landscape: Dev.fun (20K+ apps), Cursor ($29B), coding agents. 9 whitespace PoC opportunities identified.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-purple">NEW - Latest Research</span>
-                        
-                        <span class="badge badge-blue">Solana</span>
-                        
-                        <span class="badge badge-green">Vibe-Coding</span>
-                        
-                        <span class="badge badge-primary">PoC Ready</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
+                <a href="CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19.html" class="report-card featured"><span class="featured-badge">Latest</span><h3>Solana AI Vibe-Coding Ecosystem</h3><p>Complete vibe-coding landscape: Dev.fun (20K+ apps), Cursor ($29B), 18 competitors, 9 whitespace PoC opportunities.</p><div class="report-meta"><span class="badge badge-purple">Solana</span><span class="badge badge-blue">Vibe-Coding</span><span class="badge badge-v2">v2.0</span></div></a>
             </div>
-            
+
+            <!-- January 16, 2026 -->
             <div class="date-separator">
                 <div class="date-badge">
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    
-                    <span class="count">11 reports</span>
+                    January 16, 2026
+                    <span class="count">12 reports</span>
                 </div>
             </div>
             <div class="reports-grid">
-                
-                <a href="reports/SLM-MARKETPLACE-FOR-AI-AGENTS-2026-01-16.html" class="report-card featured">
-                    
-                    <span class="featured-badge">Key Document</span>
-                    
-                    <h3>SLM Marketplace for AI Agents</h3>
-                    <p>&#34;The App Store for AI Agents&#34; - Decentralized model discovery, trading &amp; orchestration with crypto-native payment rails.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">Key Document</span>
-                        
-                        <span class="badge badge-purple">SLM</span>
-                        
-                        <span class="badge badge-green">Marketplace</span>
-                        
-                        <span class="badge badge-primary">Series A</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/SERIES-A-INVESTOR-DEEP-DIVE-2026-01-16.html" class="report-card featured">
-                    
-                    <span class="featured-badge">Key Document</span>
-                    
-                    <h3>Series A Investor Deep Dive</h3>
-                    <p>Complete VC landscape analysis: Paradigm, a16z, Pantera. Partner-level mapping, intro pathways, and valuation benchmarks.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">Key Document</span>
-                        
-                        <span class="badge badge-green">VC Targets</span>
-                        
-                        <span class="badge badge-primary">$15-25M</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/SLM-CROSS-VERTICAL-COMPARISON-2026-01-16.html" class="report-card">
-                    
-                    <h3>SLM Cross-Vertical Comparison</h3>
-                    <p>SLM model selection by industry vertical: Financial Services, Healthcare, Legal, Manufacturing, Retail.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">SLM</span>
-                        
-                        <span class="badge badge-purple">Verticals</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/SLM-MODELS-FOR-DEFI-2026-01-16.html" class="report-card">
-                    
-                    <h3>SLM Models for DeFi</h3>
-                    <p>Optimal SLM selection for DeFi use cases: yield optimization, risk analysis, trading agents.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">SLM</span>
-                        
-                        <span class="badge badge-green">DeFi</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/FUNDING-slm-edge-ai-2026-01-16.html" class="report-card">
-                    
-                    <h3>SLM/Edge AI Funding Landscape</h3>
-                    <p>VC activity in SLM and edge AI infrastructure: recent rounds, investor thesis, valuation multiples.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">Funding</span>
-                        
-                        <span class="badge badge-blue">Edge AI</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/VERTICAL-AI-AGENTS-BY-INDUSTRY-2026-01-16.html" class="report-card">
-                    
-                    <h3>Vertical AI Agents by Industry</h3>
-                    <p>Industry analysis: Healthcare ($5.3B Abridge), Legal (Harvey $8B), DeFi whitespace. Market sizing and competitive gaps.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-purple">Verticals</span>
-                        
-                        <span class="badge badge-green">Opportunity</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/CEO-RESEARCH-cross-chain-orchestration-2026-01-16.html" class="report-card">
-                    
-                    <h3>Cross-Chain Agent Orchestration</h3>
-                    <p>Multi-chain AI agent coordination: LayerZero integration, chain abstraction, unified orchestration layer.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-purple">Cross-Chain</span>
-                        
-                        <span class="badge badge-blue">Infra</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/SOLANA-GRANT-STRATEGY-2026-01-16.html" class="report-card">
-                    
-                    <h3>Solana Grant Strategy</h3>
-                    <p>Solana Foundation grant application strategy: success factors, positioning, and ecosystem alignment.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-purple">Solana</span>
-                        
-                        <span class="badge badge-green">Grants</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/VC-INVESTOR-THESIS-SERIES-A-2026-01-16.html" class="report-card">
-                    
-                    <h3>VC Investor Thesis Analysis</h3>
-                    <p>Deep dive on investor thesis: a16z (&#34;crypto decentralizes AI&#34;), Paradigm, Sequoia, and what narratives resonate.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">VC</span>
-                        
-                        <span class="badge badge-green">Thesis</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/VC-PORTFOLIO-INTRO-PATHWAYS-assisterr-series-a-2026-01-16.html" class="report-card">
-                    
-                    <h3>VC Portfolio &amp; Intro Pathways</h3>
-                    <p>Portfolio conflict analysis (ZERO conflicts), warm intro pathways, and partner-level targeting.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">VC</span>
-                        
-                        <span class="badge badge-pink">Intros</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/finding-ai-crypto-series-a-benchmarks-2026-01-16.html" class="report-card">
-                    
-                    <h3>AI+Crypto Series A Benchmarks</h3>
-                    <p>Valuation benchmarks: Together AI ($3.3B), Nous Research ($1B from Paradigm), revenue multiples.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-green">Benchmarks</span>
-                        
-                        <span class="badge badge-primary">Valuations</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
+                <a href="SLM-MARKETPLACE-FOR-AI-AGENTS-2026-01-16.html" class="report-card featured"><span class="featured-badge">Latest</span><h3>SLM Marketplace for AI Agents</h3><p>"The App Store for AI Agents" - Decentralized model discovery, trading & orchestration.</p><div class="report-meta"><span class="badge badge-primary">SLM</span><span class="badge badge-purple">Marketplace</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SERIES-A-INVESTOR-DEEP-DIVE-2026-01-16.html" class="report-card featured"><span class="featured-badge">Key Doc</span><h3>Series A Investor Deep Dive</h3><p>Complete VC landscape: Paradigm, a16z, Pantera. Partner-level mapping and intro pathways.</p><div class="report-meta"><span class="badge badge-primary">VC</span><span class="badge badge-green">$15-25M</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SLM-RESEARCH-2026-01-16-FULL-REPORT.html" class="report-card"><h3>SLM Research Full Report</h3><p>Comprehensive SLM market analysis: Phi-4, Qwen2.5, Llama 3.2.</p><div class="report-meta"><span class="badge badge-primary">SLM</span><span class="badge badge-blue">Technical</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SLM-CROSS-VERTICAL-COMPARISON-2026-01-16.html" class="report-card"><h3>SLM Cross-Vertical Comparison</h3><p>SLM model selection by industry vertical.</p><div class="report-meta"><span class="badge badge-primary">SLM</span><span class="badge badge-purple">Verticals</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SLM-MODELS-FOR-DEFI-2026-01-16.html" class="report-card"><h3>SLM Models for DeFi</h3><p>Optimal SLM selection for DeFi use cases.</p><div class="report-meta"><span class="badge badge-primary">SLM</span><span class="badge badge-green">DeFi</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="FUNDING-slm-edge-ai-2026-01-16.html" class="report-card"><h3>SLM/Edge AI Funding Landscape</h3><p>VC activity in SLM and edge AI infrastructure.</p><div class="report-meta"><span class="badge badge-primary">Funding</span><span class="badge badge-blue">Edge AI</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="VERTICAL-AI-AGENTS-BY-INDUSTRY-2026-01-16.html" class="report-card"><h3>Vertical AI Agents by Industry</h3><p>Industry analysis: Healthcare, Legal, DeFi whitespace.</p><div class="report-meta"><span class="badge badge-purple">Verticals</span><span class="badge badge-green">Opportunity</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="CEO-RESEARCH-cross-chain-orchestration-2026-01-16.html" class="report-card"><h3>Cross-Chain Agent Orchestration</h3><p>Multi-chain AI agent coordination.</p><div class="report-meta"><span class="badge badge-purple">Cross-Chain</span><span class="badge badge-blue">Infra</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="SOLANA-GRANT-STRATEGY-2026-01-16.html" class="report-card"><h3>Solana Grant Strategy</h3><p>Solana Foundation grant application strategy.</p><div class="report-meta"><span class="badge badge-purple">Solana</span><span class="badge badge-green">Grants</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="VC-INVESTOR-THESIS-SERIES-A-2026-01-16.html" class="report-card"><h3>VC Investor Thesis Analysis</h3><p>Deep dive on investor thesis: a16z, Paradigm, Sequoia.</p><div class="report-meta"><span class="badge badge-primary">VC</span><span class="badge badge-green">Thesis</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="VC-PORTFOLIO-INTRO-PATHWAYS-assisterr-series-a-2026-01-16.html" class="report-card"><h3>VC Portfolio & Intro Pathways</h3><p>Portfolio conflict analysis and warm intro pathways.</p><div class="report-meta"><span class="badge badge-primary">VC</span><span class="badge badge-pink">Intros</span><span class="badge badge-v2">v2.0</span></div></a>
+                <a href="finding-ai-crypto-series-a-benchmarks-2026-01-16.html" class="report-card"><h3>AI+Crypto Series A Benchmarks</h3><p>Valuation benchmarks: Together AI, Nous Research.</p><div class="report-meta"><span class="badge badge-green">Benchmarks</span><span class="badge badge-primary">Valuations</span><span class="badge badge-v2">v2.0</span></div></a>
             </div>
-            
+
+            <!-- January 15, 2026 -->
             <div class="date-separator">
                 <div class="date-badge">
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    
-                    <span class="count">6 reports</span>
+                    January 15, 2026
+                    <span class="count">5 reports</span>
                 </div>
             </div>
             <div class="reports-grid">
-                
-                <a href="reports/SLM-RESEARCH-2026-01-16-FULL-REPORT.html" class="report-card">
-                    
-                    <h3>SLM Research Full Report</h3>
-                    <p>Comprehensive SLM market analysis: Phi-4, Qwen2.5, Llama 3.2. Edge deployment, cost optimization, and technical benchmarks.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">SLM</span>
-                        
-                        <span class="badge badge-blue">Technical</span>
-                        
-                        <span class="badge badge-v2">v2.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/CEO-DEFI-YIELD-agents-2026-01-15.html" class="report-card">
-                    
-                    <h3>DeFi Yield Optimization Agents</h3>
-                    <p>Autonomous yield optimization: strategy comparison, risk frameworks, and agent architecture for DeFi.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-green">DeFi</span>
-                        
-                        <span class="badge badge-blue">Agents</span>
-                        
-                        <span class="badge badge-v1">v1.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/KYA-RESEARCH-COMPLETE-2026-01-15.html" class="report-card">
-                    
-                    <h3>KYA Research Complete</h3>
-                    <p>Know Your Agent (KYA) trust infrastructure: market sizing, competitive landscape, and first-mover opportunity.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-pink">KYA</span>
-                        
-                        <span class="badge badge-green">Trust</span>
-                        
-                        <span class="badge badge-v1">v1.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/KYA-SERIES-A-RESEARCH-2026-01-15.html" class="report-card">
-                    
-                    <h3>KYA Series A Research</h3>
-                    <p>KYA positioning for Series A: a16z thesis alignment (96:1 agent-to-human ratio needs trust infrastructure).</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-pink">KYA</span>
-                        
-                        <span class="badge badge-primary">Series A</span>
-                        
-                        <span class="badge badge-v1">v1.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/X402-RESEARCH-COMPLETE-2026-01-15.html" class="report-card">
-                    
-                    <h3>x402 Payment Rails Research</h3>
-                    <p>Agent payment infrastructure: x402 protocol, micropayments, autonomous agent commerce.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-blue">Payments</span>
-                        
-                        <span class="badge badge-purple">x402</span>
-                        
-                        <span class="badge badge-v1">v1.0</span>
-                    </div>
-                </a>
-                
-                <a href="reports/CEO-RESEARCH-assisterr-crypto-ai-opportunities-2026-01-15.html" class="report-card">
-                    
-                    <h3>Crypto-AI Opportunities</h3>
-                    <p>Strategic opportunities at the intersection of AI and crypto: Solana ecosystem, tokenized AI, and decentralized infrastructure.</p>
-                    <div class="report-meta">
-                        
-                        <span class="badge badge-primary">Strategy</span>
-                        
-                        <span class="badge badge-purple">Crypto-AI</span>
-                        
-                        <span class="badge badge-v1">v1.0</span>
-                    </div>
-                </a>
-                
+                <a href="CEO-DEFI-YIELD-agents-2026-01-15.html" class="report-card"><h3>DeFi Yield Optimization Agents</h3><p>Autonomous yield optimization: strategy comparison, risk frameworks.</p><div class="report-meta"><span class="badge badge-green">DeFi</span><span class="badge badge-blue">Agents</span><span class="badge badge-v1">v1.0</span></div></a>
+                <a href="KYA-RESEARCH-COMPLETE-2026-01-15.html" class="report-card"><h3>KYA Research Complete</h3><p>Know Your Agent trust infrastructure: market sizing, competitive landscape.</p><div class="report-meta"><span class="badge badge-pink">KYA</span><span class="badge badge-green">Trust</span><span class="badge badge-v1">v1.0</span></div></a>
+                <a href="KYA-SERIES-A-RESEARCH-2026-01-15.html" class="report-card"><h3>KYA Series A Research</h3><p>KYA positioning for Series A: a16z thesis alignment.</p><div class="report-meta"><span class="badge badge-pink">KYA</span><span class="badge badge-primary">Series A</span><span class="badge badge-v1">v1.0</span></div></a>
+                <a href="X402-RESEARCH-COMPLETE-2026-01-15.html" class="report-card"><h3>x402 Payment Rails Research</h3><p>Agent payment infrastructure: x402 protocol, micropayments.</p><div class="report-meta"><span class="badge badge-blue">Payments</span><span class="badge badge-purple">x402</span><span class="badge badge-v1">v1.0</span></div></a>
+                <a href="CEO-RESEARCH-assisterr-crypto-ai-opportunities-2026-01-15.html" class="report-card"><h3>Crypto-AI Opportunities</h3><p>Strategic opportunities at the intersection of AI and crypto.</p><div class="report-meta"><span class="badge badge-primary">Strategy</span><span class="badge badge-purple">Crypto-AI</span><span class="badge badge-v1">v1.0</span></div></a>
             </div>
-            
         </div>
 
+        <!-- Version Legend -->
         <div class="version-legend">
             <h3>Report Versions</h3>
             <div class="version-legend-items">
                 <div class="version-legend-item">
                     <span class="badge badge-v1">v1.0</span>
-                    Early research (Jan 15) - Initial exploration
+                    Early research (Jan 15) - Initial exploration, may contain debug data
                 </div>
                 <div class="version-legend-item">
                     <span class="badge badge-v2">v2.0</span>
-                    Production multi-agent system with full synthesis
+                    Latest research (Jan 16) - Production multi-agent system with full synthesis
                 </div>
             </div>
         </div>
 
+        <!-- Footer -->
         <footer class="footer">
-            <p>Generated by <strong>Assisterr Deep Research v3.3.0</strong></p>
-            <p style="margin-top: 0.5rem;">Multi-agent research system with parallel execution</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">Last updated: 2026-01-19T11:55:25.208553</p>
+            <p>Generated by <strong>Assisterr Deep Research v2</strong></p>
+            <p style="margin-top: 0.5rem;">Multi-agent research system with parallel execution (Perplexity + Claude)</p>
             <p style="margin-top: 1rem;">
                 <a href="https://github.com/vitaliiserbynassisterr/assisterr-research">GitHub Repository</a> |
                 <a href="https://assisterr.ai">Assisterr.ai</a>
@@ -845,12 +574,19 @@
 
     <script>
         function switchView(view) {
+            // Update buttons
             document.getElementById('btn-category').classList.toggle('active', view === 'category');
             document.getElementById('btn-date').classList.toggle('active', view === 'date');
+
+            // Update sections
             document.getElementById('view-category').classList.toggle('active', view === 'category');
             document.getElementById('view-date').classList.toggle('active', view === 'date');
+
+            // Save preference
             localStorage.setItem('researchView', view);
         }
+
+        // Load saved preference
         document.addEventListener('DOMContentLoaded', function() {
             const savedView = localStorage.getItem('researchView');
             if (savedView) switchView(savedView);

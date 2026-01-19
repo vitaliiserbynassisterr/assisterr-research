@@ -1,0 +1,377 @@
+{
+  "system_version": "3.3.0",
+  "last_updated": "2026-01-19T11:55:25.208553",
+  "reports": [
+    {
+      "filename": "CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19.html",
+      "id": "CEO-RESEARCH-solana-ai-vibe-coding-competitive-2026-01-19",
+      "featured": true,
+      "badges": [
+        "NEW - Latest Research",
+        "Solana",
+        "Vibe-Coding",
+        "PoC Ready"
+      ],
+      "badge_colors": [
+        "purple",
+        "blue",
+        "green"
+      ],
+      "title": "Solana AI Vibe-Coding Ecosystem",
+      "description": "Complete vibe-coding landscape: Dev.fun (20K+ apps), Cursor ($29B), coding agents. 9 whitespace PoC opportunities identified.",
+      "version": "2.0",
+      "date": "2026-01-19",
+      "category": "solana",
+      "featured_label": "NEW - Latest Research"
+    },
+    {
+      "filename": "SLM-MARKETPLACE-FOR-AI-AGENTS-2026-01-16.html",
+      "id": "SLM-MARKETPLACE-FOR-AI-AGENTS-2026-01-16",
+      "featured": true,
+      "badges": [
+        "Key Document",
+        "SLM",
+        "Marketplace",
+        "Series A"
+      ],
+      "badge_colors": [
+        "primary",
+        "purple",
+        "green"
+      ],
+      "title": "SLM Marketplace for AI Agents",
+      "description": "\"The App Store for AI Agents\" - Decentralized model discovery, trading & orchestration with crypto-native payment rails.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "slm",
+      "featured_label": "Key Document"
+    },
+    {
+      "filename": "SERIES-A-INVESTOR-DEEP-DIVE-2026-01-16.html",
+      "id": "SERIES-A-INVESTOR-DEEP-DIVE-2026-01-16",
+      "featured": true,
+      "badges": [
+        "Key Document",
+        "VC Targets",
+        "$15-25M"
+      ],
+      "badge_colors": [
+        "primary",
+        "green"
+      ],
+      "title": "Series A Investor Deep Dive",
+      "description": "Complete VC landscape analysis: Paradigm, a16z, Pantera. Partner-level mapping, intro pathways, and valuation benchmarks.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "vc",
+      "featured_label": "Key Document"
+    },
+    {
+      "filename": "SLM-CROSS-VERTICAL-COMPARISON-2026-01-16.html",
+      "id": "SLM-CROSS-VERTICAL-COMPARISON-2026-01-16",
+      "featured": false,
+      "badges": [
+        "SLM",
+        "Verticals"
+      ],
+      "badge_colors": [
+        "primary",
+        "purple"
+      ],
+      "title": "SLM Cross-Vertical Comparison",
+      "description": "SLM model selection by industry vertical: Financial Services, Healthcare, Legal, Manufacturing, Retail.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "slm"
+    },
+    {
+      "filename": "SLM-MODELS-FOR-DEFI-2026-01-16.html",
+      "id": "SLM-MODELS-FOR-DEFI-2026-01-16",
+      "featured": false,
+      "badges": [
+        "SLM",
+        "DeFi"
+      ],
+      "badge_colors": [
+        "primary",
+        "green"
+      ],
+      "title": "SLM Models for DeFi",
+      "description": "Optimal SLM selection for DeFi use cases: yield optimization, risk analysis, trading agents.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "slm"
+    },
+    {
+      "filename": "FUNDING-slm-edge-ai-2026-01-16.html",
+      "id": "FUNDING-slm-edge-ai-2026-01-16",
+      "featured": false,
+      "badges": [
+        "Funding",
+        "Edge AI"
+      ],
+      "badge_colors": [
+        "primary",
+        "blue"
+      ],
+      "title": "SLM/Edge AI Funding Landscape",
+      "description": "VC activity in SLM and edge AI infrastructure: recent rounds, investor thesis, valuation multiples.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "slm"
+    },
+    {
+      "filename": "VERTICAL-AI-AGENTS-BY-INDUSTRY-2026-01-16.html",
+      "id": "VERTICAL-AI-AGENTS-BY-INDUSTRY-2026-01-16",
+      "featured": false,
+      "badges": [
+        "Verticals",
+        "Opportunity"
+      ],
+      "badge_colors": [
+        "purple",
+        "green"
+      ],
+      "title": "Vertical AI Agents by Industry",
+      "description": "Industry analysis: Healthcare ($5.3B Abridge), Legal (Harvey $8B), DeFi whitespace. Market sizing and competitive gaps.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "vertical"
+    },
+    {
+      "filename": "CEO-RESEARCH-cross-chain-orchestration-2026-01-16.html",
+      "id": "CEO-RESEARCH-cross-chain-orchestration-2026-01-16",
+      "featured": false,
+      "badges": [
+        "Cross-Chain",
+        "Infra"
+      ],
+      "badge_colors": [
+        "purple",
+        "blue"
+      ],
+      "title": "Cross-Chain Agent Orchestration",
+      "description": "Multi-chain AI agent coordination: LayerZero integration, chain abstraction, unified orchestration layer.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "cross-chain"
+    },
+    {
+      "filename": "SOLANA-GRANT-STRATEGY-2026-01-16.html",
+      "id": "SOLANA-GRANT-STRATEGY-2026-01-16",
+      "featured": false,
+      "badges": [
+        "Solana",
+        "Grants"
+      ],
+      "badge_colors": [
+        "purple",
+        "green"
+      ],
+      "title": "Solana Grant Strategy",
+      "description": "Solana Foundation grant application strategy: success factors, positioning, and ecosystem alignment.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "solana"
+    },
+    {
+      "filename": "VC-INVESTOR-THESIS-SERIES-A-2026-01-16.html",
+      "id": "VC-INVESTOR-THESIS-SERIES-A-2026-01-16",
+      "featured": false,
+      "badges": [
+        "VC",
+        "Thesis"
+      ],
+      "badge_colors": [
+        "primary",
+        "green"
+      ],
+      "title": "VC Investor Thesis Analysis",
+      "description": "Deep dive on investor thesis: a16z (\"crypto decentralizes AI\"), Paradigm, Sequoia, and what narratives resonate.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "vc"
+    },
+    {
+      "filename": "VC-PORTFOLIO-INTRO-PATHWAYS-assisterr-series-a-2026-01-16.html",
+      "id": "VC-PORTFOLIO-INTRO-PATHWAYS-assisterr-series-a-2026-01-16",
+      "featured": false,
+      "badges": [
+        "VC",
+        "Intros"
+      ],
+      "badge_colors": [
+        "primary",
+        "pink"
+      ],
+      "title": "VC Portfolio & Intro Pathways",
+      "description": "Portfolio conflict analysis (ZERO conflicts), warm intro pathways, and partner-level targeting.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "vc"
+    },
+    {
+      "filename": "finding-ai-crypto-series-a-benchmarks-2026-01-16.html",
+      "id": "finding-ai-crypto-series-a-benchmarks-2026-01-16",
+      "featured": false,
+      "badges": [
+        "Benchmarks",
+        "Valuations"
+      ],
+      "badge_colors": [
+        "green",
+        "primary"
+      ],
+      "title": "AI+Crypto Series A Benchmarks",
+      "description": "Valuation benchmarks: Together AI ($3.3B), Nous Research ($1B from Paradigm), revenue multiples.",
+      "version": "2.0",
+      "date": "2026-01-16",
+      "category": "vc"
+    },
+    {
+      "filename": "SLM-RESEARCH-2026-01-16-FULL-REPORT.html",
+      "id": "SLM-RESEARCH-2026-01-16-FULL-REPORT",
+      "featured": false,
+      "badges": [
+        "SLM",
+        "Technical"
+      ],
+      "badge_colors": [
+        "primary",
+        "blue"
+      ],
+      "title": "SLM Research Full Report",
+      "description": "Comprehensive SLM market analysis: Phi-4, Qwen2.5, Llama 3.2. Edge deployment, cost optimization, and technical benchmarks.",
+      "version": "2.0",
+      "date": "2026-01-15",
+      "category": "slm"
+    },
+    {
+      "filename": "CEO-DEFI-YIELD-agents-2026-01-15.html",
+      "id": "CEO-DEFI-YIELD-agents-2026-01-15",
+      "featured": false,
+      "badges": [
+        "DeFi",
+        "Agents"
+      ],
+      "badge_colors": [
+        "green",
+        "blue"
+      ],
+      "title": "DeFi Yield Optimization Agents",
+      "description": "Autonomous yield optimization: strategy comparison, risk frameworks, and agent architecture for DeFi.",
+      "version": "1.0",
+      "date": "2026-01-15",
+      "category": "vertical"
+    },
+    {
+      "filename": "KYA-RESEARCH-COMPLETE-2026-01-15.html",
+      "id": "KYA-RESEARCH-COMPLETE-2026-01-15",
+      "featured": false,
+      "badges": [
+        "KYA",
+        "Trust"
+      ],
+      "badge_colors": [
+        "pink",
+        "green"
+      ],
+      "title": "KYA Research Complete",
+      "description": "Know Your Agent (KYA) trust infrastructure: market sizing, competitive landscape, and first-mover opportunity.",
+      "version": "1.0",
+      "date": "2026-01-15",
+      "category": "kya"
+    },
+    {
+      "filename": "KYA-SERIES-A-RESEARCH-2026-01-15.html",
+      "id": "KYA-SERIES-A-RESEARCH-2026-01-15",
+      "featured": false,
+      "badges": [
+        "KYA",
+        "Series A"
+      ],
+      "badge_colors": [
+        "pink",
+        "primary"
+      ],
+      "title": "KYA Series A Research",
+      "description": "KYA positioning for Series A: a16z thesis alignment (96:1 agent-to-human ratio needs trust infrastructure).",
+      "version": "1.0",
+      "date": "2026-01-15",
+      "category": "kya"
+    },
+    {
+      "filename": "X402-RESEARCH-COMPLETE-2026-01-15.html",
+      "id": "X402-RESEARCH-COMPLETE-2026-01-15",
+      "featured": false,
+      "badges": [
+        "Payments",
+        "x402"
+      ],
+      "badge_colors": [
+        "blue",
+        "purple"
+      ],
+      "title": "x402 Payment Rails Research",
+      "description": "Agent payment infrastructure: x402 protocol, micropayments, autonomous agent commerce.",
+      "version": "1.0",
+      "date": "2026-01-15",
+      "category": "kya"
+    },
+    {
+      "filename": "CEO-RESEARCH-assisterr-crypto-ai-opportunities-2026-01-15.html",
+      "id": "CEO-RESEARCH-assisterr-crypto-ai-opportunities-2026-01-15",
+      "featured": false,
+      "badges": [
+        "Strategy",
+        "Crypto-AI"
+      ],
+      "badge_colors": [
+        "primary",
+        "purple"
+      ],
+      "title": "Crypto-AI Opportunities",
+      "description": "Strategic opportunities at the intersection of AI and crypto: Solana ecosystem, tokenized AI, and decentralized infrastructure.",
+      "version": "1.0",
+      "date": "2026-01-15",
+      "category": "solana"
+    }
+  ],
+  "categories": {
+    "featured": {
+      "name": "Featured Reports",
+      "order": 0,
+      "auto_select": "latest_3"
+    },
+    "solana": {
+      "name": "Solana Ecosystem",
+      "order": 1
+    },
+    "slm": {
+      "name": "SLM & Edge AI Research",
+      "order": 2
+    },
+    "vertical": {
+      "name": "Vertical AI Agents",
+      "order": 3
+    },
+    "kya": {
+      "name": "Trust Infrastructure (KYA)",
+      "order": 4
+    },
+    "vc": {
+      "name": "Series A & VC Intelligence",
+      "order": 5
+    },
+    "cross-chain": {
+      "name": "Cross-Chain & Multi-Chain",
+      "order": 6
+    }
+  },
+  "stats": {
+    "slm_market": "$64B",
+    "ai_agent_market": "$150B",
+    "target_valuation": "$50-100M",
+    "vc_conflicts": "0"
+  }
+}
