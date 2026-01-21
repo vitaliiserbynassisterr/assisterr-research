@@ -1,7 +1,70 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-19T23:45:00.000000",
+  "last_updated": "2026-01-21T14:00:00.000000",
   "reports": [
+    {
+      "filename": "SLM-MARKET-EVOLUTION-2026-01-21.html",
+      "id": "SLM-MARKET-EVOLUTION-2026-01-21",
+      "featured": true,
+      "badges": [
+        "Research v5.1",
+        "SLM",
+        "Market Analysis"
+      ],
+      "badge_colors": [
+        "purple",
+        "primary",
+        "green"
+      ],
+      "title": "SLM Market 2025-2026: Death or Evolution?",
+      "description": "NEW: SLM market verdict: EVOLUTION NOT DEATH. $0.93B to $5.45B (28.7% CAGR). DeepSeek R1 distillation, LoRA fine-tuning, edge deployment driving growth.",
+      "version": "5.1",
+      "date": "2026-01-21",
+      "category": "slm",
+      "featured_label": "NEW - Latest Research"
+    },
+    {
+      "filename": "LLM-VS-SLM-FEATURE-GAP-2026-01-21.html",
+      "id": "LLM-VS-SLM-FEATURE-GAP-2026-01-21",
+      "featured": true,
+      "badges": [
+        "Research v5.1",
+        "Infrastructure",
+        "1-Dev Buildable"
+      ],
+      "badge_colors": [
+        "purple",
+        "blue",
+        "green"
+      ],
+      "title": "LLM vs SLM Feature Gap Analysis",
+      "description": "23 infrastructure gaps identified. SLMs achieve 77-84% function calling (beat GPT-4). 8 buildable opportunities for 1-dev team with 100x cost advantage.",
+      "version": "5.1",
+      "date": "2026-01-21",
+      "category": "slm",
+      "featured_label": "NEW - Infrastructure"
+    },
+    {
+      "filename": "SLM-MARKETPLACES-LANDSCAPE-2026-01-21.html",
+      "id": "SLM-MARKETPLACES-LANDSCAPE-2026-01-21",
+      "featured": true,
+      "badges": [
+        "Research v5.1",
+        "Marketplace",
+        "DeFi Opportunity"
+      ],
+      "badge_colors": [
+        "purple",
+        "green",
+        "primary"
+      ],
+      "title": "SLM Marketplaces & Registries Landscape",
+      "description": "28 findings, 22 platforms analyzed. MAJOR GAP: No DeFi-native SLM registry exists. $1.3B+ DeFAI market lacks model marketplace. LoRA adapter opportunity.",
+      "version": "5.1",
+      "date": "2026-01-21",
+      "category": "slm",
+      "featured_label": "NEW - Marketplaces"
+    },
     {
       "filename": "CEO-RESEARCH-clockwork-automation-ai-2026-01-19.html",
       "id": "CEO-RESEARCH-clockwork-automation-ai-2026-01-19",
