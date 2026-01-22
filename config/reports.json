@@ -1,7 +1,19 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-21T14:00:00.000000",
+  "last_updated": "2026-01-22T11:53:26Z",
   "reports": [
+    {
+      "id": "research-slm-api-gateway-competitive-analysis-2026-01-22",
+      "filename": "research-slm-api-gateway-competitive-analysis-2026-01-22.html",
+      "title": "research slm api gateway competitive analysis 2026 01 22",
+      "description": "Research report from 2026-01-22",
+      "date": "2026-01-22",
+      "category": "slm",
+      "badges": [],
+      "badge_colors": [],
+      "featured": false,
+      "version": "2.0"
+    },
     {
       "filename": "SLM-MARKET-EVOLUTION-2026-01-21.html",
       "id": "SLM-MARKET-EVOLUTION-2026-01-21",
