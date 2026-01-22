@@ -5,14 +5,15 @@
     {
       "id": "research-slm-api-gateway-competitive-analysis-2026-01-22",
       "filename": "research-slm-api-gateway-competitive-analysis-2026-01-22.html",
-      "title": "research slm api gateway competitive analysis 2026 01 22",
-      "description": "Research report from 2026-01-22",
+      "title": "SLM API Gateway - Competitive Analysis & Market Opportunity",
+      "description": "42 findings: OpenRouter leads ($500M, 2.5M devs). LiteLLM open-source dominant. GAP: No crypto-native SLM gateway. Opportunity: $8M MRR with DeFi features (x402, wallet auth).",
       "date": "2026-01-22",
       "category": "slm",
-      "badges": [],
-      "badge_colors": [],
-      "featured": false,
-      "version": "2.0"
+      "badges": ["Research v5.1", "SLM Gateway", "Competitive Analysis"],
+      "badge_colors": ["purple", "blue", "green"],
+      "featured": true,
+      "featured_label": "NEW - Latest Research",
+      "version": "5.1"
     },
     {
       "filename": "SLM-MARKET-EVOLUTION-2026-01-21.html",
