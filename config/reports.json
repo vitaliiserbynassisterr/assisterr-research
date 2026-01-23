@@ -1,7 +1,20 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-23T07:31:27Z",
+  "last_updated": "2026-01-23T09:55:33Z",
   "reports": [
+    {
+      "id": "research-slm-marketplace-opportunities-2026-01-23",
+      "filename": "research-slm-marketplace-opportunities-2026-01-23.html",
+      "title": "SLM Marketplace Opportunities - CEO Q&A & MVP Ideas",
+      "description": "65 findings: 23 LLM vs SLM infrastructure gaps, vertical opportunities (DeFi/Solana/Legal), 7 one-dev MVP ideas. Top rec: Agentic AI SLM Marketplace with Solana Agent Kit integration.",
+      "date": "2026-01-23",
+      "category": "slm",
+      "badges": ["Research v5.2", "CEO Q&A", "MVP Ready"],
+      "badge_colors": ["purple", "orange", "green"],
+      "featured": true,
+      "featured_label": "NEW - CEO Q&A Research",
+      "version": "5.2"
+    },
     {
       "id": "research-slm-gateway-gtm-strategy-2026-01-23",
       "filename": "research-slm-gateway-gtm-strategy-2026-01-23.html",
