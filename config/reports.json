@@ -1,7 +1,28 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-22T11:53:26Z",
+  "last_updated": "2026-01-23T07:31:27Z",
   "reports": [
+    {
+      "id": "research-slm-gateway-gtm-strategy-2026-01-23",
+      "filename": "research-slm-gateway-gtm-strategy-2026-01-23.html",
+      "title": "SLM API Gateway - Go-to-Market Strategy 2026",
+      "description": "65 findings: Complete GTM playbook for Assisterr SLM Gateway. Pricing ($0.10-0.50/M tokens), 90-day launch plan ($300K ARR target), crypto-native moat (x402, wallet auth, SOL staking). Series A path: $15-25M at $75-150M.",
+      "date": "2026-01-23",
+      "category": "slm",
+      "badges": [
+        "Research v5.2",
+        "GTM Strategy",
+        "Series A Prep"
+      ],
+      "badge_colors": [
+        "purple",
+        "blue",
+        "green"
+      ],
+      "featured": true,
+      "featured_label": "NEW - GTM Playbook",
+      "version": "5.2"
+    },
     {
       "id": "research-slm-api-gateway-competitive-analysis-2026-01-22",
       "filename": "research-slm-api-gateway-competitive-analysis-2026-01-22.html",
@@ -9,10 +30,17 @@
       "description": "42 findings: OpenRouter leads ($500M, 2.5M devs). LiteLLM open-source dominant. GAP: No crypto-native SLM gateway. Opportunity: $8M MRR with DeFi features (x402, wallet auth).",
       "date": "2026-01-22",
       "category": "slm",
-      "badges": ["Research v5.1", "SLM Gateway", "Competitive Analysis"],
-      "badge_colors": ["purple", "blue", "green"],
-      "featured": true,
-      "featured_label": "NEW - Latest Research",
+      "badges": [
+        "Research v5.1",
+        "SLM Gateway",
+        "Competitive Analysis"
+      ],
+      "badge_colors": [
+        "purple",
+        "blue",
+        "green"
+      ],
+      "featured": false,
       "version": "5.1"
     },
     {
