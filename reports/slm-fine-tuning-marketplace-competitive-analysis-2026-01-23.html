@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SLM Fine-Tuning Marketplace - Competitive Analysis & Crypto-Native Opportunity | Assisterr Research</title>
+    <title>SLM Fine-Tuning Marketplace - Competitive Analysis 2026 | Assisterr Research</title>
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #14b8a6;
-            --accent: #f59e0b;
-            --danger: #ef4444;
-            --success: #22c55e;
-            --bg: #0f172a;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
+            --primary: #F66824;
+            --primary-light: #FF8A50;
+            --secondary: #DB5F94;
+            --accent: #E91E63;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #00C853;
+            --warning: #FFB300;
+            --danger: #FF5252;
         }
 
         * {
@@ -27,174 +26,287 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--darker);
+            color: var(--light);
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 20px;
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #7c3aed 100%);
-            padding: 3rem 2rem;
-            border-radius: 1rem;
-            margin-bottom: 2rem;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 60px 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        header::before {
+        .header::before {
             content: '';
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: translate(30%, -30%);
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .header .date {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         .badge {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: rgba(255,255,255,0.2);
-            border-radius: 9999px;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
+            margin: 5px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+        .badge-primary { background: var(--primary); color: white; }
+        .badge-secondary { background: var(--secondary); color: white; }
+        .badge-success { background: var(--success); color: white; }
+        .badge-warning { background: var(--warning); color: black; }
+        .badge-danger { background: var(--danger); color: white; }
+        .badge-dark { background: var(--dark); color: white; }
+
+        /* Navigation */
+        .nav {
+            background: var(--dark);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .subtitle {
-            font-size: 1.25rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 700px;
-        }
-
-        .meta {
+        .nav-links {
             display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.7);
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
         }
 
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s;
         }
 
-        .section {
-            background: var(--bg-card);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border);
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 24px;
+        .nav-links a:hover {
             background: var(--primary);
-            border-radius: 2px;
         }
 
-        .grid-2 {
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            color: var(--light);
+        }
+
+        section h4 {
+            font-size: 1.1rem;
+            margin: 20px 0 10px;
+            color: var(--secondary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* Executive Summary */
+        .exec-summary {
+            background: linear-gradient(135deg, rgba(246,104,36,0.1) 0%, rgba(219,95,148,0.1) 100%);
+            border: 1px solid rgba(246,104,36,0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .exec-summary h3 {
+            color: var(--primary-light);
+            margin-top: 0;
+        }
+
+        /* Key Stats */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .grid-3 {
+        .stat-card {
+            background: var(--dark);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--dark);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        th {
+            background: rgba(246,104,36,0.2);
+            font-weight: 600;
+            color: var(--primary-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        tr:hover td {
+            background: rgba(246,104,36,0.05);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            gap: 20px;
+            margin: 30px 0;
         }
 
         .card {
-            background: var(--bg);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-            transition: all 0.2s;
+            background: var(--dark);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
         }
 
         .card:hover {
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         .card-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text);
+            margin-bottom: 10px;
+            color: var(--light);
         }
 
         .card-value {
             font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .card-subtitle {
-            font-size: 0.875rem;
-            color: var(--text-muted);
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 5px;
         }
 
-        .stat-card {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .stat-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
+        /* Competitor Cards */
         .competitor-card {
-            background: var(--bg);
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            border: 1px solid var(--border);
+            background: var(--dark);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .competitor-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
 
         .competitor-name {
@@ -203,85 +315,57 @@
         }
 
         .threat-badge {
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
         }
 
-        .threat-high { background: rgba(239,68,68,0.2); color: #ef4444; }
-        .threat-medium { background: rgba(245,158,11,0.2); color: #f59e0b; }
-        .threat-low { background: rgba(34,197,94,0.2); color: #22c55e; }
+        .threat-high { background: rgba(255,82,82,0.2); color: #FF5252; }
+        .threat-medium { background: rgba(255,179,0,0.2); color: #FFB300; }
+        .threat-low { background: rgba(0,200,83,0.2); color: #00C853; }
 
         .competitor-type {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 10px;
         }
 
         .competitor-pricing {
             font-size: 0.85rem;
-            background: rgba(99,102,241,0.1);
-            padding: 0.5rem;
-            border-radius: 4px;
-            margin-bottom: 0.75rem;
+            background: rgba(246,104,36,0.1);
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--primary);
         }
 
         .competitor-list {
             list-style: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         .competitor-list li {
-            padding: 0.25rem 0;
-            color: var(--text-muted);
+            padding: 5px 0;
+            color: rgba(255,255,255,0.7);
         }
 
-        .finding {
-            background: var(--bg);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            border-left: 3px solid var(--primary);
-        }
-
-        .finding-content {
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .finding-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .finding-category {
-            background: rgba(99,102,241,0.2);
-            color: var(--primary);
-            padding: 0.125rem 0.5rem;
-            border-radius: 9999px;
-        }
-
-        .finding-confidence {
-            color: var(--success);
-        }
-
+        /* Insights */
         .insight-card {
-            background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(124,58,237,0.1) 100%);
+            background: linear-gradient(135deg, rgba(246,104,36,0.15) 0%, rgba(219,95,148,0.15) 100%);
             border: 1px solid var(--primary);
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
         }
 
         .insight-number {
             font-size: 0.75rem;
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
 
         .insight-text {
@@ -289,19 +373,20 @@
             font-weight: 500;
         }
 
+        /* Recommendations */
         .recommendation {
-            background: var(--bg);
-            border-radius: 0.5rem;
-            padding: 1.25rem;
-            margin-bottom: 0.75rem;
-            border: 1px solid var(--border);
+            background: var(--dark);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .recommendation-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
 
         .recommendation-title {
@@ -310,105 +395,60 @@
         }
 
         .priority-badge {
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 0.7rem;
             font-weight: 600;
         }
 
-        .priority-p0 { background: rgba(239,68,68,0.2); color: #ef4444; }
-        .priority-p1 { background: rgba(245,158,11,0.2); color: #f59e0b; }
-        .priority-p2 { background: rgba(34,197,94,0.2); color: #22c55e; }
-        .priority-p3 { background: rgba(148,163,184,0.2); color: #94a3b8; }
+        .priority-p0 { background: rgba(255,82,82,0.2); color: #FF5252; }
+        .priority-p1 { background: rgba(255,179,0,0.2); color: #FFB300; }
+        .priority-p2 { background: rgba(0,200,83,0.2); color: #00C853; }
 
         .recommendation-rationale {
             font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 12px;
         }
 
         .recommendation-action {
             font-size: 0.85rem;
-            background: rgba(20,184,166,0.1);
-            padding: 0.75rem;
-            border-radius: 4px;
+            background: rgba(219,95,148,0.1);
+            padding: 12px;
+            border-radius: 8px;
             border-left: 3px solid var(--secondary);
         }
 
-        .market-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.875rem;
-        }
-
-        .market-table th,
-        .market-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .market-table th {
-            background: var(--bg);
-            font-weight: 600;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .market-table tr:hover td {
-            background: rgba(99,102,241,0.05);
-        }
-
+        /* Differentiation Matrix */
         .diff-matrix {
             overflow-x: auto;
         }
 
         .diff-matrix table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.8rem;
+            min-width: 800px;
         }
 
-        .diff-matrix th,
-        .diff-matrix td {
-            padding: 0.75rem;
-            text-align: left;
-            border: 1px solid var(--border);
-        }
+        .gap-large { color: var(--success); font-weight: 600; }
+        .gap-medium { color: var(--warning); font-weight: 600; }
+        .gap-small { color: var(--danger); font-weight: 600; }
 
-        .diff-matrix th {
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-
-        .diff-matrix td:first-child {
-            font-weight: 600;
-            background: var(--bg);
-        }
-
-        .gap-large { color: var(--success); }
-        .gap-medium { color: var(--accent); }
-        .gap-small { color: var(--danger); }
-
+        /* Investor Cards */
         .investor-card {
-            background: var(--bg);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            border: 1px solid var(--border);
+            background: var(--dark);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .investor-name {
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            margin-bottom: 5px;
         }
 
         .investor-focus {
             font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            color: var(--gray);
+            margin-bottom: 8px;
         }
 
         .investor-thesis {
@@ -419,18 +459,18 @@
 
         .alignment-badge {
             font-size: 0.7rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
+            padding: 4px 8px;
+            border-radius: 20px;
             font-weight: 600;
         }
 
-        .alignment-perfect { background: rgba(34,197,94,0.2); color: #22c55e; }
-        .alignment-strong { background: rgba(20,184,166,0.2); color: #14b8a6; }
-        .alignment-moderate { background: rgba(245,158,11,0.2); color: #f59e0b; }
+        .alignment-perfect { background: rgba(0,200,83,0.2); color: #00C853; }
+        .alignment-strong { background: rgba(219,95,148,0.2); color: var(--secondary); }
 
+        /* Timeline */
         .timeline {
             position: relative;
-            padding-left: 2rem;
+            padding-left: 30px;
         }
 
         .timeline::before {
@@ -439,321 +479,259 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 2px;
-            background: var(--primary);
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
         }
 
         .timeline-item {
             position: relative;
-            padding-bottom: 1.5rem;
+            padding-bottom: 25px;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2rem;
+            left: -34px;
             top: 0;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             background: var(--primary);
             border-radius: 50%;
-            border: 2px solid var(--bg-card);
+            border: 3px solid var(--darker);
         }
 
         .timeline-period {
-            font-size: 0.875rem;
-            color: var(--primary);
+            font-size: 0.95rem;
+            color: var(--primary-light);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
         }
 
         .timeline-content {
-            font-size: 0.875rem;
-            color: var(--text-muted);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
         }
 
         .timeline-content ul {
             list-style: disc;
-            padding-left: 1rem;
-            margin-top: 0.5rem;
+            padding-left: 20px;
+            margin-top: 8px;
         }
 
-        .exec-summary {
-            background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(20,184,166,0.15) 100%);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid var(--primary);
-        }
-
-        .exec-summary h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .exec-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .exec-item {
-            background: rgba(0,0,0,0.2);
-            padding: 1.25rem;
-            border-radius: 0.5rem;
-        }
-
-        .exec-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .exec-value {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
+        /* Risk Cards */
         .risk-card {
-            background: var(--bg);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            border-left: 3px solid var(--danger);
+            background: var(--dark);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--danger);
         }
 
         .risk-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
+            align-items: flex-start;
+            margin-bottom: 10px;
         }
 
         .risk-title {
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .risk-badges {
             display: flex;
-            gap: 0.5rem;
+            gap: 8px;
         }
 
         .risk-badge {
-            font-size: 0.7rem;
-            padding: 0.125rem 0.375rem;
-            border-radius: 4px;
+            font-size: 0.65rem;
+            padding: 3px 8px;
+            border-radius: 20px;
         }
 
         .risk-mitigation {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .toc {
-            background: var(--bg);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-        }
-
-        .toc-title {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .toc-list {
-            list-style: none;
-        }
-
-        .toc-list li {
-            padding: 0.375rem 0;
-        }
-
-        .toc-list a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.2s;
-        }
-
-        .toc-list a:hover {
-            color: var(--primary);
-        }
-
+        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            border-top: 1px solid var(--border);
-            margin-top: 2rem;
+            padding: 40px 0;
+            color: var(--gray);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
+        footer .brand {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container { padding: 1rem; }
-            h1 { font-size: 1.75rem; }
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-            .meta { flex-wrap: wrap; gap: 1rem; }
+            .header h1 { font-size: 1.8rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            section { padding: 40px 0; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <span class="badge">Series A Research</span>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <svg width="180" height="45" viewBox="0 0 132 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <path d="M131.115 10.2971V12.2584C130.922 12.2094 130.728 12.2094 130.583 12.2094C130.438 12.2094 130.245 12.2094 130.003 12.2094C129.471 12.2094 129.035 12.3075 128.6 12.4546C128.164 12.6017 127.874 12.8468 127.584 13.092C127.294 13.3862 127.1 13.6804 126.907 14.0727C126.762 14.465 126.665 14.8573 126.616 15.2986L125.988 15.6418C125.988 14.9063 126.084 14.1708 126.229 13.5333C126.375 12.8959 126.665 12.3075 126.955 11.7681C127.294 11.2287 127.729 10.8364 128.213 10.5913C128.745 10.2971 129.374 10.15 130.051 10.15C130.196 10.15 130.39 10.15 130.632 10.199C130.873 10.248 131.019 10.248 131.115 10.2971ZM127.003 12.3565V22.8498H124.73V10.3951H126.955L127.003 12.3565ZM122.65 10.2971V12.2584C122.456 12.2094 122.263 12.2094 122.117 12.2094C121.972 12.2094 121.779 12.2094 121.537 12.2094C121.005 12.2094 120.569 12.3075 120.134 12.4546C119.747 12.6017 119.408 12.8468 119.118 13.092C118.828 13.3862 118.634 13.6804 118.441 14.0727C118.296 14.465 118.199 14.8573 118.151 15.2986L117.522 15.6418C117.522 14.9063 117.619 14.1708 117.764 13.5333C117.909 12.8959 118.199 12.3075 118.489 11.7681C118.828 11.2287 119.263 10.8364 119.747 10.5913C120.279 10.2971 120.908 10.15 121.585 10.15C121.73 10.15 121.924 10.15 122.166 10.199C122.408 10.248 122.553 10.248 122.65 10.2971ZM118.489 12.3565V22.8498H116.216V10.3951H118.441L118.489 12.3565ZM108.427 23.095C107.508 23.095 106.686 22.9479 105.912 22.6537C105.186 22.3595 104.509 21.9182 103.977 21.3788C103.445 20.8394 103.058 20.202 102.767 19.4665C102.477 18.731 102.332 17.8974 102.332 17.0638V16.5734C102.332 15.5437 102.477 14.6611 102.816 13.8766C103.154 13.092 103.59 12.4055 104.122 11.8662C104.654 11.3268 105.283 10.8855 105.96 10.5913C106.637 10.2971 107.363 10.15 108.137 10.15C109.105 10.15 109.879 10.2971 110.604 10.5913C111.281 10.8855 111.862 11.3268 112.297 11.8662C112.733 12.4055 113.071 13.043 113.265 13.8275C113.458 14.563 113.603 15.3966 113.603 16.2302V17.2109H103.735V15.4457H111.378V15.2986C111.33 14.7592 111.233 14.2198 110.991 13.6804C110.798 13.1411 110.459 12.7488 110.024 12.4055C109.588 12.0623 108.959 11.9152 108.185 11.9152C107.653 11.9152 107.218 12.0133 106.783 12.2094C106.347 12.4055 105.96 12.6997 105.67 13.092C105.38 13.4843 105.138 13.9746 104.944 14.563C104.751 15.1515 104.702 15.7889 104.702 16.5734V17.0638C104.702 17.6522 104.799 18.1916 104.944 18.731C105.138 19.2703 105.38 19.7116 105.718 20.1039C106.057 20.4962 106.492 20.7904 106.976 21.0356C107.46 21.2807 108.04 21.3788 108.621 21.3788C109.443 21.3788 110.12 21.2317 110.653 20.9375C111.185 20.6433 111.668 20.202 112.104 19.7116L113.458 20.7414C113.168 21.1336 112.829 21.5259 112.346 21.9182C111.91 22.3104 111.378 22.6046 110.701 22.8008C110.072 22.9479 109.298 23.095 108.427 23.095ZM95.5595 7.35502H97.8331V19.7607C97.8331 20.202 97.8815 20.4962 98.0266 20.7414C98.1718 20.9375 98.3653 21.0846 98.5588 21.1827C98.8007 21.2317 98.9942 21.2807 99.2844 21.2807C99.4779 21.2807 99.6714 21.2807 99.8649 21.2317C100.058 21.1827 100.252 21.1827 100.349 21.1336V22.8989C100.155 22.9479 99.9133 22.9969 99.623 23.046C99.3328 23.095 98.9942 23.144 98.5588 23.144C98.0266 23.144 97.4945 23.046 97.0108 22.8498C96.527 22.6537 96.1884 22.3104 95.8981 21.8201C95.6079 21.3298 95.5111 20.6433 95.5111 19.8587V7.35502H95.5595ZM100.3 10.3951V12.0133H93.1408V10.3951H100.3ZM89.5126 19.5645C89.5126 19.2703 89.4159 18.9761 89.2707 18.731C89.1256 18.4858 88.8354 18.2406 88.4 17.9954C87.9646 17.7503 87.3357 17.6032 86.465 17.407C85.7394 17.2599 85.0621 17.0638 84.4816 16.8677C83.9011 16.6715 83.369 16.4263 82.982 16.1321C82.595 15.8379 82.2563 15.4947 82.0628 15.1515C81.821 14.7592 81.7242 14.3179 81.7242 13.7785C81.7242 13.2882 81.821 12.7978 82.0628 12.4055C82.3047 11.9642 82.6433 11.572 83.0303 11.2287C83.4657 10.8855 83.9978 10.6403 84.5784 10.4442C85.1589 10.248 85.8361 10.15 86.6101 10.15C87.6744 10.15 88.5935 10.3461 89.3191 10.6893C90.0931 11.0326 90.6252 11.5229 91.0606 12.1113C91.4476 12.6997 91.6411 13.3372 91.6411 14.0727H89.3675C89.3675 13.7295 89.2707 13.3862 89.0289 13.092C88.8354 12.7488 88.4967 12.5036 88.1097 12.2584C87.7227 12.0623 87.1906 11.9152 86.6101 11.9152C85.9812 11.9152 85.4491 12.0133 85.0621 12.2094C84.6751 12.4055 84.3848 12.6017 84.2397 12.8959C84.0462 13.1901 83.9978 13.4843 83.9978 13.7785C83.9978 14.0237 84.0462 14.2198 84.143 14.4159C84.2397 14.6121 84.3848 14.7592 84.6267 14.9063C84.8686 15.0534 85.1589 15.2005 85.5459 15.2986C85.9329 15.4457 86.465 15.5437 87.0939 15.6908C88.1581 15.936 89.0772 16.1812 89.7545 16.5244C90.4317 16.8677 90.9639 17.2599 91.3025 17.7012C91.6411 18.1916 91.8346 18.7309 91.8346 19.4174C91.8346 19.9568 91.6895 20.4471 91.4476 20.9375C91.2057 21.3788 90.8671 21.7711 90.4317 22.1143C89.9964 22.4575 89.4642 22.7027 88.8354 22.8989C88.2065 23.095 87.5292 23.144 86.7552 23.144C85.5942 23.144 84.5784 22.9479 83.8043 22.5556C83.0303 22.1633 82.4015 21.673 81.9661 21.0356C81.5307 20.3981 81.3372 19.7607 81.3372 19.0742H83.6108C83.6592 19.6626 83.8043 20.1039 84.143 20.4471C84.4816 20.7904 84.8686 21.0356 85.3523 21.1827C85.8361 21.3298 86.2715 21.3788 86.7552 21.3788C87.3841 21.3788 87.9162 21.2807 88.3032 21.1336C88.7386 20.9865 89.0289 20.7904 89.2707 20.4962C89.4159 20.202 89.5126 19.9078 89.5126 19.5645ZM75.7257 7.06082C75.7257 6.71758 75.8224 6.42337 76.0643 6.1782C76.3062 5.93303 76.6448 5.83496 77.0802 5.83496C77.5156 5.83496 77.8542 5.93303 78.0477 6.1782C78.2896 6.42337 78.3863 6.71758 78.3863 7.06082C78.3863 7.40405 78.2896 7.69826 78.0477 7.8944C77.8058 8.13957 77.4672 8.23764 77.0802 8.23764C76.6448 8.23764 76.3062 8.13957 76.0643 7.8944C75.8224 7.69826 75.7257 7.40405 75.7257 7.06082ZM78.1928 10.3951V22.8498H75.9192V10.3951H78.1928ZM70.5012 19.5645C70.5012 19.2703 70.4044 18.9761 70.2593 18.731C70.1142 18.4858 69.8239 18.2406 69.3885 17.9954C68.9532 17.7503 68.3243 17.6032 67.4535 17.407C66.7279 17.2599 66.0507 17.0638 65.4702 16.8677C64.8897 16.6715 64.3575 16.4263 63.9705 16.1321C63.5835 15.8379 63.2449 15.4947 63.0514 15.1515C62.8095 14.7592 62.7128 14.3179 62.7128 13.7785C62.7128 13.2882 62.8095 12.7978 63.0514 12.4055C63.2933 11.9642 63.6319 11.572 64.0189 11.2287C64.4543 10.8855 64.9864 10.6403 65.5669 10.4442C66.1474 10.248 66.8247 10.15 67.5987 10.15C68.6629 10.15 69.582 10.3461 70.3077 10.6893C71.0817 11.0326 71.6138 11.5229 72.0492 12.1113C72.4362 12.6997 72.6297 13.3372 72.6297 14.0727H70.356C70.356 13.7295 70.2593 13.3862 70.0174 13.092C69.8239 12.7488 69.4853 12.5036 69.0983 12.2584C68.7113 12.0623 68.1792 11.9152 67.5987 11.9152C66.9698 11.9152 66.4377 12.0133 66.0507 12.2094C65.6637 12.4055 65.3734 12.6017 65.2283 12.8959C65.0348 13.1901 64.9864 13.4843 64.9864 13.7785C64.9864 14.0237 65.0348 14.2198 65.1315 14.4159C65.2283 14.6121 65.3734 14.7592 65.6153 14.9063C65.8571 15.0534 66.1474 15.2005 66.5344 15.2986C66.9214 15.4457 67.4535 15.5437 68.0824 15.6908C69.1467 15.936 70.0658 16.1812 70.743 16.5244C71.4203 16.8677 71.9524 17.2599 72.291 17.7012C72.6297 18.1916 72.8232 18.7309 72.8232 19.4174C72.8232 19.9568 72.6781 20.4471 72.4362 20.9375C72.1943 21.3788 71.8557 21.7711 71.4203 22.1143C70.9849 22.4575 70.4528 22.7027 69.8239 22.8989C69.195 23.095 68.5178 23.144 67.7438 23.144C66.5828 23.144 65.5669 22.9479 64.7929 22.5556C63.9705 22.1633 63.39 21.673 62.9546 21.0356C62.5193 20.3981 62.3258 19.7607 62.3258 19.0742H64.5994C64.6478 19.6626 64.7929 20.1039 65.1315 20.4471C65.4701 20.7904 65.8571 21.0356 66.3409 21.1827C66.8247 21.3298 67.26 21.3788 67.7438 21.3788C68.3727 21.3788 68.9048 21.2807 69.2918 21.1336C69.7272 20.9865 70.0174 20.7904 70.2593 20.4962C70.356 20.202 70.5012 19.9078 70.5012 19.5645ZM57.5366 19.5645C57.5366 19.2703 57.4399 18.9761 57.2947 18.731C57.1496 18.4858 56.8594 18.2406 56.424 17.9954C55.9886 17.7503 55.3597 17.6032 54.489 17.407C53.7634 17.2599 53.0861 17.0638 52.5056 16.8677C51.9251 16.6715 51.393 16.4263 51.006 16.1321C50.619 15.8379 50.2803 15.4947 50.0868 15.1515C49.845 14.7592 49.7482 14.3179 49.7482 13.7785C49.7482 13.2882 49.845 12.7978 50.0868 12.4055C50.3287 11.9642 50.6673 11.572 51.0543 11.2287C51.4897 10.8855 52.0218 10.6403 52.6024 10.4442C53.1829 10.248 53.8601 10.15 54.6341 10.15C55.6984 10.15 56.6175 10.3461 57.3431 10.6893C58.1171 11.0326 58.6493 11.5229 59.0846 12.1113C59.4716 12.6997 59.6651 13.3372 59.6651 14.0727H57.3915C57.3915 13.7295 57.2947 13.3862 57.0529 13.092C56.8594 12.7488 56.5207 12.5036 56.1337 12.2584C55.7467 12.0623 55.2146 11.9152 54.6341 11.9152C54.0052 11.9152 53.4731 12.0133 53.0861 12.2094C52.6991 12.4055 52.4089 12.6017 52.2637 12.8959C52.0702 13.1901 52.0218 13.4843 52.0218 13.7785C52.0218 14.0237 52.0702 14.2198 52.167 14.4159C52.2637 14.6121 52.4088 14.7592 52.6507 14.9063C52.8926 15.0534 53.1829 15.2005 53.5699 15.2986C53.9569 15.4457 54.489 15.5437 55.1179 15.6908C56.1821 15.936 57.1012 16.1812 57.7785 16.5244C58.4557 16.8677 58.9879 17.2599 59.3265 17.7012C59.6651 18.1916 59.8586 18.7309 59.8586 19.4174C59.8586 19.9568 59.7135 20.4471 59.4716 20.9375C59.2297 21.3788 58.8911 21.7711 58.4557 22.1143C58.0204 22.4575 57.4882 22.7027 56.8594 22.8989C56.2305 23.095 55.5532 23.144 54.7792 23.144C53.6182 23.144 52.6024 22.9479 51.8283 22.5556C51.006 22.1633 50.4255 21.673 49.9901 21.0356C49.5547 20.3981 49.3612 19.7607 49.3612 19.0742H51.6348C51.6832 19.6626 51.8283 20.1039 52.167 20.4471C52.5056 20.7904 52.8926 21.0356 53.3764 21.1827C53.8601 21.3298 54.2955 21.3788 54.7792 21.3788C55.4081 21.3788 55.9402 21.2807 56.3272 21.1336C56.7626 20.9865 57.0529 20.7904 57.2947 20.4962C57.4399 20.202 57.5366 19.9078 57.5366 19.5645ZM44.3786 15.2986L44.4269 16.8186H42.1533C41.5244 16.8186 40.9439 16.8677 40.4118 16.9657C39.9281 17.0638 39.4927 17.2109 39.154 17.407C38.8154 17.6032 38.5735 17.8483 38.38 18.1425C38.1865 18.4367 38.0898 18.78 38.0898 19.1232C38.0898 19.5155 38.1865 19.8587 38.38 20.202C38.5735 20.5452 38.8638 20.7904 39.2024 20.9865C39.5894 21.1827 40.0732 21.2807 40.6053 21.2807C41.2826 21.2807 41.9114 21.1336 42.4436 20.8885C42.9757 20.5942 43.4111 20.251 43.7013 19.8587C44.0399 19.4665 44.1851 19.0742 44.2334 18.6819L45.2009 19.7116C45.1526 20.0549 45.0074 20.3981 44.7172 20.7904C44.4753 21.1827 44.1367 21.5749 43.7013 21.9182C43.2659 22.2614 42.7822 22.5556 42.2017 22.8008C41.6212 23.046 40.9923 23.144 40.2667 23.144C39.3475 23.144 38.5735 22.9969 37.8963 22.6537C37.219 22.3104 36.6869 21.8691 36.3483 21.3298C35.9613 20.7904 35.8162 20.1529 35.8162 19.4665C35.8162 18.78 35.9613 18.1916 36.2515 17.7012C36.5418 17.1619 36.9288 16.7696 37.4609 16.4263C37.993 16.0831 38.6219 15.8379 39.3475 15.6418C40.0732 15.4457 40.8956 15.3966 41.8147 15.3966H44.3786V15.2986ZM43.9916 20.7414V14.3179C43.9916 13.8275 43.8948 13.3862 43.6529 13.043C43.4594 12.6507 43.1208 12.4055 42.7338 12.2094C42.2984 12.0133 41.8147 11.9152 41.1858 11.9152C40.6053 11.9152 40.1216 12.0133 39.6862 12.2094C39.2508 12.4055 38.9122 12.6507 38.6703 12.9449C38.4284 13.2391 38.3317 13.5824 38.3317 13.9256H36.058C36.058 13.4843 36.2032 13.043 36.445 12.6017C36.6869 12.1604 37.0255 11.7681 37.5093 11.4249C37.993 11.0816 38.5252 10.7874 39.154 10.5913C39.7829 10.3951 40.5086 10.248 41.3309 10.248C42.2984 10.248 43.1208 10.3951 43.8948 10.6893C44.6204 10.9835 45.2009 11.4739 45.6363 12.0623C46.0717 12.6997 46.2652 13.4353 46.2652 14.3669V20.202C46.2652 20.5942 46.3136 21.0356 46.362 21.5259C46.4587 22.0162 46.5555 22.4085 46.7006 22.7518V22.9479H44.3302C44.2334 22.7027 44.1367 22.3595 44.0399 21.9672C44.0399 21.4769 43.9916 21.0846 43.9916 20.7414Z" fill="#DB5F94"/>
+                    <path d="M16.3209 0L16.9498 10.3952L19.7072 0.343239L18.1592 10.6404L22.9483 1.42199L19.3202 11.1798L25.8992 3.13819L20.3844 11.9153L28.4147 5.44279L21.2068 12.896L30.3981 8.23774L21.8357 14.0238L31.801 11.425L22.2227 15.2496L32.4782 14.7593L22.3678 16.5245L32.4782 18.2407L22.2227 17.7994L31.801 21.6241L21.8357 19.0253L30.3981 24.7623L21.2068 20.104L28.4147 27.5572L20.3844 21.0847L25.8992 29.8618L19.3202 21.8202L22.9483 31.578L18.1592 22.3596L19.7072 32.6568L16.9498 22.6048L16.3209 33L15.692 22.6048L12.9347 32.6568L14.4343 22.3596L9.69352 31.578L13.2733 21.8202L6.74263 29.8618L12.2574 21.0847L4.22713 27.5572L11.3867 20.104L2.19537 24.7623L10.7578 19.0253L0.840862 21.6241L10.3708 17.7994L0.115234 18.2407L10.2256 16.5245L0.115234 14.7593L10.3708 15.2496L0.840862 11.425L10.7578 14.0238L2.19537 8.23774L11.3867 12.896L4.22713 5.44279L12.2574 11.9153L6.74263 3.13819L13.2733 11.1798L9.69352 1.42199L14.4343 10.6404L12.9347 0.343239L15.692 10.3952L16.3209 0Z" fill="#F66824"/>
+                    </g>
+                    <defs><clipPath id="clip0"><rect width="131" height="33" fill="white" transform="translate(0.115234)"/></clipPath></defs>
+                </svg>
+            </div>
             <h1>SLM Fine-Tuning Marketplace</h1>
-            <p class="subtitle">Competitive Analysis & Crypto-Native Opportunity - Strategic positioning for Assisterr's next growth phase</p>
-            <div class="meta">
-                <div class="meta-item">
-                    <span>January 23, 2026</span>
-                </div>
-                <div class="meta-item">
-                    <span>4 Research Agents</span>
-                </div>
-                <div class="meta-item">
-                    <span>90+ Findings</span>
-                </div>
-                <div class="meta-item">
-                    <span>Research System v5.2</span>
-                </div>
+            <p class="subtitle">Competitive Analysis & Crypto-Native Opportunity 2026</p>
+            <p class="date">January 23, 2026 | Research System v5.2 | 88 Findings</p>
+            <div style="margin-top: 15px;">
+                <span class="badge badge-primary">Series A Research</span>
+                <span class="badge badge-secondary">4 Agents</span>
+                <span class="badge badge-success">92% Quality Score</span>
             </div>
-        </header>
+        </div>
+    </header>
 
+    <!-- Navigation -->
+    <nav class="nav">
+        <ul class="nav-links">
+            <a href="#summary">Summary</a>
+            <a href="#market">Market</a>
+            <a href="#competitors">Competitors</a>
+            <a href="#funding">Funding</a>
+            <a href="#investors">Investors</a>
+            <a href="#recommendations">Actions</a>
+            <a href="#risks">Risks</a>
+        </ul>
+    </nav>
+
+    <div class="container">
         <!-- Executive Summary -->
-        <div class="exec-summary">
+        <section id="summary">
             <h2>Executive Summary</h2>
-            <div class="exec-grid">
-                <div class="exec-item">
-                    <div class="exec-label">Market Opportunity</div>
-                    <div class="exec-value">$6.5B (2024) to $20.71B (2030) - SLM market at 22% CAGR</div>
-                </div>
-                <div class="exec-item">
-                    <div class="exec-label">Series A Target</div>
-                    <div class="exec-value">$15-25M at $60-100M post-money valuation</div>
-                </div>
-                <div class="exec-item">
-                    <div class="exec-label">Key Thesis</div>
-                    <div class="exec-value">"Stripe for AI Fine-Tuning" - crypto-native marketplace with 85% cost savings</div>
-                </div>
-                <div class="exec-item">
-                    <div class="exec-label">Comparable Valuation</div>
-                    <div class="exec-value">Replicate: $350M on $5.3M ARR = 66x revenue multiple</div>
-                </div>
-                <div class="exec-item">
-                    <div class="exec-label">Unique Positioning</div>
-                    <div class="exec-value">Only platform combining: SLM focus + No-code + Tokenization + Data Marketplace + Revenue Sharing</div>
-                </div>
-                <div class="exec-item">
-                    <div class="exec-label">Timing</div>
-                    <div class="exec-value">12-18 month window before cloud incumbents commoditize. Gensyn TGE Feb 2026.</div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Table of Contents -->
-        <div class="section">
-            <div class="toc">
-                <div class="toc-title">Table of Contents</div>
-                <ul class="toc-list">
-                    <li><a href="#market">1. Market Sizing (TAM/SAM/SOM)</a></li>
-                    <li><a href="#competitors">2. Competitive Landscape</a></li>
-                    <li><a href="#differentiation">3. Differentiation Matrix</a></li>
-                    <li><a href="#funding">4. Funding Landscape</a></li>
-                    <li><a href="#investors">5. Investor Targeting</a></li>
-                    <li><a href="#narrative">6. Series A Narrative</a></li>
-                    <li><a href="#pricing">7. Pricing Strategy</a></li>
-                    <li><a href="#recommendations">8. Strategic Recommendations</a></li>
-                    <li><a href="#risks">9. Risk Analysis</a></li>
-                    <li><a href="#milestones">10. Milestones & Roadmap</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Market Sizing Section -->
-        <section class="section" id="market">
-            <h2 class="section-title">Market Sizing (TAM/SAM/SOM)</h2>
-
-            <div class="grid-4">
-                <div class="card stat-card">
-                    <div class="stat-icon">TAM</div>
-                    <div class="card-value">$20.71B</div>
-                    <div class="card-subtitle">SLM Market by 2030</div>
-                    <div class="card-subtitle" style="margin-top: 0.5rem; font-size: 0.75rem;">22% CAGR from $6.5B (2024)</div>
-                </div>
-                <div class="card stat-card">
-                    <div class="stat-icon">SAM</div>
-                    <div class="card-value">$15-30M</div>
-                    <div class="card-subtitle">Crypto AI Fine-Tuning (2026)</div>
-                    <div class="card-subtitle" style="margin-top: 0.5rem; font-size: 0.75rem;">5-10% of DePIN AI infrastructure</div>
-                </div>
-                <div class="card stat-card">
-                    <div class="stat-icon">SOM Y1</div>
-                    <div class="card-value">$100-300K</div>
-                    <div class="card-subtitle">First Year Target</div>
-                    <div class="card-subtitle" style="margin-top: 0.5rem; font-size: 0.75rem;">50-200 creators, 10-20 enterprises</div>
-                </div>
-                <div class="card stat-card">
-                    <div class="stat-icon">SOM Y3</div>
-                    <div class="card-value">$2-5M</div>
-                    <div class="card-subtitle">Third Year Target</div>
-                    <div class="card-subtitle" style="margin-top: 0.5rem; font-size: 0.75rem;">2-5K creators, 200-500 enterprises</div>
-                </div>
+            <div class="exec-summary">
+                <h3>The Opportunity</h3>
+                <p>Assisterr is positioned to capture the emerging <strong>crypto-native SLM fine-tuning marketplace</strong> - a white space opportunity where no competitor combines: (1) SLM-specific focus, (2) no-code fine-tuning, (3) tokenized model ownership, (4) integrated data marketplace, and (5) creator revenue sharing.</p>
+                <p style="margin-top: 15px;"><strong>Series A Thesis:</strong> "Stripe for AI Fine-Tuning" - democratizing GPU access with instant crypto payments, 85% cheaper than AWS.</p>
             </div>
 
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">Vertical Market Opportunities</h3>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-title">DeFi / Financial AI</div>
-                    <div class="card-value" style="font-size: 1.5rem;">$200-400M</div>
-                    <div class="card-subtitle">Fine-tuning opportunity: $30-80M</div>
-                    <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-                        <strong>Use cases:</strong> Trading strategy, risk analysis, fraud detection, yield optimization
-                    </div>
-                    <div style="margin-top: 0.5rem;">
-                        <span style="color: var(--success); font-size: 0.8rem;">Priority: HIGHEST (Y1 Focus)</span>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="value">$20.71B</div>
+                    <div class="label">SLM TAM by 2030 (22% CAGR)</div>
                 </div>
-                <div class="card">
-                    <div class="card-title">Solana Developer Tools</div>
-                    <div class="card-value" style="font-size: 1.5rem;">$150-300M</div>
-                    <div class="card-subtitle">Fine-tuning opportunity: $10-30M</div>
-                    <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-                        <strong>Use cases:</strong> Anchor code gen, smart contract auditing, Rust optimization
-                    </div>
-                    <div style="margin-top: 0.5rem;">
-                        <span style="color: var(--secondary); font-size: 0.8rem;">Priority: HIGH (Y1 Focus)</span>
-                    </div>
+                <div class="stat-card">
+                    <div class="value">$15-25M</div>
+                    <div class="label">Series A Target</div>
                 </div>
-                <div class="card">
-                    <div class="card-title">Legal AI</div>
-                    <div class="card-value" style="font-size: 1.5rem;">$2.0-2.2B</div>
-                    <div class="card-subtitle">Fine-tuning opportunity: $40-60M</div>
-                    <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-                        <strong>Use cases:</strong> Contract review, legal research, compliance monitoring
-                    </div>
-                    <div style="margin-top: 0.5rem;">
-                        <span style="color: var(--accent); font-size: 0.8rem;">Priority: LOW (Y2-3 Expansion)</span>
-                    </div>
+                <div class="stat-card">
+                    <div class="value">66x</div>
+                    <div class="label">Revenue Multiple (Replicate benchmark)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">12-18mo</div>
+                    <div class="label">Window Before Commoditization</div>
                 </div>
             </div>
         </section>
 
-        <!-- Competitive Landscape -->
-        <section class="section" id="competitors">
-            <h2 class="section-title">Competitive Landscape</h2>
+        <!-- Market Sizing -->
+        <section id="market">
+            <h2>Market Sizing</h2>
 
-            <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Enterprise Platforms</h3>
-            <div class="grid-3">
+            <h3>TAM / SAM / SOM</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-title">Total Addressable Market (TAM)</div>
+                    <div class="card-value">$20.71B</div>
+                    <div class="card-subtitle">SLM Market by 2030 | 22% CAGR from $6.5B (2024)</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Serviceable Addressable Market (SAM)</div>
+                    <div class="card-value">$15-30M</div>
+                    <div class="card-subtitle">Crypto AI Fine-Tuning (2026) | 5-10% of DePIN AI</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Serviceable Obtainable Market (SOM Y1)</div>
+                    <div class="card-value">$100-300K</div>
+                    <div class="card-subtitle">50-200 creators | 10-20 enterprise pilots</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Serviceable Obtainable Market (SOM Y3)</div>
+                    <div class="card-value">$2-5M</div>
+                    <div class="card-subtitle">2-5K creators | 200-500 enterprise customers</div>
+                </div>
+            </div>
+
+            <h3>Vertical Market Opportunities</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vertical</th>
+                            <th>Market Size (2026)</th>
+                            <th>Fine-Tuning Opportunity</th>
+                            <th>Assisterr Fit</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DeFi / Financial AI</strong></td>
+                            <td>$200-400M</td>
+                            <td>$30-80M</td>
+                            <td><span class="badge badge-success">VERY HIGH</span></td>
+                            <td><span class="badge badge-primary">Year 1</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Solana Developer Tools</strong></td>
+                            <td>$150-300M</td>
+                            <td>$10-30M</td>
+                            <td><span class="badge badge-success">VERY HIGH</span></td>
+                            <td><span class="badge badge-primary">Year 1</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legal AI</strong></td>
+                            <td>$2.0-2.2B</td>
+                            <td>$40-60M</td>
+                            <td><span class="badge badge-warning">MEDIUM</span></td>
+                            <td><span class="badge badge-dark">Year 2-3</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>NFT & Gaming AI</strong></td>
+                            <td>$50-100M</td>
+                            <td>$5-15M</td>
+                            <td><span class="badge badge-warning">MEDIUM</span></td>
+                            <td><span class="badge badge-dark">Year 2</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Competitive Landscape -->
+        <section id="competitors">
+            <h2>Competitive Landscape</h2>
+
+            <h3>Enterprise Platforms</h3>
+            <div class="cards-grid">
                 <div class="competitor-card">
                     <div class="competitor-header">
                         <span class="competitor-name">Fireworks AI</span>
@@ -761,17 +739,10 @@
                     </div>
                     <div class="competitor-type">Enterprise | $4B valuation | Series C $254M</div>
                     <div class="competitor-pricing">$2/1M training examples, zero inference markup</div>
-                    <div><strong style="font-size: 0.8rem; color: var(--success);">Strengths:</strong></div>
                     <ul class="competitor-list">
-                        <li>Best enterprise pricing model</li>
-                        <li>No markup on fine-tuned inference</li>
-                        <li>10T tokens/day, 10K+ customers</li>
-                    </ul>
-                    <div style="margin-top: 0.5rem;"><strong style="font-size: 0.8rem; color: var(--danger);">Weaknesses:</strong></div>
-                    <ul class="competitor-list">
-                        <li>No marketplace ecosystem</li>
-                        <li>No creator revenue sharing</li>
-                        <li>No blockchain integration</li>
+                        <li><strong style="color: var(--success);">+</strong> Best enterprise pricing</li>
+                        <li><strong style="color: var(--success);">+</strong> 10T tokens/day, 10K+ customers</li>
+                        <li><strong style="color: var(--danger);">-</strong> No marketplace, no crypto</li>
                     </ul>
                 </div>
                 <div class="competitor-card">
@@ -781,17 +752,10 @@
                     </div>
                     <div class="competitor-type">Enterprise | $28.4M raised | Series A</div>
                     <div class="competitor-pricing">$0.20/1M tokens, free tier 1M tokens/day</div>
-                    <div><strong style="font-size: 0.8rem; color: var(--success);">Strengths:</strong></div>
                     <ul class="competitor-list">
-                        <li>First-mover in RFT (Reinforcement Fine-Tuning)</li>
-                        <li>LoRAX enables 100s of models on single GPU</li>
-                        <li>Can fine-tune with only 10-100 examples</li>
-                    </ul>
-                    <div style="margin-top: 0.5rem;"><strong style="font-size: 0.8rem; color: var(--danger);">Weaknesses:</strong></div>
-                    <ul class="competitor-list">
-                        <li>Requires technical expertise</li>
-                        <li>No marketplace features</li>
-                        <li>No tokenization</li>
+                        <li><strong style="color: var(--success);">+</strong> First-mover in RFT</li>
+                        <li><strong style="color: var(--success);">+</strong> LoRAX multi-model serving</li>
+                        <li><strong style="color: var(--danger);">-</strong> Requires technical expertise</li>
                     </ul>
                 </div>
                 <div class="competitor-card">
@@ -801,23 +765,16 @@
                     </div>
                     <div class="competitor-type">Enterprise | $3.3B valuation | Series B $305M</div>
                     <div class="competitor-pricing">$0.48-$3.20/1M tokens, DPO 2.5x more</div>
-                    <div><strong style="font-size: 0.8rem; color: var(--success);">Strengths:</strong></div>
                     <ul class="competitor-list">
-                        <li>Transparent per-token pricing</li>
-                        <li>Supports DPO and RLHF</li>
-                        <li>No minimum spending threshold</li>
-                    </ul>
-                    <div style="margin-top: 0.5rem;"><strong style="font-size: 0.8rem; color: var(--danger);">Weaknesses:</strong></div>
-                    <ul class="competitor-list">
-                        <li>DPO pricing 2.5x more expensive</li>
-                        <li>Developer-focused only</li>
-                        <li>No crypto integration</li>
+                        <li><strong style="color: var(--success);">+</strong> Transparent pricing, DPO/RLHF</li>
+                        <li><strong style="color: var(--success);">+</strong> No minimum spend</li>
+                        <li><strong style="color: var(--danger);">-</strong> Developer-focused only</li>
                     </ul>
                 </div>
             </div>
 
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">Crypto-Native Platforms</h3>
-            <div class="grid-3">
+            <h3>Crypto-Native Platforms</h3>
+            <div class="cards-grid">
                 <div class="competitor-card">
                     <div class="competitor-header">
                         <span class="competitor-name">Gensyn</span>
@@ -825,17 +782,10 @@
                     </div>
                     <div class="competitor-type">Crypto | TGE Dec 2025 | Mainnet Feb 2026</div>
                     <div class="competitor-pricing">Token-based incentives, testnet multipliers</div>
-                    <div><strong style="font-size: 0.8rem; color: var(--success);">Strengths:</strong></div>
                     <ul class="competitor-list">
-                        <li>Layer-1 protocol for ML compute</li>
-                        <li>Strong token sale (300M tokens, 3%)</li>
-                        <li>Permissionless compute marketplace</li>
-                    </ul>
-                    <div style="margin-top: 0.5rem;"><strong style="font-size: 0.8rem; color: var(--danger);">Weaknesses:</strong></div>
-                    <ul class="competitor-list">
-                        <li>Mainnet not yet launched</li>
-                        <li>Focus on compute, not fine-tuning</li>
-                        <li>No no-code interface</li>
+                        <li><strong style="color: var(--success);">+</strong> Layer-1 ML compute protocol</li>
+                        <li><strong style="color: var(--success);">+</strong> Strong token sale (300M, 3%)</li>
+                        <li><strong style="color: var(--danger);">-</strong> Not yet launched, no UX</li>
                     </ul>
                 </div>
                 <div class="competitor-card">
@@ -845,17 +795,10 @@
                     </div>
                     <div class="competitor-type">Crypto | $4.44B market cap | 93 subnets</div>
                     <div class="competitor-pricing">TAO emissions to validators/miners</div>
-                    <div><strong style="font-size: 0.8rem; color: var(--success);">Strengths:</strong></div>
                     <ul class="competitor-list">
-                        <li>Proven token incentive model</li>
-                        <li>Grayscale filed S-1 for ETF</li>
-                        <li>Active validator ecosystem</li>
-                    </ul>
-                    <div style="margin-top: 0.5rem;"><strong style="font-size: 0.8rem; color: var(--danger);">Weaknesses:</strong></div>
-                    <ul class="competitor-list">
-                        <li>Extremely technical</li>
-                        <li>Not accessible to SMBs</li>
-                        <li>Complex subnet mechanics</li>
+                        <li><strong style="color: var(--success);">+</strong> Proven token incentives</li>
+                        <li><strong style="color: var(--success);">+</strong> Grayscale ETF filed</li>
+                        <li><strong style="color: var(--danger);">-</strong> Too technical, not accessible</li>
                     </ul>
                 </div>
                 <div class="competitor-card">
@@ -864,511 +807,219 @@
                         <span class="threat-badge threat-low">LOW</span>
                     </div>
                     <div class="competitor-type">Crypto | $25M raised | Infrastructure</div>
-                    <div class="competitor-pricing">Not disclosed, token-based</div>
-                    <div><strong style="font-size: 0.8rem; color: var(--success);">Strengths:</strong></div>
+                    <div class="competitor-pricing">Token-based, undisclosed</div>
                     <ul class="competitor-list">
-                        <li>vTune verification for trustless fine-tuning</li>
-                        <li>8000+ Infernet nodes</li>
-                        <li>ZK proof integration</li>
-                    </ul>
-                    <div style="margin-top: 0.5rem;"><strong style="font-size: 0.8rem; color: var(--danger);">Weaknesses:</strong></div>
-                    <ul class="competitor-list">
-                        <li>Very early stage</li>
-                        <li>Infrastructure-layer only</li>
-                        <li>No end-user interface</li>
+                        <li><strong style="color: var(--success);">+</strong> vTune verification</li>
+                        <li><strong style="color: var(--success);">+</strong> 8000+ Infernet nodes</li>
+                        <li><strong style="color: var(--danger);">-</strong> Infrastructure only, no platform</li>
                     </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Differentiation Matrix -->
-        <section class="section" id="differentiation">
-            <h2 class="section-title">Differentiation Matrix</h2>
-
+            <h3>Differentiation Matrix</h3>
             <div class="diff-matrix">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Dimension</th>
-                            <th>Assisterr</th>
-                            <th>Enterprise Leaders</th>
-                            <th>Crypto Platforms</th>
-                            <th>Gap Size</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>No-Code Fine-Tuning</td>
-                            <td>Yes - Core value prop</td>
-                            <td>Limited (Replicate has web UI)</td>
-                            <td>No - All require expertise</td>
-                            <td class="gap-large">LARGE</td>
-                        </tr>
-                        <tr>
-                            <td>Tokenized Model Ownership</td>
-                            <td>Yes - Models are tradable</td>
-                            <td>No - Traditional licensing</td>
-                            <td>Partial - Infrastructure tokens</td>
-                            <td class="gap-large">LARGE</td>
-                        </tr>
-                        <tr>
-                            <td>Creator Revenue Sharing</td>
-                            <td>Yes - Smart contract-based</td>
-                            <td>No - B2B SaaS model</td>
-                            <td>Indirect - Token incentives</td>
-                            <td class="gap-large">LARGE</td>
-                        </tr>
-                        <tr>
-                            <td>Integrated Data Marketplace</td>
-                            <td>Yes - Two-sided</td>
-                            <td>No - BYOD model</td>
-                            <td>No - Infrastructure only</td>
-                            <td class="gap-large">LARGE</td>
-                        </tr>
-                        <tr>
-                            <td>SLM-Specific Focus</td>
-                            <td>Yes - Optimized for small models</td>
-                            <td>No - All model sizes</td>
-                            <td>No - General ML infra</td>
-                            <td class="gap-medium">MEDIUM</td>
-                        </tr>
-                        <tr>
-                            <td>Pricing Competitiveness</td>
-                            <td>TBD - Needs transparent pricing</td>
-                            <td>Fireworks leads at $2/1M</td>
-                            <td>Opaque token economics</td>
-                            <td class="gap-small">SMALL</td>
-                        </tr>
-                        <tr>
-                            <td>Blockchain Performance</td>
-                            <td>Solana - 3-5K TPS, $0.00025 tx</td>
-                            <td>N/A - Centralized</td>
-                            <td>Ethereum L2s slower</td>
-                            <td class="gap-large">LARGE</td>
-                        </tr>
-                        <tr>
-                            <td>Community Size</td>
-                            <td>4.7M users, 24K agents</td>
-                            <td>B2B customers (100s-1000s)</td>
-                            <td>Developer communities</td>
-                            <td class="gap-large">LARGE</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div style="margin-top: 2rem;">
-                <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Key Insight</h3>
-                <div class="insight-card">
-                    <div class="insight-text">No major competitor combines: (1) SLM-specific focus, (2) no-code fine-tuning, (3) tokenized model ownership, (4) integrated data marketplace, (5) creator revenue sharing. This five-pillar differentiation is Assisterr's unique moat.</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Assisterr</th>
+                                <th>Enterprise</th>
+                                <th>Crypto</th>
+                                <th>Gap</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>No-Code Fine-Tuning</strong></td>
+                                <td>Yes - Core value prop</td>
+                                <td>Limited (Replicate only)</td>
+                                <td>No</td>
+                                <td class="gap-large">LARGE</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tokenized Model Ownership</strong></td>
+                                <td>Yes - Tradable assets</td>
+                                <td>No</td>
+                                <td>Partial</td>
+                                <td class="gap-large">LARGE</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Creator Revenue Sharing</strong></td>
+                                <td>Yes - Smart contracts</td>
+                                <td>No</td>
+                                <td>Indirect</td>
+                                <td class="gap-large">LARGE</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data Marketplace</strong></td>
+                                <td>Yes - Two-sided</td>
+                                <td>No</td>
+                                <td>No</td>
+                                <td class="gap-large">LARGE</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pricing Competitiveness</strong></td>
+                                <td>TBD</td>
+                                <td>Fireworks leads</td>
+                                <td>Opaque</td>
+                                <td class="gap-small">SMALL</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Community Size</strong></td>
+                                <td>4.7M users, 24K agents</td>
+                                <td>100s-1000s</td>
+                                <td>1000s</td>
+                                <td class="gap-large">LARGE</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
 
         <!-- Funding Landscape -->
-        <section class="section" id="funding">
-            <h2 class="section-title">Funding Landscape</h2>
+        <section id="funding">
+            <h2>Funding Landscape</h2>
 
-            <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Recent Funding Rounds</h3>
-            <table class="market-table">
-                <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Round</th>
-                        <th>Amount</th>
-                        <th>Valuation</th>
-                        <th>Lead Investors</th>
-                        <th>Key Metrics</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Together AI</strong></td>
-                        <td>Series B</td>
-                        <td>$305M</td>
-                        <td>$3.3B</td>
-                        <td>General Catalyst, Prosperity7</td>
-                        <td>160% valuation jump in &lt;12 months</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Fireworks AI</strong></td>
-                        <td>Series C</td>
-                        <td>$254M</td>
-                        <td>$4B</td>
-                        <td>Lightspeed, Index Ventures</td>
-                        <td>10T tokens/day, 10K+ customers</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Replicate</strong></td>
-                        <td>Series B</td>
-                        <td>$40M</td>
-                        <td>$350M</td>
-                        <td>a16z, Sequoia Capital</td>
-                        <td>$5.3M ARR, 66x revenue multiple</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Bittensor</strong></td>
-                        <td>Token (Public)</td>
-                        <td>-</td>
-                        <td>$4.44B</td>
-                        <td>Grayscale ETF filed</td>
-                        <td>93 subnets, institutional validation</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ritual</strong></td>
-                        <td>Seed/Series A</td>
-                        <td>$25M</td>
-                        <td>Undisclosed</td>
-                        <td>Former Polychain partners</td>
-                        <td>8,000+ Infernet nodes</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h3>Recent Funding Rounds</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Round</th>
+                            <th>Amount</th>
+                            <th>Valuation</th>
+                            <th>Lead Investors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Together AI</strong></td>
+                            <td>Series B</td>
+                            <td>$305M</td>
+                            <td>$3.3B</td>
+                            <td>General Catalyst, Prosperity7</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fireworks AI</strong></td>
+                            <td>Series C</td>
+                            <td>$254M</td>
+                            <td>$4B</td>
+                            <td>Lightspeed, Index Ventures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Replicate</strong></td>
+                            <td>Series B</td>
+                            <td>$40M</td>
+                            <td>$350M</td>
+                            <td>a16z, Sequoia Capital</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bittensor</strong></td>
+                            <td>Token</td>
+                            <td>-</td>
+                            <td>$4.44B</td>
+                            <td>Grayscale ETF filed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">Valuation Benchmarks</h3>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-title">Series A AI Infrastructure</div>
-                    <div class="card-value" style="font-size: 1.5rem;">$45-75M</div>
-                    <div class="card-subtitle">Typical post-money valuation</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
-                        Revenue multiples: 30-60x ARR<br>
-                        Typical raise: $5-50M
-                    </div>
+            <h3>Valuation Benchmarks</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="value">$45-75M</div>
+                    <div class="label">Series A Post-Money (AI Infra)</div>
                 </div>
-                <div class="card">
-                    <div class="card-title">Crypto+AI Premium</div>
-                    <div class="card-value" style="font-size: 1.5rem;">+50-100%</div>
-                    <div class="card-subtitle">Valuation premium vs traditional SaaS</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
-                        Token liquidity optionality<br>
-                        Global access, DeFi composability
-                    </div>
+                <div class="stat-card">
+                    <div class="value">30-60x</div>
+                    <div class="label">Series A Revenue Multiple</div>
                 </div>
-                <div class="card">
-                    <div class="card-title">Replicate Benchmark</div>
-                    <div class="card-value" style="font-size: 1.5rem;">66x ARR</div>
-                    <div class="card-subtitle">$350M on $5.3M ARR</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
-                        Most comparable to Assisterr<br>
-                        30K paying customers, 2M users
-                    </div>
+                <div class="stat-card">
+                    <div class="value">+50-100%</div>
+                    <div class="label">Crypto+AI Premium vs SaaS</div>
                 </div>
             </div>
         </section>
 
         <!-- Investor Targeting -->
-        <section class="section" id="investors">
-            <h2 class="section-title">Investor Targeting</h2>
+        <section id="investors">
+            <h2>Investor Targeting</h2>
 
-            <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">Tier 1 - Lead Targets</h3>
-            <div class="grid-2">
+            <h3>Tier 1 - Lead Targets</h3>
+            <div class="cards-grid">
                 <div class="investor-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <span class="investor-name">a16z crypto</span>
                         <span class="alignment-badge alignment-perfect">PERFECT FIT</span>
                     </div>
                     <div class="investor-focus">Focus: AI agents, KYA, stablecoins, privacy</div>
                     <div class="investor-thesis">"AI agent economy needs on-chain identity, payments, privacy"</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
-                        <strong>Approach:</strong> Emphasize KYA integration for model provenance, stablecoin settlements, privacy-preserving fine-tuning
-                    </div>
                 </div>
                 <div class="investor-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <span class="investor-name">Polychain Capital</span>
                         <span class="alignment-badge alignment-strong">STRONG FIT</span>
                     </div>
-                    <div class="investor-focus">Focus: AI infrastructure, GPU tokenization, AI data</div>
+                    <div class="investor-focus">Focus: AI infrastructure, GPU tokenization</div>
                     <div class="investor-thesis">"Decentralized AI infrastructure is the future"</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
-                        <strong>Approach:</strong> Emphasize tokenized compute markets, DeFi integration, decentralized governance
-                    </div>
                 </div>
                 <div class="investor-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <span class="investor-name">General Catalyst</span>
                         <span class="alignment-badge alignment-strong">STRONG FIT</span>
                     </div>
-                    <div class="investor-focus">Focus: AI infrastructure, enterprise (led Together AI)</div>
+                    <div class="investor-focus">Focus: AI infrastructure (led Together AI $3.3B)</div>
                     <div class="investor-thesis">"Open-source AI infrastructure for enterprise"</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
-                        <strong>Approach:</strong> Emphasize enterprise fine-tuning tier, open-source model support, cost savings
-                    </div>
                 </div>
                 <div class="investor-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <span class="investor-name">Paradigm</span>
                         <span class="alignment-badge alignment-strong">STRONG FIT</span>
                     </div>
                     <div class="investor-focus">Focus: DeFi + AI convergence, 40% of top crypto valuations</div>
                     <div class="investor-thesis">"Crypto enables coordination for AI networks"</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
-                        <strong>Approach:</strong> Emphasize DeFi vertical SLMs, token economic alignment, network effects
-                    </div>
-                </div>
-            </div>
-
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">Tier 2 - Co-Lead Targets</h3>
-            <div class="grid-3">
-                <div class="investor-card">
-                    <span class="investor-name">Pantera Capital</span>
-                    <div class="investor-focus">Crypto infrastructure, AI tokenization</div>
-                </div>
-                <div class="investor-card">
-                    <span class="investor-name">Sequoia Capital</span>
-                    <div class="investor-focus">AI infrastructure (Replicate, Fireworks)</div>
-                </div>
-                <div class="investor-card">
-                    <span class="investor-name">Lightspeed Ventures</span>
-                    <div class="investor-focus">AI infrastructure (led Fireworks C)</div>
-                </div>
-                <div class="investor-card">
-                    <span class="investor-name">Felicis Ventures</span>
-                    <div class="investor-focus">AI/ML platforms (led Predibase)</div>
-                </div>
-                <div class="investor-card">
-                    <span class="investor-name">Binance Labs</span>
-                    <div class="investor-focus">Crypto AI projects, ecosystem</div>
-                </div>
-                <div class="investor-card">
-                    <span class="investor-name">NVIDIA NVentures</span>
-                    <div class="investor-focus">GPU ecosystem expansion</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Series A Narrative -->
-        <section class="section" id="narrative">
-            <h2 class="section-title">Series A Narrative</h2>
-
-            <div class="insight-card">
-                <div class="insight-number">THE THESIS</div>
-                <div class="insight-text" style="font-size: 1.1rem;">
-                    "Assisterr is building the <strong>'Stripe for AI Fine-Tuning'</strong> - a crypto-native marketplace that democratizes access to GPU compute while enabling instant, global payments for training jobs. We're positioned at the intersection of three massive trends: (1) AI agent economy ($30T by 2030), (2) Tokenized compute markets ($3.5T by 2028), and (3) On-chain finance infrastructure ($46T stablecoin volume in 2025). Just as Stripe made payments invisible, Assisterr makes fine-tuning accessible."
-                </div>
-            </div>
-
-            <div class="grid-2" style="margin-top: 1.5rem;">
-                <div class="card">
-                    <div class="card-title" style="color: var(--primary);">Positioning</div>
-                    <div style="margin-top: 1rem;">
-                        <div style="margin-bottom: 1rem;">
-                            <strong style="font-size: 0.75rem; color: var(--text-muted);">TAGLINE</strong>
-                            <p style="font-size: 0.95rem;">Decentralized Fine-Tuning Marketplace for the AI Agent Economy</p>
-                        </div>
-                        <div style="margin-bottom: 1rem;">
-                            <strong style="font-size: 0.75rem; color: var(--text-muted);">ONE-LINER</strong>
-                            <p style="font-size: 0.95rem;">Assisterr tokenizes GPU compute for fine-tuning, enabling any developer to train custom models with instant crypto payments - 85% cheaper than AWS.</p>
-                        </div>
-                        <div>
-                            <strong style="font-size: 0.75rem; color: var(--text-muted);">CATEGORY</strong>
-                            <p style="font-size: 0.95rem;">AI Infrastructure x DePIN x Web3</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-title" style="color: var(--primary);">Proof Points</div>
-                    <ul style="margin-top: 1rem; font-size: 0.9rem; list-style: none;">
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">Replicate at $350M validates fine-tuning API demand (66x multiple)</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">85% cost reduction vs AWS via decentralized GPU networks</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">$30T AI agent economy by 2030 - every agent needs fine-tuned models</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">Grayscale filed S-1 for Bittensor ETF - institutional validation</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border);">$46T stablecoin volume in 2025, Solana enables &lt;$0.01 tx costs</li>
-                        <li style="padding: 0.5rem 0;">4.7M users, 24,000 deployed AI agents in &lt;9 months</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">Use of Funds ($15-25M)</h3>
-            <div class="grid-4">
-                <div class="card stat-card">
-                    <div class="card-value" style="font-size: 1.5rem;">40%</div>
-                    <div class="card-title">Product Development</div>
-                    <div class="card-subtitle">$6-10M</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted); text-align: left;">
-                        GPU orchestration, fine-tuning API, on-chain settlements, privacy training
-                    </div>
-                </div>
-                <div class="card stat-card">
-                    <div class="card-value" style="font-size: 1.5rem;">30%</div>
-                    <div class="card-title">Go-to-Market</div>
-                    <div class="card-subtitle">$4.5-7.5M</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted); text-align: left;">
-                        Developer community, enterprise sales, marketing, partnerships
-                    </div>
-                </div>
-                <div class="card stat-card">
-                    <div class="card-value" style="font-size: 1.5rem;">20%</div>
-                    <div class="card-title">Infrastructure</div>
-                    <div class="card-subtitle">$3-5M</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted); text-align: left;">
-                        GPU provider network, Solana scaling, security audits, compliance
-                    </div>
-                </div>
-                <div class="card stat-card">
-                    <div class="card-value" style="font-size: 1.5rem;">10%</div>
-                    <div class="card-title">Operations</div>
-                    <div class="card-subtitle">$1.5-2.5M</div>
-                    <div style="margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted); text-align: left;">
-                        Team expansion (20-30), legal/regulatory, finance/ops
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Strategy -->
-        <section class="section" id="pricing">
-            <h2 class="section-title">Pricing Strategy</h2>
-
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-title" style="color: var(--success);">Free Tier</div>
-                    <div style="margin-top: 1rem; font-size: 0.9rem;">
-                        <ul style="list-style: disc; padding-left: 1rem;">
-                            <li>5 fine-tuning jobs/month</li>
-                            <li>100 GPU hours/month</li>
-                            <li>5GB model storage</li>
-                            <li>80% creator / 20% platform revenue share</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card" style="border-color: var(--primary);">
-                    <div class="card-title" style="color: var(--primary);">Pro Tier - $29/month</div>
-                    <div style="margin-top: 1rem; font-size: 0.9rem;">
-                        <ul style="list-style: disc; padding-left: 1rem;">
-                            <li>50 fine-tuning jobs/month</li>
-                            <li>500 GPU hours/month</li>
-                            <li>50GB model storage</li>
-                            <li>85% creator / 15% platform</li>
-                            <li>Priority compute, advanced analytics</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-title" style="color: var(--accent);">Enterprise - $299-999/month</div>
-                    <div style="margin-top: 1rem; font-size: 0.9rem;">
-                        <ul style="list-style: disc; padding-left: 1rem;">
-                            <li>Unlimited jobs</li>
-                            <li>Custom compute allocation</li>
-                            <li>Unlimited storage</li>
-                            <li>90% creator / 10% platform</li>
-                            <li>Dedicated support, SLA guarantees</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">Unit Economics</h3>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-title">Per-Job Economics</div>
-                    <table style="width: 100%; font-size: 0.85rem; margin-top: 1rem;">
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Customer pays</td>
-                            <td style="padding: 0.5rem 0; text-align: right;"><strong>$500</strong></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Raw GPU cost (10 hrs @ $15/hr A100)</td>
-                            <td style="padding: 0.5rem 0; text-align: right;">$150</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Platform margin (30%)</td>
-                            <td style="padding: 0.5rem 0; text-align: right;">$150</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Creator payout (40%)</td>
-                            <td style="padding: 0.5rem 0; text-align: right;">$200</td>
-                        </tr>
-                        <tr style="border-top: 1px solid var(--border);">
-                            <td style="padding: 0.5rem 0;"><strong>Gross Margin</strong></td>
-                            <td style="padding: 0.5rem 0; text-align: right; color: var(--success);"><strong>70%</strong></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="card">
-                    <div class="card-title">Competitive Pricing Comparison</div>
-                    <table style="width: 100%; font-size: 0.85rem; margin-top: 1rem;">
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Predibase</td>
-                            <td style="padding: 0.5rem 0; text-align: right;">$0.20/1M tokens</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Fireworks AI</td>
-                            <td style="padding: 0.5rem 0; text-align: right;">$2/1M training examples</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Together AI (LoRA)</td>
-                            <td style="padding: 0.5rem 0; text-align: right;">$0.48-2.90/1M tokens</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem 0;">Together AI (DPO)</td>
-                            <td style="padding: 0.5rem 0; text-align: right;">$1.20-8.00/1M tokens</td>
-                        </tr>
-                        <tr style="border-top: 1px solid var(--border);">
-                            <td style="padding: 0.5rem 0;"><strong>Assisterr Target</strong></td>
-                            <td style="padding: 0.5rem 0; text-align: right; color: var(--primary);"><strong>$0.30-0.50/1M tokens</strong></td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </section>
 
         <!-- Strategic Recommendations -->
-        <section class="section" id="recommendations">
-            <h2 class="section-title">Strategic Recommendations</h2>
+        <section id="recommendations">
+            <h2>Strategic Recommendations</h2>
 
-            <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">P0 - Critical (Immediate)</h3>
+            <h3>P0 - Critical (Immediate)</h3>
             <div class="recommendation">
                 <div class="recommendation-header">
                     <span class="recommendation-title">Publish Transparent Pricing</span>
                     <span class="priority-badge priority-p0">P0</span>
                 </div>
-                <p class="recommendation-rationale">Fireworks at $2/1M sets market expectation. Opaque pricing creates friction vs competitors with clear rates.</p>
+                <p class="recommendation-rationale">Fireworks at $2/1M sets market expectation. Opaque pricing creates friction.</p>
                 <div class="recommendation-action">
-                    <strong>Action:</strong> Release pricing page with: training cost per 1M tokens by model size, inference cost per token, free tier limits, marketplace fee structure (e.g., 10% of model sales)
+                    <strong>Action:</strong> Release pricing page with training cost per 1M tokens, inference cost, free tier limits, marketplace fees.
                 </div>
             </div>
             <div class="recommendation">
                 <div class="recommendation-header">
-                    <span class="recommendation-title">Emphasize Unique Positioning</span>
+                    <span class="recommendation-title">Emphasize Unique 5-Pillar Positioning</span>
                     <span class="priority-badge priority-p0">P0</span>
                 </div>
-                <p class="recommendation-rationale">No competitor combines: SLM focus + no-code + tokenization + data marketplace + revenue sharing. This is Assisterr's unique moat.</p>
+                <p class="recommendation-rationale">No competitor combines SLM focus + no-code + tokenization + data marketplace + revenue sharing.</p>
                 <div class="recommendation-action">
-                    <strong>Action:</strong> Update marketing to: "The first vertical SLM marketplace on Solana - own, monetize, and trade specialized AI models"
-                </div>
-            </div>
-            <div class="recommendation">
-                <div class="recommendation-header">
-                    <span class="recommendation-title">Launch Marketplace Categories</span>
-                    <span class="priority-badge priority-p0">P0</span>
-                </div>
-                <p class="recommendation-rationale">Gartner predicts 80% of enterprises adopt vertical AI by 2026. Vertical moats beat horizontal positioning.</p>
-                <div class="recommendation-action">
-                    <strong>Action:</strong> Create marketplace categories: Healthcare, Legal, Finance, Sales, Customer Support, Content Creation. Surface top models per vertical.
+                    <strong>Action:</strong> Update marketing: "The first vertical SLM marketplace on Solana - own, monetize, and trade specialized AI models"
                 </div>
             </div>
 
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">P1 - High Priority</h3>
+            <h3>P1 - High Priority</h3>
             <div class="recommendation">
                 <div class="recommendation-header">
                     <span class="recommendation-title">Ship RFT (Reinforcement Fine-Tuning)</span>
                     <span class="priority-badge priority-p1">P1</span>
                 </div>
-                <p class="recommendation-rationale">Predibase's RFT is first-mover advantage with 10-100 example fine-tuning. Advanced users will choose Predibase without this.</p>
+                <p class="recommendation-rationale">Predibase's RFT is first-mover advantage with 10-100 example fine-tuning.</p>
                 <div class="recommendation-action">
                     <strong>Action:</strong> Add RFT to fine-tuning workflow, market as "No-code RFT - Predibase sophistication, Assisterr simplicity"
-                </div>
-            </div>
-            <div class="recommendation">
-                <div class="recommendation-header">
-                    <span class="recommendation-title">Integrate Ritual vTune or Build Verification</span>
-                    <span class="priority-badge priority-p1">P1</span>
-                </div>
-                <p class="recommendation-rationale">Trust is critical for decentralized fine-tuning. Ritual's vTune solves verification with &lt;1% data modification.</p>
-                <div class="recommendation-action">
-                    <strong>Action:</strong> Option 1: Partner with Ritual for vTune integration. Option 2: Build Solana-native verification using similar watermarking technique.
                 </div>
             </div>
             <div class="recommendation">
@@ -1376,124 +1027,63 @@
                     <span class="recommendation-title">Target Creator Economy</span>
                     <span class="priority-badge priority-p1">P1</span>
                 </div>
-                <p class="recommendation-rationale">91% of creators use AI tools, 79% of marketers increasing AI spend, social token revenue sharing is expected.</p>
+                <p class="recommendation-rationale">91% of creators use AI tools, 79% of marketers increasing AI spend.</p>
                 <div class="recommendation-action">
-                    <strong>Action:</strong> Launch "Assisterr for Creators" campaign: content creator use cases, revenue sharing examples, social token integration
-                </div>
-            </div>
-
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">P2 - Medium Priority</h3>
-            <div class="recommendation">
-                <div class="recommendation-header">
-                    <span class="recommendation-title">Pursue SOC-2 Compliance</span>
-                    <span class="priority-badge priority-p2">P2</span>
-                </div>
-                <p class="recommendation-rationale">AWS Bedrock and Predibase have SOC-2. Enterprise buyers require this for security/compliance.</p>
-                <div class="recommendation-action">
-                    <strong>Action:</strong> Start SOC-2 Type 1 certification process. Required for Fortune 500 sales.
-                </div>
-            </div>
-            <div class="recommendation">
-                <div class="recommendation-header">
-                    <span class="recommendation-title">Position Against Gensyn Launch</span>
-                    <span class="priority-badge priority-p2">P2</span>
-                </div>
-                <p class="recommendation-rationale">Gensyn TGE completed Dec 2025, mainnet launching Feb 2026. Timing competitor for crypto-native users.</p>
-                <div class="recommendation-action">
-                    <strong>Action:</strong> Ship weekly features Jan-Mar 2026. Demonstrate faster iteration than Gensyn's infrastructure-layer approach.
+                    <strong>Action:</strong> Launch "Assisterr for Creators" campaign with revenue sharing examples and social token integration.
                 </div>
             </div>
         </section>
 
         <!-- Risk Analysis -->
-        <section class="section" id="risks">
-            <h2 class="section-title">Risk Analysis</h2>
+        <section id="risks">
+            <h2>Risk Analysis</h2>
 
-            <div class="grid-2">
-                <div class="risk-card">
-                    <div class="risk-header">
-                        <span class="risk-title">Competition from Cloud Providers</span>
-                        <div class="risk-badges">
-                            <span class="risk-badge threat-medium">MEDIUM PROB</span>
-                            <span class="risk-badge threat-low">LOW IMPACT</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">AWS/Azure launch competing fine-tuning APIs, creating pressure on enterprise segment.</p>
-                    <div class="risk-mitigation">
-                        <strong>Mitigation:</strong> Cost advantage (85% cheaper), crypto-native features (instant settlements, global access), community ownership (token holders benefit from growth). Target creator/SME segment.
-                    </div>
-                </div>
+            <div class="cards-grid">
                 <div class="risk-card">
                     <div class="risk-header">
                         <span class="risk-title">Gensyn Pre-Launch Competition</span>
                         <div class="risk-badges">
-                            <span class="risk-badge threat-high">HIGH PROB</span>
-                            <span class="risk-badge threat-medium">MEDIUM IMPACT</span>
+                            <span class="risk-badge threat-high">HIGH</span>
+                            <span class="risk-badge threat-medium">MED IMPACT</span>
                         </div>
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Gensyn launches pre-training marketplace before Assisterr captures market share.</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">Gensyn launches mainnet Feb 2026, capturing crypto-native users first.</p>
                     <div class="risk-mitigation">
-                        <strong>Mitigation:</strong> Shift positioning to "application layer for Gensyn models". Partner rather than compete. Differentiate on fine-tuning vs training focus.
+                        <strong>Mitigation:</strong> Position as "application layer for Gensyn models". Differentiate on fine-tuning vs training focus.
                     </div>
                 </div>
                 <div class="risk-card">
                     <div class="risk-header">
-                        <span class="risk-title">Ritual Verification Standard</span>
+                        <span class="risk-title">Fireworks AI Pricing Pressure</span>
                         <div class="risk-badges">
-                            <span class="risk-badge threat-medium">MEDIUM PROB</span>
-                            <span class="risk-badge threat-medium">MEDIUM IMPACT</span>
+                            <span class="risk-badge threat-high">HIGH</span>
+                            <span class="risk-badge threat-medium">MED IMPACT</span>
                         </div>
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Ritual's on-chain fine-tuning verification becomes industry standard.</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">Best enterprise pricing ($2/1M) creates pressure on marketplace model.</p>
                     <div class="risk-mitigation">
-                        <strong>Mitigation:</strong> Develop Solana verifiable computation story. zkVM for Solana or partnering with existing solutions. ZK proof for model fingerprint = authenticity guarantee.
+                        <strong>Mitigation:</strong> Match pricing via decentralized compute. Differentiate on marketplace + revenue sharing.
                     </div>
                 </div>
                 <div class="risk-card">
                     <div class="risk-header">
                         <span class="risk-title">LoRA Cost Compression</span>
                         <div class="risk-badges">
-                            <span class="risk-badge threat-medium">MEDIUM PROB</span>
+                            <span class="risk-badge threat-medium">MED</span>
                             <span class="risk-badge threat-high">HIGH IMPACT</span>
                         </div>
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">LoRA optimization improvements (FP8, new techniques) reduce fine-tuning costs 50%+ in next 12 months.</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">FP8 and new techniques reduce fine-tuning costs 50%+ in 12 months.</p>
                     <div class="risk-mitigation">
-                        <strong>Mitigation:</strong> Build marketplace efficiency (aggregated demand, better hardware utilization). Network effects, not just cost arbitrage.
-                    </div>
-                </div>
-                <div class="risk-card">
-                    <div class="risk-header">
-                        <span class="risk-title">Regulatory Uncertainty</span>
-                        <div class="risk-badges">
-                            <span class="risk-badge threat-low">LOW PROB</span>
-                            <span class="risk-badge threat-medium">MEDIUM IMPACT</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Crypto regulation evolves unfavorably for token-based marketplaces.</p>
-                    <div class="risk-mitigation">
-                        <strong>Mitigation:</strong> Dual structure: (1) API business (traditional equity), (2) Token for network incentives. Can operate without token if needed.
-                    </div>
-                </div>
-                <div class="risk-card">
-                    <div class="risk-header">
-                        <span class="risk-title">GPU Supply Constraints</span>
-                        <div class="risk-badges">
-                            <span class="risk-badge threat-medium">MEDIUM PROB</span>
-                            <span class="risk-badge threat-medium">MEDIUM IMPACT</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Insufficient GPU providers to meet marketplace demand.</p>
-                    <div class="risk-mitigation">
-                        <strong>Mitigation:</strong> Bootstrap with 50-100 providers, 20-50% yields attract providers, integrate with Render Network, Akash, Bittensor for supply.
+                        <strong>Mitigation:</strong> Build marketplace efficiency via network effects, not just cost arbitrage.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Milestones & Roadmap -->
-        <section class="section" id="milestones">
-            <h2 class="section-title">Milestones & Roadmap</h2>
+        <!-- Timeline -->
+        <section>
+            <h2>Milestones & Roadmap</h2>
 
             <div class="timeline">
                 <div class="timeline-item">
@@ -1525,53 +1115,33 @@
                             <li>Enterprise tier launch</li>
                             <li>25,000+ developers</li>
                             <li>20,000 jobs/month</li>
-                            <li>$2M MRR</li>
-                            <li>Series B ready ($100M+ valuation)</li>
+                            <li>$2M MRR - Series B ready ($100M+ valuation)</li>
                         </ul>
                     </div>
-                </div>
-            </div>
-
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.1rem;">Valuation Scenarios at Series A Close</h3>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-title" style="color: var(--text-muted);">Conservative</div>
-                    <div class="card-value" style="font-size: 1.75rem;">$50M</div>
-                    <div class="card-subtitle">$1M ARR at 50x multiple</div>
-                </div>
-                <div class="card" style="border-color: var(--primary);">
-                    <div class="card-title" style="color: var(--primary);">Base Case</div>
-                    <div class="card-value" style="font-size: 1.75rem;">$75M</div>
-                    <div class="card-subtitle">$1.5M ARR at 60x multiple (crypto premium)</div>
-                </div>
-                <div class="card">
-                    <div class="card-title" style="color: var(--success);">Aggressive</div>
-                    <div class="card-value" style="font-size: 1.75rem;">$100M+</div>
-                    <div class="card-subtitle">$2M ARR at 80x multiple (category-defining)</div>
                 </div>
             </div>
         </section>
 
         <!-- Key Insights -->
-        <section class="section">
-            <h2 class="section-title">Key Insights</h2>
+        <section>
+            <h2>Key Insights</h2>
 
-            <div class="grid-2">
+            <div class="cards-grid">
                 <div class="insight-card">
                     <div class="insight-number">INSIGHT 1</div>
-                    <div class="insight-text">SLM market is 3.2x larger than LLM market and growing faster (22% CAGR vs 15-20%). Fine-tuning is core to SLM differentiation.</div>
+                    <div class="insight-text">SLM market is 3.2x larger than LLM market and growing faster (22% CAGR). Fine-tuning is core to SLM differentiation.</div>
                 </div>
                 <div class="insight-card">
                     <div class="insight-number">INSIGHT 2</div>
-                    <div class="insight-text">Crypto-native fine-tuning marketplace is genuinely novel: no existing player combines tokenized model ownership + on-chain provenance + Solana integration.</div>
+                    <div class="insight-text">Crypto-native fine-tuning marketplace is genuinely novel: no existing player combines tokenized ownership + on-chain provenance + Solana integration.</div>
                 </div>
                 <div class="insight-card">
                     <div class="insight-number">INSIGHT 3</div>
-                    <div class="insight-text">LoRA economics make marketplace viable: 80% cost reduction vs full fine-tuning enables 50%+ take rates while staying price-competitive.</div>
+                    <div class="insight-text">LoRA economics make marketplace viable: 80% cost reduction enables 50%+ take rates while staying price-competitive.</div>
                 </div>
                 <div class="insight-card">
                     <div class="insight-number">INSIGHT 4</div>
-                    <div class="insight-text">2026 is "year of fine-tuned small models" - frontier model improvement slowdown driving demand for task-specific fine-tuning.</div>
+                    <div class="insight-text">2026 is "year of fine-tuned small models" - frontier model slowdown driving demand for task-specific fine-tuning.</div>
                 </div>
                 <div class="insight-card">
                     <div class="insight-number">INSIGHT 5</div>
@@ -1579,16 +1149,17 @@
                 </div>
                 <div class="insight-card">
                     <div class="insight-number">INSIGHT 6</div>
-                    <div class="insight-text">12-18 month window before AWS/Azure commoditize space. Gensyn TGE (Feb 2026), Grayscale Bittensor ETF create tailwinds.</div>
+                    <div class="insight-text">12-18 month window before AWS/Azure commoditize space. Gensyn TGE and Grayscale ETF create tailwinds.</div>
                 </div>
             </div>
         </section>
-
-        <footer>
-            <p>Generated by Assisterr Research System v5.2</p>
-            <p style="margin-top: 0.5rem;">Research conducted January 23, 2026 | 4 Research Agents | 90+ Findings</p>
-            <p style="margin-top: 0.5rem; color: var(--primary);">For Series A fundraising preparation</p>
-        </footer>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Generated by <span class="brand">Assisterr Research System v5.2</span></p>
+        <p style="margin-top: 10px;">January 23, 2026 | 4 Research Agents | 88 Findings | 92% Quality Score</p>
+        <p style="margin-top: 10px;">For Series A Fundraising Preparation</p>
+    </footer>
 </body>
 </html>
