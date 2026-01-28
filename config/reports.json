@@ -1,7 +1,19 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-28T08:33:11Z",
+  "last_updated": "2026-01-28T08:46:24Z",
   "reports": [
+    {
+      "id": "SLM-API-GATEWAY-FEASIBILITY-2026-01-28",
+      "filename": "SLM-API-GATEWAY-FEASIBILITY-2026-01-28.html",
+      "title": "SLM API GATEWAY FEASIBILITY 2026 01 28",
+      "description": "Research report from 2026-01-28",
+      "date": "2026-01-28",
+      "category": "slm",
+      "badges": [],
+      "badge_colors": [],
+      "featured": false,
+      "version": "2.0"
+    },
     {
       "id": "SLM-FINE-TUNING-SERVICE-FEASIBILITY-2026-01-28",
       "filename": "SLM-FINE-TUNING-SERVICE-FEASIBILITY-2026-01-28.html",
