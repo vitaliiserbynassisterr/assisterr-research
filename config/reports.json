@@ -1,7 +1,19 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-23T14:06:22Z",
+  "last_updated": "2026-01-28T08:11:02Z",
   "reports": [
+    {
+      "id": "SLM-AGENT-MARKETPLACE-FEASIBILITY-2026-01-28",
+      "filename": "SLM-AGENT-MARKETPLACE-FEASIBILITY-2026-01-28.html",
+      "title": "SLM AGENT MARKETPLACE FEASIBILITY 2026 01 28",
+      "description": "Research report from 2026-01-28",
+      "date": "2026-01-28",
+      "category": "slm",
+      "badges": [],
+      "badge_colors": [],
+      "featured": false,
+      "version": "2.0"
+    },
     {
       "id": "slm-fine-tuning-marketplace-competitive-analysis-2026-01-23",
       "filename": "slm-fine-tuning-marketplace-competitive-analysis-2026-01-23.html",
