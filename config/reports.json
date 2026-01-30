@@ -1,7 +1,19 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-30T11:58:54Z",
+  "last_updated": "2026-01-30T13:48:15Z",
   "reports": [
+    {
+      "id": "CEO-BRIEF-SLM-VERTICAL-AGENTS-DEEP-RESEARCH-2026-01-30",
+      "filename": "CEO-BRIEF-SLM-VERTICAL-AGENTS-DEEP-RESEARCH-2026-01-30.html",
+      "title": "CEO BRIEF SLM VERTICAL AGENTS DEEP RESEARCH 2026 01 30",
+      "description": "Research report from 2026-01-30",
+      "date": "2026-01-30",
+      "category": "slm",
+      "badges": [],
+      "badge_colors": [],
+      "featured": false,
+      "version": "2.0"
+    },
     {
       "id": "LANDING-PAGE-MVP-IDEAS-6-CONSOLIDATED-2026-01-30",
       "filename": "LANDING-PAGE-MVP-IDEAS-6-CONSOLIDATED-2026-01-30.html",
