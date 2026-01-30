@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assisterr MVP Landing Page Ideas | 6 Vertical SLM Opportunities</title>
+    <style>
+        :root {
+            --primary: #0066FF;
+            --primary-light: #3399FF;
+            --accent: #00D4AA;
+            --dark: #0A0F1A;
+            --dark-secondary: #141B2D;
+            --dark-card: #1A2236;
+            --text: #E8ECF4;
+            --text-muted: #8B95A5;
+            --border: #2A3548;
+            --success: #00D4AA;
+            --warning: #FFB547;
+            --danger: #FF5757;
+            --web3: linear-gradient(135deg, #7B4AE2 0%, #00D4AA 100%);
+            --non-web3: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, var(--dark-secondary) 0%, var(--dark) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .meta-badge strong {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: radial-gradient(ellipse at center top, rgba(0,102,255,0.15) 0%, transparent 60%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .hero-stat .label {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .category-badge.web3 {
+            background: var(--web3);
+        }
+
+        .category-badge.non-web3 {
+            background: var(--non-web3);
+        }
+
+        /* Idea Cards */
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+        }
+
+        .idea-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .idea-card.recommended {
+            border-color: var(--accent);
+            box-shadow: 0 0 40px rgba(0,212,170,0.1);
+        }
+
+        .idea-card-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .idea-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .idea-card.recommended .idea-number {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .idea-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .idea-subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .recommended-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 12px;
+        }
+
+        .idea-card-body {
+            padding: 24px;
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric {
+            background: var(--dark-secondary);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .metric-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .metric-value {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .metric-value.highlight {
+            color: var(--accent);
+        }
+
+        /* Angles */
+        .angles-section {
+            margin-top: 24px;
+        }
+
+        .angles-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .angle {
+            background: var(--dark-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .angle.primary {
+            border-left-color: var(--accent);
+        }
+
+        .angle-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .angle-badge.primary {
+            background: rgba(0,212,170,0.2);
+            color: var(--accent);
+        }
+
+        .angle-badge.secondary {
+            background: rgba(0,102,255,0.2);
+            color: var(--primary-light);
+        }
+
+        .angle h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .angle p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .angle-cta {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Competitor Section */
+        .competitors {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .competitors-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .competitor-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .competitor-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .competitor-users {
+            color: var(--text-muted);
+        }
+
+        /* Confidence Bar */
+        .confidence-bar {
+            margin-top: 24px;
+        }
+
+        .confidence-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .confidence-track {
+            height: 8px;
+            background: var(--dark-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .confidence-fill.high {
+            background: var(--accent);
+        }
+
+        .confidence-fill.medium {
+            background: var(--warning);
+        }
+
+        /* Summary Table */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 32px;
+        }
+
+        .summary-table th,
+        .summary-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-table th {
+            background: var(--dark-secondary);
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        .summary-table td {
+            font-size: 14px;
+        }
+
+        .summary-table tr:hover td {
+            background: var(--dark-card);
+        }
+
+        /* Next Steps */
+        .next-steps {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 48px;
+        }
+
+        .next-steps h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-meta {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .ideas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Assisterr Research</div>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <div class="meta-badge">
+                        <span>Research Date:</span>
+                        <strong>2026-01-30</strong>
+                    </div>
+                    <div class="meta-badge">
+                        <span>Ideas:</span>
+                        <strong>6 MVP Candidates</strong>
+                    </div>
+                    <div class="meta-badge">
+                        <span>Avg Confidence:</span>
+                        <strong>84%</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>6 Landing Page MVP Ideas</h1>
+            <p class="subtitle">
+                Validated market opportunities for Assisterr's SLM vertical agents platform.
+                3 Web3-focused ideas leveraging Solana expertise + 3 Non-Web3 ideas for broader market reach.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="value">$1.4B - $17.5B</div>
+                    <div class="label">Combined TAM</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">17,708 - 200K+</div>
+                    <div class="label">Addressable Users</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="value">$29 - $999/mo</div>
+                    <div class="label">Price Points Validated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEB3 IDEAS SECTION -->
+    <section style="background: linear-gradient(180deg, var(--dark) 0%, var(--dark-secondary) 100%);">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge web3">Web3 / Crypto</span>
+                <h2>Web3 Ideas (Solana Ecosystem)</h2>
+                <p>Leverage Assisterr's Solana expertise and existing community for faster GTM</p>
+            </div>
+
+            <div class="ideas-grid">
+                <!-- IDEA 1: Solana Developer Copilot -->
+                <div class="idea-card recommended">
+                    <div class="idea-card-header">
+                        <div class="idea-number">1</div>
+                        <h3 class="idea-title">Solana Developer Copilot <span class="recommended-badge">Recommended</span></h3>
+                        <p class="idea-subtitle">AI copilot trained exclusively on Solana/Anchor with real-time security scanning</p>
+                    </div>
+                    <div class="idea-card-body">
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-label">Market Size</div>
+                                <div class="metric-value highlight">17,708 Devs</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">YoY Growth</div>
+                                <div class="metric-value">83%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Price Point</div>
+                                <div class="metric-value">$29-49/mo</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Competition</div>
+                                <div class="metric-value highlight">None Direct</div>
+                            </div>
+                        </div>
+
+                        <div class="angles-section">
+                            <div class="angles-title">3 Marketing Angles</div>
+
+                            <div class="angle primary">
+                                <span class="angle-badge primary">Primary</span>
+                                <h4>"Stop Debugging Ownership Errors for Hours"</h4>
+                                <p>Addresses #1 vulnerability - missing ownership checks. Security-focused positioning.</p>
+                                <span class="angle-cta">CTA: "Ship Secure Solana Programs Faster"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Secondary</span>
+                                <h4>"Build Solana Programs 10x Faster"</h4>
+                                <p>Speed-focused for 83% YoY new developer growth. Productivity ROI positioning.</p>
+                                <span class="angle-cta">CTA: "AI That Actually Knows Anchor"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Tertiary</span>
+                                <h4>"Copilot Doesn't Understand Solana. We Do."</h4>
+                                <p>Direct competitor comparison. Cost-benefit framing ($29 vs $10K audit).</p>
+                                <span class="angle-cta">CTA: "Save $10K+ in Audit Costs"</span>
+                            </div>
+                        </div>
+
+                        <div class="competitors">
+                            <div class="competitors-title">Competitor Gap Analysis</div>
+                            <div class="competitor-list">
+                                <div class="competitor-chip">GitHub Copilot <span class="competitor-users">| No Solana</span></div>
+                                <div class="competitor-chip">ChainGPT <span class="competitor-users">| Multi-chain, no IDE</span></div>
+                                <div class="competitor-chip">Solana MCP <span class="competitor-users">| Docs only, free</span></div>
+                            </div>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div class="confidence-label">
+                                <span>Research Confidence</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="confidence-track">
+                                <div class="confidence-fill high" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IDEA 2: FTaaS -->
+                <div class="idea-card">
+                    <div class="idea-card-header">
+                        <div class="idea-number">2</div>
+                        <h3 class="idea-title">Fine-Tuning as a Service (FTaaS)</h3>
+                        <p class="idea-subtitle">No-code SLM fine-tuning with Unsloth backend for 2x training speed at 60% lower cost</p>
+                    </div>
+                    <div class="idea-card-body">
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-label">Market Size (TAM)</div>
+                                <div class="metric-value highlight">$4.2B by 2028</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">CAGR</div>
+                                <div class="metric-value">58%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Price Point</div>
+                                <div class="metric-value">$49-999/mo</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Year 3 ARR</div>
+                                <div class="metric-value">$17.5M</div>
+                            </div>
+                        </div>
+
+                        <div class="angles-section">
+                            <div class="angles-title">3 Marketing Angles</div>
+
+                            <div class="angle primary">
+                                <span class="angle-badge primary">Primary</span>
+                                <h4>"Fine-Tune Your SLM in 30 Minutes, Not 30 Days"</h4>
+                                <p>Speed-to-value for SMBs frustrated with AWS/GCP complexity.</p>
+                                <span class="angle-cta">CTA: "No GPU. No Code. No PhD Required."</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Secondary</span>
+                                <h4>"225x Cheaper Than OpenAI Fine-Tuning"</h4>
+                                <p>Cost comparison vs GPT-4 fine-tuning. Unsloth backend enables 2x speed.</p>
+                                <span class="angle-cta">CTA: "Your Model. Your Data. 1/225th the Cost."</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Tertiary</span>
+                                <h4>"Creator Marketplace: Monetize Your Expertise"</h4>
+                                <p>Two-sided marketplace where domain experts sell fine-tuned models.</p>
+                                <span class="angle-cta">CTA: "Turn Your Knowledge Into Recurring Revenue"</span>
+                            </div>
+                        </div>
+
+                        <div class="competitors">
+                            <div class="competitors-title">Key Competitors</div>
+                            <div class="competitor-list">
+                                <div class="competitor-chip">Together AI <span class="competitor-users">| $3.5B val</span></div>
+                                <div class="competitor-chip">Fireworks AI <span class="competitor-users">| $552M raised</span></div>
+                                <div class="competitor-chip">Predibase <span class="competitor-users">| $46M raised</span></div>
+                            </div>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div class="confidence-label">
+                                <span>Research Confidence</span>
+                                <span>87%</span>
+                            </div>
+                            <div class="confidence-track">
+                                <div class="confidence-fill high" style="width: 87%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IDEA 3: Crypto Trading AI -->
+                <div class="idea-card">
+                    <div class="idea-card-header">
+                        <div class="idea-number">3</div>
+                        <h3 class="idea-title">Crypto Trading AI (Solana Focus)</h3>
+                        <p class="idea-subtitle">MEV optimization + DeFi yield agents leveraging Jupiter ecosystem</p>
+                    </div>
+                    <div class="idea-card-body">
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-label">Market Size (TAM)</div>
+                                <div class="metric-value highlight">$1.1B - $5.8B</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Solana Specific</div>
+                                <div class="metric-value">$175M - $650M</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Jupiter Revenue</div>
+                                <div class="metric-value">$150M/yr</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Price Point</div>
+                                <div class="metric-value">$30-500/mo</div>
+                            </div>
+                        </div>
+
+                        <div class="angles-section">
+                            <div class="angles-title">3 Marketing Angles</div>
+
+                            <div class="angle primary">
+                                <span class="angle-badge primary">Primary</span>
+                                <h4>"MEV Profits Without the Technical Complexity"</h4>
+                                <p>Jito-powered arbitrage for sophisticated retail. $1.73M single-trade proof point.</p>
+                                <span class="angle-cta">CTA: "Capture MEV Like the Pros"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Secondary</span>
+                                <h4>"Set It and Forget It DeFi Yields"</h4>
+                                <p>Automated yield optimization across Solana protocols. No manual rebalancing.</p>
+                                <span class="angle-cta">CTA: "AI Manages Your Stablecoins 24/7"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Tertiary</span>
+                                <h4>"Whale Intelligence for Retail Traders"</h4>
+                                <p>Nansen-style analytics + actionable alerts. Currently underserved on Solana.</p>
+                                <span class="angle-cta">CTA: "Trade With the Whales, Not Against Them"</span>
+                            </div>
+                        </div>
+
+                        <div class="competitors">
+                            <div class="competitors-title">Competitor Landscape</div>
+                            <div class="competitor-list">
+                                <div class="competitor-chip">3Commas <span class="competitor-users">| 200K+ users</span></div>
+                                <div class="competitor-chip">Nansen <span class="competitor-users">| $500M+ val</span></div>
+                                <div class="competitor-chip">Jupiter <span class="competitor-users">| $150M/yr</span></div>
+                            </div>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div class="confidence-label">
+                                <span>Research Confidence</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="confidence-track">
+                                <div class="confidence-fill high" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NON-WEB3 IDEAS SECTION -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge non-web3">Non-Web3 / Broader Market</span>
+                <h2>Non-Web3 Ideas (Wider Market)</h2>
+                <p>Larger addressable markets with more paying users, leveraging SLM cost advantages</p>
+            </div>
+
+            <div class="ideas-grid">
+                <!-- IDEA 4: E-commerce Support -->
+                <div class="idea-card recommended">
+                    <div class="idea-card-header">
+                        <div class="idea-number">4</div>
+                        <h3 class="idea-title">E-commerce Support Agents <span class="recommended-badge">Recommended</span></h3>
+                        <p class="idea-subtitle">SLM-powered customer support at $0.50/resolution vs Zendesk's $1.50</p>
+                    </div>
+                    <div class="idea-card-body">
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-label">Market Size</div>
+                                <div class="metric-value highlight">$47.82B by 2030</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Zendesk AI ARR</div>
+                                <div class="metric-value">$200M → $500M</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Price Point</div>
+                                <div class="metric-value">$0.50/resolution</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">SMB Budget</div>
+                                <div class="metric-value">$50-200/mo</div>
+                            </div>
+                        </div>
+
+                        <div class="angles-section">
+                            <div class="angles-title">3 Marketing Angles</div>
+
+                            <div class="angle primary">
+                                <span class="angle-badge primary">Primary</span>
+                                <h4>"AI Support at $0.50/Resolution (vs. $1.50+ Elsewhere)"</h4>
+                                <p>67% cheaper than Zendesk, 44% cheaper than Gorgias. Pure price differentiation.</p>
+                                <span class="angle-cta">CTA: "Half the Price. Same Resolution Quality."</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Secondary</span>
+                                <h4>"Live in Hours, Not Weeks"</h4>
+                                <p>Zendesk is complex, requires weeks of setup. Speed-to-value for SMB.</p>
+                                <span class="angle-cta">CTA: "Connect Shopify in 60 Seconds"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Tertiary</span>
+                                <h4>"Your Customer Data Never Leaves Your Servers"</h4>
+                                <p>Self-hosted SLM = GDPR compliance built-in. Privacy as differentiator.</p>
+                                <span class="angle-cta">CTA: "Self-Hosted AI. Your Data Stays Yours."</span>
+                            </div>
+                        </div>
+
+                        <div class="competitors">
+                            <div class="competitors-title">Key Competitors</div>
+                            <div class="competitor-list">
+                                <div class="competitor-chip">Zendesk <span class="competitor-users">| $200M AI ARR</span></div>
+                                <div class="competitor-chip">Gorgias <span class="competitor-users">| $72.6M ARR</span></div>
+                                <div class="competitor-chip">Intercom Fin <span class="competitor-users">| $0.99/res</span></div>
+                            </div>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div class="confidence-label">
+                                <span>Research Confidence</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="confidence-track">
+                                <div class="confidence-fill high" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IDEA 5: Gaming NPC -->
+                <div class="idea-card recommended">
+                    <div class="idea-card-header">
+                        <div class="idea-number">5</div>
+                        <h3 class="idea-title">Gaming NPC Agents <span class="recommended-badge">Recommended</span></h3>
+                        <p class="idea-subtitle">Flat-rate AI NPCs for indie game studios at $49-299/mo vs usage-based competitors</p>
+                    </div>
+                    <div class="idea-card-body">
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-label">Market Size</div>
+                                <div class="metric-value highlight">$1.41B → $5.51B</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">CAGR</div>
+                                <div class="metric-value">31.2%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Price Point</div>
+                                <div class="metric-value">$49-299/mo</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Indie Budget</div>
+                                <div class="metric-value">$50-300/mo</div>
+                            </div>
+                        </div>
+
+                        <div class="angles-section">
+                            <div class="angles-title">3 Marketing Angles</div>
+
+                            <div class="angle primary">
+                                <span class="angle-badge primary">Primary</span>
+                                <h4>"AI NPCs Without the Surprise Bills"</h4>
+                                <p>Inworld's usage-based pricing went $5K → $250K. Flat-rate protects studios.</p>
+                                <span class="angle-cta">CTA: "Predictable Pricing. Unlimited Interactions."</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Secondary</span>
+                                <h4>"NPCs That Respond Like Real Characters, Not Chatbots"</h4>
+                                <p>SLM-powered sub-200ms latency vs 800-1200ms for cloud AI.</p>
+                                <span class="angle-cta">CTA: "Real-Time Immersion at Indie Prices"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Tertiary</span>
+                                <h4>"100 NPCs. 1,000 Storylines. 0 Writers Burned Out."</h4>
+                                <p>Content scaling pain: 1 NPC with 3 paths = 40+ responses needed.</p>
+                                <span class="angle-cta">CTA: "Scale Your Narrative Without Scaling Payroll"</span>
+                            </div>
+                        </div>
+
+                        <div class="competitors">
+                            <div class="competitors-title">Key Competitors</div>
+                            <div class="competitor-list">
+                                <div class="competitor-chip">Inworld AI <span class="competitor-users">| $117M raised</span></div>
+                                <div class="competitor-chip">Convai <span class="competitor-users">| $29-99/mo</span></div>
+                                <div class="competitor-chip">Charisma <span class="competitor-users">| $650K raised</span></div>
+                            </div>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div class="confidence-label">
+                                <span>Research Confidence</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="confidence-track">
+                                <div class="confidence-fill high" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IDEA 6: Edge/Mobile SLM -->
+                <div class="idea-card">
+                    <div class="idea-card-header">
+                        <div class="idea-number">6</div>
+                        <h3 class="idea-title">Edge/Mobile SLM Deployment</h3>
+                        <p class="idea-subtitle">One-click on-device AI for mobile apps, IoT, and privacy-first use cases</p>
+                    </div>
+                    <div class="idea-card-body">
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-label">Edge AI TAM</div>
+                                <div class="metric-value highlight">$3.91B → $26.69B</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">CAGR</div>
+                                <div class="metric-value">21.7%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Price Point</div>
+                                <div class="metric-value">$99-499/mo</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Use Case</div>
+                                <div class="metric-value">Mobile Apps</div>
+                            </div>
+                        </div>
+
+                        <div class="angles-section">
+                            <div class="angles-title">3 Marketing Angles</div>
+
+                            <div class="angle primary">
+                                <span class="angle-badge primary">Primary</span>
+                                <h4>"AI in Your App. Zero Cloud Costs."</h4>
+                                <p>On-device inference = no API calls, no per-token costs, no latency.</p>
+                                <span class="angle-cta">CTA: "Deploy SLM to Mobile in 1 Click"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Secondary</span>
+                                <h4>"GDPR-Compliant AI Without the Lawyers"</h4>
+                                <p>Data never leaves device = automatic privacy compliance.</p>
+                                <span class="angle-cta">CTA: "Privacy-First AI for Regulated Industries"</span>
+                            </div>
+
+                            <div class="angle">
+                                <span class="angle-badge secondary">Tertiary</span>
+                                <h4>"Works Offline. No Internet Required."</h4>
+                                <p>Healthcare, field service, remote locations - offline AI capability.</p>
+                                <span class="angle-cta">CTA: "AI That Works Where WiFi Doesn't"</span>
+                            </div>
+                        </div>
+
+                        <div class="competitors">
+                            <div class="competitors-title">Market Leaders</div>
+                            <div class="competitor-list">
+                                <div class="competitor-chip">Apple MLX <span class="competitor-users">| On-device</span></div>
+                                <div class="competitor-chip">Google MediaPipe <span class="competitor-users">| Free SDK</span></div>
+                                <div class="competitor-chip">Qualcomm AI Hub <span class="competitor-users">| Hardware</span></div>
+                            </div>
+                        </div>
+
+                        <div class="confidence-bar">
+                            <div class="confidence-label">
+                                <span>Research Confidence</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="confidence-track">
+                                <div class="confidence-fill medium" style="width: 78%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section style="background: var(--dark-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Comparison</h2>
+                <p>All 6 ideas ranked by market size, competition level, and fit with Assisterr's strengths</p>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Idea</th>
+                            <th>Category</th>
+                            <th>TAM</th>
+                            <th>Price Point</th>
+                            <th>Competition</th>
+                            <th>Assisterr Fit</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: rgba(0,212,170,0.1);">
+                            <td><strong>1</strong></td>
+                            <td><strong>Solana Developer Copilot</strong></td>
+                            <td>Web3</td>
+                            <td>$354K-531K MRR</td>
+                            <td>$29-49/mo</td>
+                            <td style="color: var(--accent);">None Direct</td>
+                            <td style="color: var(--accent);">Perfect</td>
+                            <td>85%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>FTaaS (Fine-Tuning)</td>
+                            <td>Web3</td>
+                            <td>$4.2B by 2028</td>
+                            <td>$49-999/mo</td>
+                            <td style="color: var(--warning);">High</td>
+                            <td>Strong</td>
+                            <td>87%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Crypto Trading AI</td>
+                            <td>Web3</td>
+                            <td>$1.1B-5.8B</td>
+                            <td>$30-500/mo</td>
+                            <td style="color: var(--warning);">High</td>
+                            <td>Strong</td>
+                            <td>82%</td>
+                        </tr>
+                        <tr style="background: rgba(0,212,170,0.1);">
+                            <td><strong>4</strong></td>
+                            <td><strong>E-commerce Support</strong></td>
+                            <td>Non-Web3</td>
+                            <td>$47.82B by 2030</td>
+                            <td>$0.50/resolution</td>
+                            <td style="color: var(--warning);">High</td>
+                            <td>Good (SLM)</td>
+                            <td>85%</td>
+                        </tr>
+                        <tr style="background: rgba(0,212,170,0.1);">
+                            <td><strong>5</strong></td>
+                            <td><strong>Gaming NPC Agents</strong></td>
+                            <td>Non-Web3</td>
+                            <td>$1.41B → $5.51B</td>
+                            <td>$49-299/mo</td>
+                            <td style="color: var(--accent);">Low-Medium</td>
+                            <td>Strong</td>
+                            <td>82%</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Edge/Mobile SLM</td>
+                            <td>Non-Web3</td>
+                            <td>$3.91B → $26.69B</td>
+                            <td>$99-499/mo</td>
+                            <td style="color: var(--danger);">Very High</td>
+                            <td>Medium</td>
+                            <td>78%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section>
+        <div class="container">
+            <div class="next-steps">
+                <h3>Recommended Next Steps</h3>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Build 3 Landing Pages</h4>
+                            <p>Create landing pages for top 3 recommended ideas: Solana Copilot, E-commerce Support, Gaming NPC. Test primary headline angles.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Run Paid Traffic Test</h4>
+                            <p>$500-1000 per landing page on targeted channels (Twitter for Web3, Google Ads for non-Web3). Measure conversion rates.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Validate with 10-20 Interviews</h4>
+                            <p>Use interview questions from research findings. Validate pricing, pain points, and willingness to pay.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Choose MVP Based on Data</h4>
+                            <p>Pick idea with highest conversion + interview validation. Build MVP in 4-6 weeks targeting $2M ARR for Series A.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATA SOURCES -->
+    <section style="background: var(--dark-secondary); padding: 48px 0;">
+        <div class="container">
+            <h3 style="font-size: 20px; margin-bottom: 24px;">Research Methodology</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+                <div>
+                    <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Primary Sources</h4>
+                    <ul style="list-style: none; font-size: 14px; color: var(--text-muted);">
+                        <li>Zendesk, Gorgias, Intercom pricing pages</li>
+                        <li>Crunchbase, Tracxn funding data</li>
+                        <li>Globe Newswire market reports</li>
+                        <li>TechCrunch, VentureBeat coverage</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Research Agents Used</h4>
+                    <ul style="list-style: none; font-size: 14px; color: var(--text-muted);">
+                        <li>Scout Agent (haiku) - Initial discovery</li>
+                        <li>Depth Agent (sonnet) - Deep analysis</li>
+                        <li>Perplexity API - Real-time web search</li>
+                        <li>Cross-validation across 16+ searches</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Confidence Factors</h4>
+                    <ul style="list-style: none; font-size: 14px; color: var(--text-muted);">
+                        <li>Competitor pricing: Publicly available</li>
+                        <li>Market size: Multiple corroborating sources</li>
+                        <li>User counts: Mix of official + estimates</li>
+                        <li>Missing: Direct customer interviews</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-meta">
+                <span>Generated: 2026-01-30</span>
+                <span>Research System: v5.2</span>
+                <span>Total Findings: 12</span>
+                <span>Avg Confidence: 84%</span>
+            </div>
+            <p style="margin-top: 24px; color: var(--text-muted); font-size: 14px;">
+                Assisterr Research Hub | Series A Preparation
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

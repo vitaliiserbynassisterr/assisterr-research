@@ -1,7 +1,31 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-30T06:28:25Z",
+  "last_updated": "2026-01-30T11:17:07Z",
   "reports": [
+    {
+      "id": "LANDING-PAGE-MVP-IDEAS-6-CONSOLIDATED-2026-01-30",
+      "filename": "LANDING-PAGE-MVP-IDEAS-6-CONSOLIDATED-2026-01-30.html",
+      "title": "LANDING PAGE MVP IDEAS 6 CONSOLIDATED 2026 01 30",
+      "description": "Research report from 2026-01-30",
+      "date": "2026-01-30",
+      "category": "slm",
+      "badges": [],
+      "badge_colors": [],
+      "featured": false,
+      "version": "2.0"
+    },
+    {
+      "id": "FTAAS-CEO-DEEP-DIVE-2026-01-30",
+      "filename": "FTAAS-CEO-DEEP-DIVE-2026-01-30.html",
+      "title": "FTAAS CEO DEEP DIVE 2026 01 30",
+      "description": "Research report from 2026-01-30",
+      "date": "2026-01-30",
+      "category": "slm",
+      "badges": [],
+      "badge_colors": [],
+      "featured": true,
+      "version": "2.0"
+    },
     {
       "id": "SLM-PRODUCT-USP-PRICING-2026-01-30",
       "filename": "SLM-PRODUCT-USP-PRICING-2026-01-30.html",
