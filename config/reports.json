@@ -1,7 +1,19 @@
 {
   "system_version": "5.1.0",
-  "last_updated": "2026-01-30T13:48:15Z",
+  "last_updated": "2026-02-02T08:59:36Z",
   "reports": [
+    {
+      "id": "MVP-IDEAS-AGENT-ECONOMY-2026-02-01",
+      "filename": "MVP-IDEAS-AGENT-ECONOMY-2026-02-01.html",
+      "title": "MVP IDEAS AGENT ECONOMY 2026 02 01",
+      "description": "Research report from 2026-02-01",
+      "date": "2026-02-01",
+      "category": "slm",
+      "badges": [],
+      "badge_colors": [],
+      "featured": false,
+      "version": "2.0"
+    },
     {
       "id": "CEO-BRIEF-SLM-VERTICAL-AGENTS-DEEP-RESEARCH-2026-01-30",
       "filename": "CEO-BRIEF-SLM-VERTICAL-AGENTS-DEEP-RESEARCH-2026-01-30.html",
