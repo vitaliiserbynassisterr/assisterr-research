@@ -132,12 +132,24 @@ if [ -z "$DESCRIPTION" ]; then
     DESCRIPTION="Research report from $DATE"
 fi
 
+# Get research system version from VERSION.json
+VERSION_FILE="$HOME/development/assisterr/assisterr-workflow/research/VERSION.json"
+if [ -f "$VERSION_FILE" ] && command -v jq &> /dev/null; then
+    RESEARCH_VERSION=$(jq -r '.current_version' "$VERSION_FILE" 2>/dev/null)
+    if [ -z "$RESEARCH_VERSION" ] || [ "$RESEARCH_VERSION" = "null" ]; then
+        RESEARCH_VERSION="5.8.0"
+    fi
+else
+    RESEARCH_VERSION="5.8.0"
+fi
+
 echo -e "${GREEN}Extracted metadata:${NC}"
 echo "  ID: $ID"
 echo "  Title: $TITLE"
 echo "  Date: $DATE"
 echo "  Category: $CATEGORY"
 echo "  Featured: $FEATURED"
+echo "  Research Version: $RESEARCH_VERSION"
 
 # Create JSON entry
 FEATURED_JSON="false"
@@ -153,10 +165,10 @@ NEW_ENTRY=$(cat <<EOF
     "description": "$DESCRIPTION",
     "date": "$DATE",
     "category": "$CATEGORY",
-    "badges": [],
-    "badge_colors": [],
+    "badges": ["Research v$RESEARCH_VERSION"],
+    "badge_colors": ["purple"],
     "featured": $FEATURED_JSON,
-    "version": "2.0"
+    "version": "$RESEARCH_VERSION"
 }
 EOF
 )
@@ -170,11 +182,11 @@ if command -v jq &> /dev/null; then
     EXISTING=$(jq -r ".reports[] | select(.id == \"$ID\") | .id" "$CONFIG_FILE" 2>/dev/null)
     if [ -n "$EXISTING" ]; then
         echo -e "${YELLOW}Report already exists in config. Updating...${NC}"
-        # Remove existing and add new
-        jq "(.reports |= map(select(.id != \"$ID\"))) | .reports = [${NEW_ENTRY}] + .reports | .last_updated = \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"" "$CONFIG_FILE" > "$CONFIG_FILE.tmp"
+        # Remove existing and add new, update system_version
+        jq "(.reports |= map(select(.id != \"$ID\"))) | .reports = [${NEW_ENTRY}] + .reports | .last_updated = \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\" | .system_version = \"$RESEARCH_VERSION\"" "$CONFIG_FILE" > "$CONFIG_FILE.tmp"
     else
-        # Add to beginning of reports array
-        jq ".reports = [${NEW_ENTRY}] + .reports | .last_updated = \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"" "$CONFIG_FILE" > "$CONFIG_FILE.tmp"
+        # Add to beginning of reports array, update system_version
+        jq ".reports = [${NEW_ENTRY}] + .reports | .last_updated = \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\" | .system_version = \"$RESEARCH_VERSION\"" "$CONFIG_FILE" > "$CONFIG_FILE.tmp"
     fi
 
     mv "$CONFIG_FILE.tmp" "$CONFIG_FILE"
