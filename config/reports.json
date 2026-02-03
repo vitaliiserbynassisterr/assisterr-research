@@ -1,7 +1,23 @@
 {
   "system_version": "5.8.0",
-  "last_updated": "2026-02-03T10:00:00Z",
+  "last_updated": "2026-02-03T10:06:52Z",
   "reports": [
+    {
+      "id": "SOLANA-AGENT-REGISTRY-A2A-PROTOCOL-2026-02-03",
+      "filename": "SOLANA-AGENT-REGISTRY-A2A-PROTOCOL-2026-02-03.html",
+      "title": "SOLANA AGENT REGISTRY A2A PROTOCOL 2026 02 03",
+      "description": "Research report from 2026-02-03",
+      "date": "2026-02-03",
+      "category": "solana",
+      "badges": [
+        "Research v5.8.0"
+      ],
+      "badge_colors": [
+        "purple"
+      ],
+      "featured": false,
+      "version": "5.8.0"
+    },
     {
       "id": "MVP-IDEAS-AGENT-ECONOMY-2026-02-01",
       "filename": "MVP-IDEAS-AGENT-ECONOMY-2026-02-01.html",
