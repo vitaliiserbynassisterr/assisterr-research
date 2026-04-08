@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q2 2026 MCP Server Quality Report | Laureum.ai</title>
+<meta name="description" content="First public quality benchmark of remotely-accessible MCP servers, evaluated by Laureum's adversarial-probe-aligned evaluation pipeline. 27 servers, full audit trails, OWASP Triple-Aligned methodology.">
+<meta property="og:title" content="Q2 2026 MCP Server Quality Report">
+<meta property="og:description" content="27 MCP servers tested · Top: Hugging Face, CoinGecko, JavaDocs · Methodology: OWASP Triple-Aligned + DeepMind Agent Trap detection">
+<style>
+:root {
+  --primary: #E2754D;
+  --primary-dark: #C4614A;
+  --bg: #0E0E0C;
+  --bg-card: #1A1A18;
+  --bg-card-hover: #232220;
+  --text: #F5F5F3;
+  --text-muted: #A0A09C;
+  --text-dim: #6B6964;
+  --border: #2A2925;
+  --expert: #E2754D;
+  --proficient: #DB5F94;
+  --basic: #f59e0b;
+  --failed: #9e3b3b;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+  font-size: 15px;
+}
+.container { max-width: 980px; margin: 0 auto; padding: 60px 24px; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 11px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 56px;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.subtitle {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+.lede {
+  font-size: 17px;
+  color: var(--text-muted);
+  border-left: 3px solid var(--primary);
+  padding: 12px 20px;
+  background: rgba(226,117,77,0.04);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 40px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+.stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+.stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+th {
+  background: rgba(226,117,77,0.08);
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover { background: var(--bg-card-hover); }
+.score {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.tier {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tier.expert { background: rgba(226,117,77,0.15); color: var(--expert); border: 1px solid var(--expert); }
+.tier.proficient { background: rgba(219,95,148,0.15); color: var(--proficient); border: 1px solid var(--proficient); }
+.tier.basic { background: rgba(245,158,11,0.15); color: var(--basic); border: 1px solid var(--basic); }
+.tier.failed { background: rgba(158,59,59,0.15); color: var(--failed); border: 1px solid var(--failed); }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.spotlight {
+  background: linear-gradient(135deg, rgba(226,117,77,0.08), rgba(219,95,148,0.04));
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 32px 0;
+}
+.audit-link {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  background: var(--bg-card);
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+.cta {
+  background: var(--primary);
+  color: var(--bg);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  display: inline-block;
+  margin: 8px 4px;
+  transition: all 0.2s;
+}
+.cta:hover { background: var(--primary-dark); text-decoration: none; transform: translateY(-1px); }
+.footer {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 13px;
+  text-align: center;
+}
+ul.dim-list { list-style: none; padding: 0; }
+ul.dim-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-variant-numeric: tabular-nums;
+}
+.code { font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="eyebrow">Public Benchmark · Laureum.ai</div>
+  <h1>Q2 2026 MCP Server Quality Report</h1>
+  <div class="subtitle">Published 2026-04-08 · 27 servers evaluated · 100% audit-traceable</div>
+
+  <div class="lede">
+    First public quality benchmark of remotely-accessible MCP servers, evaluated by Laureum's adversarial-probe-aligned evaluation pipeline. Each score is reproducible — every evaluation has a full audit trail (tool calls, judge prompts, sanitization events, probe executions) accessible via <code>GET /v1/admin/eval/{id}/audit</code>.
+  </div>
+
+  <h2>Executive Summary</h2>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-value">27</div><div class="stat-label">Servers</div></div>
+    <div class="stat"><div class="stat-value">68.5</div><div class="stat-label">Avg Score</div></div>
+    <div class="stat"><div class="stat-value">125</div><div class="stat-label">Tools Tested</div></div>
+    <div class="stat"><div class="stat-value">27/27</div><div class="stat-label">Audit Traceable</div></div>
+  </div>
+
+  <h3>Tier distribution</h3>
+  <table>
+    <thead><tr><th>Tier</th><th>Count</th><th>%</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tier expert">Expert</span></td><td>5</td><td>19%</td></tr>
+      <tr><td><span class="tier proficient">Proficient</span></td><td>13</td><td>48%</td></tr>
+      <tr><td><span class="tier basic">Basic</span></td><td>3</td><td>11%</td></tr>
+      <tr><td><span class="tier failed">Failed</span></td><td>6</td><td>22%</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Average dimension scores (Laureum 6-axis)</h3>
+  <table>
+    <thead><tr><th>Dimension</th><th>Weight</th><th>Avg Score</th></tr></thead>
+    <tbody>
+      <tr><td>Accuracy</td><td>35%</td><td class="score">61/100</td></tr>
+      <tr><td>Safety</td><td>20%</td><td class="score">66/100</td></tr>
+      <tr><td>Reliability</td><td>15%</td><td class="score">70/100</td></tr>
+      <tr><td>Process Quality</td><td>10%</td><td class="score">56/100</td></tr>
+      <tr><td>Latency</td><td>10%</td><td class="score">52/100</td></tr>
+      <tr><td>Schema Quality</td><td>10%</td><td class="score">83/100</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Top 10 by Overall Score</h2>
+  <table>
+    <thead><tr><th>#</th><th>Server</th><th>Score</th><th>Tier</th><th>Tools</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><a href="https://hf.co/mcp">Hugging Face</a></td><td class="score">93</td><td><span class="tier basic">Basic</span></td><td>8</td></tr>
+      <tr><td>2</td><td><a href="https://mcp.api.coingecko.com/mcp">CoinGecko</a></td><td class="score">93</td><td><span class="tier expert">Expert</span></td><td>3</td></tr>
+      <tr><td>3</td><td><a href="https://javadocs.dev/mcp">JavaDocs.dev</a></td><td class="score">92</td><td><span class="tier expert">Expert</span></td><td>3</td></tr>
+      <tr><td>4</td><td><a href="https://mcp.deepwiki.com/mcp">DeepWiki</a></td><td class="score">87</td><td><span class="tier expert">Expert</span></td><td>3</td></tr>
+      <tr><td>5</td><td><a href="https://gitmcp.io/microsoft/TypeScript">GitMCP (TypeScript)</a></td><td class="score">86</td><td><span class="tier expert">Expert</span></td><td>3</td></tr>
+      <tr><td>6</td><td><a href="https://gitmcp.io/anthropics/anthropic-cookbook">GitMCP (Anthropic)</a></td><td class="score">85</td><td><span class="tier expert">Expert</span></td><td>3</td></tr>
+      <tr><td>7</td><td><a href="https://mcp.context7.com/mcp">Context7</a></td><td class="score">84</td><td><span class="tier proficient">Proficient</span></td><td>2</td></tr>
+      <tr><td>8</td><td><a href="https://mcp.openzeppelin.com/contracts/solidity/mcp">OpenZeppelin (Solidity)</a></td><td class="score">82</td><td><span class="tier proficient">Proficient</span></td><td>8</td></tr>
+      <tr><td>9</td><td><a href="https://open.dexter.cash/mcp">Dexter x402 Gateway</a></td><td class="score">82</td><td><span class="tier proficient">Proficient</span></td><td>6</td></tr>
+      <tr><td>10</td><td><a href="https://gitmcp.io/facebook/react">GitMCP (React)</a></td><td class="score">82</td><td><span class="tier proficient">Proficient</span></td><td>3</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Spotlight: Solana DeFi (Dexter x402 Gateway)</h2>
+
+  <div class="spotlight">
+    <div class="eyebrow">Flagship Solana Case</div>
+    <h3 style="margin-top:8px;"><a href="https://open.dexter.cash/mcp">open.dexter.cash/mcp</a> → 82/100, Proficient</h3>
+    <p style="color:var(--text-muted); margin:12px 0;">
+      Dexter exposes 6 x402 protocol tools for Solana DeFi: search, pay, fetch, check, access, wallet. The flagship Solana case demonstrates Laureum's evaluation methodology applied to crypto-native infrastructure.
+    </p>
+
+    <table style="background:rgba(0,0,0,0.2);">
+      <thead><tr><th>Tool</th><th>Score</th><th>Tests Passed</th></tr></thead>
+      <tbody>
+        <tr><td class="code">x402_search</td><td class="score">58</td><td>3/5</td></tr>
+        <tr><td class="code">x402_pay</td><td class="score">66</td><td>4/5</td></tr>
+        <tr><td class="code">x402_fetch</td><td class="score">66</td><td>4/5</td></tr>
+        <tr><td class="code">x402_check</td><td class="score">86</td><td>5/5</td></tr>
+        <tr><td class="code">x402_access</td><td class="score">72</td><td>4/5</td></tr>
+        <tr><td class="code">x402_wallet</td><td class="score">45</td><td>1/3</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:16px; color:var(--text-muted); font-size:14px;">
+      <strong>Audit trail</strong>: 195 records — 166 tool calls + 28 LLM judge calls + 1 QO-043 sanitization event
+    </p>
+    <div class="audit-link">GET /v1/admin/eval/93df9afe-06af-4e4a-801a-3a61b90b515e/audit</div>
+  </div>
+
+  <h2>Methodology</h2>
+
+  <p style="color:var(--text-muted); margin:16px 0;">All evaluations use Laureum's <code>certified</code> mode (Level 2 functional testing):</p>
+
+  <ul style="color:var(--text-muted); padding-left:24px; margin:16px 0;">
+    <li><strong>Tool functional tests</strong> — each tool exercised with 3-5 test cases (happy_path, edge_case, error_handling)</li>
+    <li><strong>6-axis scoring</strong> — accuracy 35% · safety 20% · reliability 15% · process quality 10% · latency 10% · schema quality 10%</li>
+    <li><strong>Adversarial probes</strong> — 25 probe types covering OWASP LLM/Agentic/MCP Top 10 + 6 DeepMind Agent Trap categories</li>
+    <li><strong>Multi-judge consensus</strong> — Cerebras (llama3.1-8b) primary, Groq + OpenRouter fallback</li>
+    <li><strong>Audit trail</strong> — every tool call, judge call, sanitization event, and probe execution persisted in MongoDB and queryable via admin endpoint</li>
+  </ul>
+
+  <h3>Standards alignment</h3>
+  <table>
+    <thead><tr><th>Standard</th><th>Coverage</th></tr></thead>
+    <tbody>
+      <tr><td>OWASP Top 10 for LLM Applications</td><td class="score">8/10</td></tr>
+      <tr><td>OWASP Top 10 for Agentic Applications</td><td class="score">9/10</td></tr>
+      <tr><td>OWASP MCP Top 10</td><td class="score">8/10</td></tr>
+      <tr><td>DeepMind &ldquo;AI Agent Traps&rdquo; (Franklin et al. 2026)</td><td class="score">15/19 testable</td></tr>
+    </tbody>
+  </table>
+
+  <h2>About Laureum.ai</h2>
+
+  <p style="color:var(--text-muted); margin:16px 0;">
+    Laureum is a runtime quality verification platform for AI agents and MCP servers. Unlike static security scanners, Laureum connects to live MCP servers, exercises every tool, runs adversarial probes, and produces verifiable quality credentials (AQVC).
+  </p>
+
+  <div style="text-align:center; margin:32px 0;">
+    <a href="https://laureum.ai/evaluate" class="cta">Evaluate Your Server →</a>
+    <a href="https://laureum.ai/leaderboard" class="cta" style="background:var(--bg-card); color:var(--text);">View Leaderboard</a>
+  </div>
+
+  <div class="footer">
+    Report generated 2026-04-08 from Laureum production MongoDB.<br>
+    Methodology, audit trails, and source code: <a href="https://github.com/assister-xyz/quality-oracle">github.com/assister-xyz/quality-oracle</a>
+  </div>
+</div>
+</body>
+</html>

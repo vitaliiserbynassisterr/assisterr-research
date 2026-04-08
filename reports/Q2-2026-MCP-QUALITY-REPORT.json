@@ -1,0 +1,296 @@
+{
+  "report_version": "q2-2026-v1",
+  "generated_at": "2026-04-08",
+  "source": "laureum.ai production",
+  "total_servers": 27,
+  "with_audit_trail": 27,
+  "avg_score": 68.5,
+  "median_score": 80,
+  "tier_distribution": {
+    "basic": 3,
+    "expert": 5,
+    "proficient": 13,
+    "failed": 6
+  },
+  "dimension_averages": {
+    "accuracy": 61,
+    "safety": 66,
+    "process_quality": 56,
+    "reliability": 70,
+    "latency": 52,
+    "schema_quality": 83
+  },
+  "top_10": [
+    {
+      "rank": 1,
+      "name": "Hf.Co",
+      "url": "https://hf.co/mcp",
+      "score": 93,
+      "tier": "basic",
+      "evaluation_id": "8d411716-66b6-4a60-828e-7480ea488d3c"
+    },
+    {
+      "rank": 2,
+      "name": "Coingecko",
+      "url": "https://mcp.api.coingecko.com/mcp",
+      "score": 93,
+      "tier": "expert",
+      "evaluation_id": "f32861d3-32b7-4058-a534-a1868341b2e2"
+    },
+    {
+      "rank": 3,
+      "name": "Javadocs",
+      "url": "https://javadocs.dev/mcp",
+      "score": 92,
+      "tier": "expert",
+      "evaluation_id": "7d85c905-1c15-49ef-b05e-51420a0ec9d5"
+    },
+    {
+      "rank": 4,
+      "name": "Deepwiki",
+      "url": "https://mcp.deepwiki.com/mcp",
+      "score": 87,
+      "tier": "expert",
+      "evaluation_id": "1866071d-9072-4f5f-bab8-e4b0d9317fe7"
+    },
+    {
+      "rank": 5,
+      "name": "Gitio",
+      "url": "https://gitmcp.io/microsoft/TypeScript",
+      "score": 86,
+      "tier": "expert",
+      "evaluation_id": "676a9fde-61a7-4506-914b-3fcd182b1c98"
+    },
+    {
+      "rank": 6,
+      "name": "Gitio",
+      "url": "https://gitmcp.io/anthropics/anthropic-cookbook",
+      "score": 85,
+      "tier": "expert",
+      "evaluation_id": "dbac789c-bfe4-468f-9ae5-d812c0a00fbe"
+    },
+    {
+      "rank": 7,
+      "name": "Context7",
+      "url": "https://mcp.context7.com/mcp",
+      "score": 84,
+      "tier": "proficient",
+      "evaluation_id": "a4728ecc-a6a0-47a5-be82-9c6bc2dcf1ef"
+    },
+    {
+      "rank": 8,
+      "name": "Openzeppelin",
+      "url": "https://mcp.openzeppelin.com/contracts/solidity/mcp",
+      "score": 82,
+      "tier": "proficient",
+      "evaluation_id": "04e395f1-6377-4174-b467-fb9c872ff046"
+    },
+    {
+      "rank": 9,
+      "name": "Open.Dexter",
+      "url": "https://open.dexter.cash/mcp",
+      "score": 82,
+      "tier": "proficient",
+      "evaluation_id": "93df9afe-06af-4e4a-801a-3a61b90b515e"
+    },
+    {
+      "rank": 10,
+      "name": "Gitio",
+      "url": "https://gitmcp.io/facebook/react",
+      "score": 82,
+      "tier": "proficient",
+      "evaluation_id": "2d005ae9-50d9-4a31-854b-f8705e1598d7"
+    }
+  ],
+  "all_servers": [
+    {
+      "rank": 1,
+      "url": "https://hf.co/mcp",
+      "score": 93,
+      "tier": "basic",
+      "last_evaluated_at": "2026-03-31T16:11:12.715000"
+    },
+    {
+      "rank": 2,
+      "url": "https://mcp.api.coingecko.com/mcp",
+      "score": 93,
+      "tier": "expert",
+      "last_evaluated_at": "2026-03-20T14:31:39.134000"
+    },
+    {
+      "rank": 3,
+      "url": "https://javadocs.dev/mcp",
+      "score": 92,
+      "tier": "expert",
+      "last_evaluated_at": "2026-03-20T14:20:29.449000"
+    },
+    {
+      "rank": 4,
+      "url": "https://mcp.deepwiki.com/mcp",
+      "score": 87,
+      "tier": "expert",
+      "last_evaluated_at": "2026-04-05T17:49:14.106000"
+    },
+    {
+      "rank": 5,
+      "url": "https://gitmcp.io/microsoft/TypeScript",
+      "score": 86,
+      "tier": "expert",
+      "last_evaluated_at": "2026-03-20T14:27:10.649000"
+    },
+    {
+      "rank": 6,
+      "url": "https://gitmcp.io/anthropics/anthropic-cookbook",
+      "score": 85,
+      "tier": "expert",
+      "last_evaluated_at": "2026-04-01T19:55:40.126000"
+    },
+    {
+      "rank": 7,
+      "url": "https://mcp.context7.com/mcp",
+      "score": 84,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-05T17:40:06.285000"
+    },
+    {
+      "rank": 8,
+      "url": "https://mcp.openzeppelin.com/contracts/solidity/mcp",
+      "score": 82,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-08T06:13:32.878000"
+    },
+    {
+      "rank": 9,
+      "url": "https://open.dexter.cash/mcp",
+      "score": 82,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-07T18:22:19.094000"
+    },
+    {
+      "rank": 10,
+      "url": "https://gitmcp.io/facebook/react",
+      "score": 82,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-03-20T14:27:04.667000"
+    },
+    {
+      "rank": 11,
+      "url": "https://gitmcp.io/openai/openai-python",
+      "score": 82,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-03-20T14:27:07.678000"
+    },
+    {
+      "rank": 12,
+      "url": "https://knowledge-mcp.global.api.aws",
+      "score": 80,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-08T06:14:41.747000"
+    },
+    {
+      "rank": 13,
+      "url": "https://api.usefulai.fun/mcp",
+      "score": 80,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-07T18:27:58.069000"
+    },
+    {
+      "rank": 14,
+      "url": "https://gitmcp.io/docs",
+      "score": 80,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-03-31T16:11:12.900000"
+    },
+    {
+      "rank": 15,
+      "url": "https://mcp.exa.ai/mcp",
+      "score": 79,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-07T18:30:42.400000"
+    },
+    {
+      "rank": 16,
+      "url": "https://mcp.docs.astro.build/mcp",
+      "score": 77,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-07T18:28:26.124000"
+    },
+    {
+      "rank": 17,
+      "url": "https://mcp.remote-mcp.com",
+      "score": 72,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-07T18:28:42.476000"
+    },
+    {
+      "rank": 18,
+      "url": "https://zip1.io/mcp",
+      "score": 71,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-04-07T18:29:24.874000"
+    },
+    {
+      "rank": 19,
+      "url": "https://api.manifold.markets/v0/mcp",
+      "score": 68,
+      "tier": "proficient",
+      "last_evaluated_at": "2026-03-31T16:11:13.352000"
+    },
+    {
+      "rank": 20,
+      "url": "https://huggingface.co/mcp",
+      "score": 63,
+      "tier": "basic",
+      "last_evaluated_at": "2026-04-05T10:21:50.984000"
+    },
+    {
+      "rank": 21,
+      "url": "https://gitmcp.io/tailwindlabs/tailwindcss",
+      "score": 39,
+      "tier": "failed",
+      "last_evaluated_at": "2026-03-20T14:28:00.555000"
+    },
+    {
+      "rank": 22,
+      "url": "https://mcp.ferryhopper.com/mcp",
+      "score": 39,
+      "tier": "basic",
+      "last_evaluated_at": "2026-03-31T16:11:13.221000"
+    },
+    {
+      "rank": 23,
+      "url": "https://gitmcp.io/expressjs/express",
+      "score": 38,
+      "tier": "failed",
+      "last_evaluated_at": "2026-03-20T14:28:06.547000"
+    },
+    {
+      "rank": 24,
+      "url": "https://gitmcp.io/vercel/next.js",
+      "score": 31,
+      "tier": "failed",
+      "last_evaluated_at": "2026-03-20T14:24:55.447000"
+    },
+    {
+      "rank": 25,
+      "url": "https://gitmcp.io/fastapi/fastapi",
+      "score": 29,
+      "tier": "failed",
+      "last_evaluated_at": "2026-03-20T14:28:56.842000"
+    },
+    {
+      "rank": 26,
+      "url": "https://gitmcp.io/langchain-ai/langchain",
+      "score": 29,
+      "tier": "failed",
+      "last_evaluated_at": "2026-03-20T14:28:27.543000"
+    },
+    {
+      "rank": 27,
+      "url": "https://gitmcp.io/pallets/flask",
+      "score": 26,
+      "tier": "failed",
+      "last_evaluated_at": "2026-03-20T14:29:29.338000"
+    }
+  ]
+}
